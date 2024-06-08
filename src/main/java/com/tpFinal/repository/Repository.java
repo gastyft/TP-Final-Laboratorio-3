@@ -19,7 +19,7 @@ public class Repository<T> implements IRepository<T> {
 
         public Repository(Class<T> typeParameterClass ) {
             this.typeParameterClass = typeParameterClass;
-            this.archivo = new File("src/main/java/org/example/archivos/"+typeParameterClass.getSimpleName()+".json");
+            this.archivo = new File("src/main/java/com/tpFinal/archivos/"+typeParameterClass.getSimpleName()+".json");
         }
 
         @Override
