@@ -13,6 +13,7 @@ public class MenuPrincipal {
     private JLabel usuarioLabel;
     private JPasswordField passwordField1;
     private JButton logInButton;
+    private JButton newUserButton;
 
 
     public MenuPrincipal() {
@@ -27,6 +28,13 @@ public class MenuPrincipal {
                  menualumno.setVisible(true);
 
 
+
+            }
+        });
+        newUserButton.addActionListener(e -> {
+            {
+                MenuUsuario menuUsuario = new MenuUsuario();
+                menuUsuario.setVisible(true);
 
             }
         });
