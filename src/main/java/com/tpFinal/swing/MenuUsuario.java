@@ -28,15 +28,19 @@ public class MenuUsuario extends JDialog {
         crearButton.addActionListener(e->{
             {
                 if(profesorRadioButton.isSelected()){
+
                     persona = new Profesor();
                     validar();
                     JOptionPane.showMessageDialog(MenuUsuario.this, "Profesor creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     dispose();
+
                 } else if (alumnoRadioButton.isSelected()) {
+
                     persona = new Alumno();
                     validar();
                     JOptionPane.showMessageDialog(MenuUsuario.this, "Alumno creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     dispose();
+
                 }else{
                     JOptionPane.showMessageDialog(this, "Elija un radio button", "Error", JOptionPane.ERROR_MESSAGE);
                 }

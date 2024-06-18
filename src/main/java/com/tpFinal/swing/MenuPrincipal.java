@@ -2,6 +2,7 @@ package com.tpFinal.swing;
 
 import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.DiaSemana;
+import com.tpFinal.sistema.Sistema;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ public class MenuPrincipal {
     private JPasswordField passwordField1;
     private JButton logInButton;
     private JButton newUserButton;
+    private final Sistema sistema = new Sistema();
 
 
     public MenuPrincipal() {
@@ -25,13 +27,7 @@ public class MenuPrincipal {
 
 
                  /// aca asigna si es un alumno y lo manda al menu alumno
-                Alumno alumno = new Alumno("Jose","Lodeiro","lodes@gmail.com","123");
-            Profesor profesor = new Profesor("Pedro","Lopez","lopes@gmail.com","234");
-                LocalDateTime localDateTime = LocalDateTime.now();
-            List<DiaSemana> diasemana = Arrays.asList(DiaSemana.LUNES, DiaSemana.MIERCOLES, DiaSemana.VIERNES);
-                 Fecha fecha = new Fecha(localDateTime,localDateTime.plusHours(4),diasemana);
-            Curso curso = new Curso("matematica",profesor,fecha);
-                 alumno.agregarCurso(curso);
+
                  ///
                  menuAlumno menualumno = new menuAlumno(alumno);
                  menualumno.setVisible(true);

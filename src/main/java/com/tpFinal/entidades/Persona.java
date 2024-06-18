@@ -1,9 +1,10 @@
 package com.tpFinal.entidades;
 
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Persona {
+public abstract class Persona implements Comparable<Persona> {
     private static int idPersona = 0;
     private String nombre;
     private String apellido;
@@ -75,6 +76,9 @@ public abstract class Persona {
     @Override
     public int hashCode() {
         return Objects.hashCode(legajo);
+    }
+    public int compareTo(Persona persona) {
+        return nombre.compareTo(persona.nombre);
     }
 
     @Override
