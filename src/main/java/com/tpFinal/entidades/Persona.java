@@ -1,20 +1,27 @@
 package com.tpFinal.entidades;
 
+
+import java.util.Objects;
+
 public abstract class Persona {
     private static int idPersona = 0;
     private String nombre;
     private String apellido;
     private String email;
-    private String contraseña;
+    private String contrasena;
     private String legajo;
 
+    public Persona(String legajo) {
+        this.legajo = legajo + idPersona++;
+    }
 
-    public Persona(String nombre, String apellido, String email, String contraseña) {
+    public Persona(String nombre, String apellido, String email, String contrasena,String legajo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.contraseña = contraseña;
-        this.legajo = "AA++";
+        this.contrasena = contrasena;
+        this.legajo = legajo + idPersona++;
+
     }
 
     public static int getIdPersona() {
@@ -33,12 +40,51 @@ public abstract class Persona {
         return email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
     public String getLegajo() {
         return legajo;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Persona persona = (Persona) o;
+        return Objects.equals(legajo, persona.legajo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(legajo);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("""
+                Nombre: %s
+                Apellido: %s
+                Email: %s
+                Contrasena: %s
+                Legajo: %s
+                """,nombre,apellido,email,contrasena,legajo);
+    }
 }

@@ -2,7 +2,7 @@ package com.tpFinal.entidades;
 
 import java.util.TreeSet;
 
-public class Curso {
+public class Curso implements Comparable<Curso> {
     private String nombre;
     private Profesor profesor;
     private Fecha fecha;
@@ -26,5 +26,10 @@ public class Curso {
 
     public TreeSet<Alumno> getAlumnosInscritos() {
         return alumnosInscritos;
+    }
+
+    @Override
+    public int compareTo(Curso o) {
+        return this.nombre.compareTo(o.getNombre());
     }
 }

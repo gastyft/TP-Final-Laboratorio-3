@@ -2,6 +2,7 @@ package com.tpFinal.swing;
 
 import com.tpFinal.entidades.Alumno;
 import com.tpFinal.entidades.Curso;
+import com.tpFinal.entidades.Persona;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -20,8 +21,9 @@ public class MenuPrincipal {
 
         logInButton.addActionListener(e -> {
 
-             { /// aca asigna si es un alumno y lo manda al menu alumno
-                Alumno alumno = new Alumno("Jose","Lodeiro","lodes@gmail.com","fddsfs");
+             {
+                 /// aca asigna si es un alumno y lo manda al menu alumno
+                Alumno alumno = new Alumno("Jose","Lodeiro","lodes@gmail.com","123");
                  Curso curso = new Curso("matematica");
                  alumno.agregarCurso(curso);
                  menuAlumno menualumno = new menuAlumno(alumno);
@@ -35,6 +37,8 @@ public class MenuPrincipal {
             {
                 MenuUsuario menuUsuario = new MenuUsuario();
                 menuUsuario.setVisible(true);
+                Persona persona = menuUsuario.getPersona();
+                System.out.println(persona);
 
             }
         });
