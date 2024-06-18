@@ -57,7 +57,7 @@ public class menuAlumno extends JDialog{
 
         informacionButton.addActionListener(e-> {
              {  Curso cursoseleccionado= cursosList.getSelectedValue();
-                nombreCurso.setText(cursoseleccionado.getNombre());
+                nombreCurso.setText(cursoseleccionado.getCursosNombre().name());
                 profesorNombre.setText(cursoseleccionado.getProfesor().getNombre());
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
                 String formattedDateTimeinicio = cursoseleccionado.getFecha().getFechaInicio().format(formatter);
@@ -82,7 +82,7 @@ public class menuAlumno extends JDialog{
         cursosList.setCellRenderer(new ListCellRenderer<Curso>() {
             @Override
             public Component getListCellRendererComponent(JList<? extends Curso> list, Curso value, int index, boolean isSelected, boolean cellHasFocus) {
-                JLabel label = new JLabel(value.getNombre());
+                JLabel label = new JLabel(value.getCursosNombre().name());
                 if (isSelected) {
                     label.setBackground(list.getSelectionBackground());
                     label.setForeground(list.getSelectionForeground());

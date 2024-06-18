@@ -1,6 +1,7 @@
 package com.tpFinal.sistema;
 
 import com.tpFinal.entidades.*;
+import com.tpFinal.enumeraciones.CursosNombre;
 import com.tpFinal.enumeraciones.DiaSemana;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,8 @@ import java.util.stream.Collectors;
 
 public class Sistema {
 
-    private final TreeSet<Persona> personas = new TreeSet<Persona>();
+    private final TreeSet<Alumno> alumnos = new TreeSet<Alumno>();
+    private final TreeSet<Profesor> profesores = new TreeSet<>();
     private final TreeSet<Curso> cursos = new TreeSet<Curso>();
     private final TreeSet<Inscripcion> inscripciones = new TreeSet<Inscripcion>();
 
@@ -22,23 +24,26 @@ public class Sistema {
        LocalDateTime localDateTime = LocalDateTime.now();
        List<DiaSemana> diasemana = Arrays.asList(DiaSemana.LUNES, DiaSemana.MIERCOLES, DiaSemana.VIERNES);
        Fecha fecha = new Fecha(localDateTime,localDateTime.plusHours(4),diasemana);
-       Curso curso = new Curso("matematica",profesor,fecha);
+       Curso curso = new Curso(CursosNombre.ALGORITMOS,profesor,fecha);
        alumno.agregarCurso(curso);
-       personas.add(alumno);
-
+       alumnos.add(alumno);
 
 
    }
-   public void agregarPersona(Persona persona){
-       personas.add(persona);
+   public void agregarPersona(Alumno alumno){
+       alumnos.add(alumno);
    }
-   public List<Persona> devolverPersonaslist(){
+   public void agregarProfesor(Profesor profesor){
+       profesores.add(profesor);
+   }
 
-       return personas.stream().toList();
-    }
-    public List<Persona> devolverAlumnos(){
+   public List<Alumno> devolverAlumnoslist(){
 
-        return personas.stream().filter(persona -> persona instanceof Alumno).collect(Collectors.toList());
+       return alumnos.stream().toList();
     }
+    public List<Profesor> devolverProfesoreslist(){
+       return profesores.stream().toList();
+    }
+
 
 }

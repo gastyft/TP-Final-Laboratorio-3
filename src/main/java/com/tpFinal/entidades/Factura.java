@@ -10,11 +10,11 @@ public class Factura {
     private CursosNombre curso;
     private double valor;
 
-    public Factura(int idFactura, Alumno alumno, CursosNombre curso, double valor) {
-        this.idFactura = idFactura;
+    public Factura( Alumno alumno, CursosNombre curso) {
+        this.idFactura = nextId++;
         this.alumno = alumno;
         this.curso = curso;
-        this.valor = valor;
+        this.valor = curso.getPrecio();
     }
 
     public int getIdFactura() {

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Alumno extends Persona {
 
-    List<Inscripcion> inscripciones;
+    List<Inscripcion> inscripciones = new ArrayList<>();
     List<Curso> cursosPagos = new ArrayList<>();
 
     public Alumno() {
@@ -32,7 +32,12 @@ public class Alumno extends Persona {
     }
   public void agregarCurso(Curso curso) {
         cursosPagos.add(curso);
+
   }
+  public void agregarInscripcion(Inscripcion inscripcion) {
+        inscripciones.add(inscripcion);
+  }
+
 
 
 }
