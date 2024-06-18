@@ -32,6 +32,8 @@ public class MenuUsuario extends JDialog {
 
                 } else if (alumnoRadioButton.isSelected()) {
 
+                }else{
+                    JOptionPane.showMessageDialog(this, "Elija un radio button", "Error", JOptionPane.ERROR_MESSAGE);
                 }
 
             }

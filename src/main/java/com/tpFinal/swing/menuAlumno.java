@@ -21,7 +21,7 @@ public class menuAlumno extends JDialog{
     private JButton logOutButton;
     private JList<Curso> cursosList;
     private JButton informacionButton;
-    private JList<DiaSemana> list1;
+    private JList<DiaSemana> diaslist1;
     private JLabel nombreCurso;
     private JLabel profesorNombre;
     private JLabel fechaInicio;
@@ -40,6 +40,11 @@ public class menuAlumno extends JDialog{
         inicializarJListCursos();
 
 
+        logOutButton.addActionListener(e ->{
+            {
+             setVisible(false);
+            }
+        });
     }
     private void inicializarJListCursos(){
         DefaultListModel<Curso> listModel = new DefaultListModel<>();
