@@ -27,7 +27,8 @@ public class MenuPrincipal {
 
 
                  /// aca asigna si es un alumno y lo manda al menu alumno
-
+            List<Persona> alumnos = sistema.devolverAlumnos();
+            Alumno alumno =(Alumno) alumnos.getFirst();
                  ///
                  menuAlumno menualumno = new menuAlumno(alumno);
                  menualumno.setVisible(true);

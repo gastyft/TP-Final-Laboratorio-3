@@ -36,5 +36,9 @@ public class Sistema {
 
        return personas.stream().toList();
     }
+    public List<Persona> devolverAlumnos(){
+
+        return personas.stream().filter(persona -> persona instanceof Alumno).collect(Collectors.toList());
+    }
 
 }
