@@ -1,9 +1,10 @@
 package com.tpFinal.entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Alumno extends Persona {
+public class Alumno extends Persona implements Comparable<Alumno>{
 
     List<Inscripcion> inscripciones;
     List<Curso> cursosPagos = new ArrayList<>();
@@ -33,4 +34,8 @@ public class Alumno extends Persona {
         cursosPagos.add(curso);
   }
 
+    @Override
+    public int compareTo(Alumno o) {
+        return this.getNombre().compareTo(o.getNombre());
+    }
 }

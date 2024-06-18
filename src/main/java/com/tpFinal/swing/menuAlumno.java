@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.format.DateTimeFormatter;
 
 public class menuAlumno extends JDialog{
 
@@ -58,6 +59,19 @@ public class menuAlumno extends JDialog{
              {  Curso cursoseleccionado= cursosList.getSelectedValue();
                 nombreCurso.setText(cursoseleccionado.getNombre());
                 profesorNombre.setText(cursoseleccionado.getProfesor().getNombre());
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+                String formattedDateTimeinicio = cursoseleccionado.getFecha().getFechaInicio().format(formatter);
+                String formattedDateTimefin = cursoseleccionado.getFecha().getFechaFin().format(formatter);
+                fechaInicio.setText(formattedDateTimeinicio);
+                fechaFin.setText(formattedDateTimefin);
+
+                 DefaultListModel<DiaSemana> diaSemanaModel = new DefaultListModel<>();
+                 for (DiaSemana dia : cursoseleccionado.getFecha().getDiasemana()) {
+                     diaSemanaModel.addElement(dia);
+                 }
+                 diaslist1.setModel(diaSemanaModel);
+
+
 
             }
         });
