@@ -113,9 +113,10 @@ public class menuAlumno extends JDialog{
             try {
 
                 alumno.addInscripcion(inscripcion1);
-                JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                 cursonuevo.agregarAlumnos(alumno);
                 alumno.agregarCurso(cursonuevo);
+                JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
             }catch (ExceptionPersonalizada er){
 
             }
