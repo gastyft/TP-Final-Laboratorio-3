@@ -4,7 +4,6 @@ import javax.swing.*;
 
 public class ExceptionPersonalizada extends Exception{
     public ExceptionPersonalizada(String message) {
-        super(message);
             SwingUtilities.invokeLater(() -> {
                 JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
             });

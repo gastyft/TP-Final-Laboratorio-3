@@ -1,0 +1,48 @@
+[ {
+  "nombre" : "Carlos1",
+  "nombreUsuario" : "carlitoG1",
+  "email" : "carlitoguti1",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImExMjMxIn0.YQAFZEJC-H5MuYeHyrT8XgH6bWvcat3F_b_E6lYDsqZ_t250cpMhGbodm2Y5-dQK_l7GJS4CCjnfK9e-y66H2w",
+  "rol" : "ROL_PROFESOR",
+  "prof" : null,
+  "alum" : {
+    "nombre" : "Carlos1",
+    "apellido" : "Gutierrez1",
+    "email" : "carlitoguti1",
+    "contrasena" : "a1231",
+    "legajo" : "AA0",
+    "inscripciones" : [ ],
+    "cursosPagos" : [ ]
+  }
+}, {
+  "nombre" : "Carlos12",
+  "nombreUsuario" : "carlitoG12",
+  "email" : "carlitoguti221",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImExMjMxIn0.YQAFZEJC-H5MuYeHyrT8XgH6bWvcat3F_b_E6lYDsqZ_t250cpMhGbodm2Y5-dQK_l7GJS4CCjnfK9e-y66H2w",
+  "rol" : "ROL_PROFESOR",
+  "prof" : null,
+  "alum" : {
+    "nombre" : "Carlos12",
+    "apellido" : "Gutierrez12",
+    "email" : "carlitoguti12",
+    "contrasena" : "a1231",
+    "legajo" : "AA0",
+    "inscripciones" : [ ],
+    "cursosPagos" : [ ]
+  }
+}, {
+  "nombre" : "Carlos1232",
+  "nombreUsuario" : "carlitoG1232",
+  "email" : "carlitoguti221",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImExMjMxIn0.YQAFZEJC-H5MuYeHyrT8XgH6bWvcat3F_b_E6lYDsqZ_t250cpMhGbodm2Y5-dQK_l7GJS4CCjnfK9e-y66H2w",
+  "rol" : "ROL_PROFESOR",
+  "prof" : {
+    "nombre" : "Carlos1232",
+    "apellido" : "Gutierrez12",
+    "email" : "carlitoguti12",
+    "contrasena" : "a1231",
+    "legajo" : "PP0",
+    "cursos" : [ ]
+  },
+  "alum" : null
+} ]

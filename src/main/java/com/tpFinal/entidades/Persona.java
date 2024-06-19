@@ -1,10 +1,13 @@
 package com.tpFinal.entidades;
 
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Persona implements Comparable<Persona> {
+public abstract class Persona implements Comparable<Persona>,Serializable {
     private static int idPersona = 0;
     private String nombre;
     private String apellido;
@@ -12,6 +15,9 @@ public abstract class Persona implements Comparable<Persona> {
     private String contrasena;
     private String legajo;
 
+    public Persona() {
+        // Constructor sin argumentos
+    }
     public Persona(String legajo) {
         this.legajo = legajo + idPersona++;
     }
