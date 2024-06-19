@@ -159,12 +159,12 @@
                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <component id="e3007" class="javax.swing.JLabel">
+              <component id="e3007" class="javax.swing.JLabel" binding="nombrecurso">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="d43ff" class="javax.swing.JLabel">
@@ -175,12 +175,12 @@
                   <text value="Fin"/>
                 </properties>
               </component>
-              <component id="15b06" class="javax.swing.JLabel">
+              <component id="15b06" class="javax.swing.JLabel" binding="inicioCurso">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="97e89" class="javax.swing.JLabel">
@@ -191,12 +191,12 @@
                   <text value="Inicio"/>
                 </properties>
               </component>
-              <component id="7de6a" class="javax.swing.JLabel">
+              <component id="7de6a" class="javax.swing.JLabel" binding="finCurso">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="ae11d" class="javax.swing.JLabel">
@@ -223,12 +223,20 @@
                   <text value="Buscar"/>
                 </properties>
               </component>
+              <component id="a2d99" class="javax.swing.JList" binding="alumnoslist1">
+                <constraints>
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
             </children>
           </grid>
           <grid id="cd667" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Untitled"/>
+              <tabbedpane title="Crear curso"/>
             </constraints>
             <properties/>
             <border type="none"/>
