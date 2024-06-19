@@ -16,5 +16,9 @@ public class Profesor extends Persona {
   public TreeSet<Curso> getCursos() {
     return cursos;
   }
+  public void agregarCurso(Curso curso ){
+    cursos.add(curso);
+  }
+
 
 }

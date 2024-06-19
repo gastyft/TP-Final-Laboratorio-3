@@ -6,8 +6,6 @@ import com.tpFinal.enumeraciones.DiaSemana;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;
 
 public class menuAlumno extends JDialog{
@@ -27,6 +25,7 @@ public class menuAlumno extends JDialog{
     private JLabel profesorNombre;
     private JLabel fechaInicio;
     private JLabel fechaFin;
+    private JList<Curso> inscripcionlist1;
 
     public menuAlumno(Alumno alumno) {
         this.alumno = alumno;

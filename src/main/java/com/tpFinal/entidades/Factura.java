@@ -2,6 +2,8 @@ package com.tpFinal.entidades;
 
 import com.tpFinal.enumeraciones.CursosNombre;
 
+import java.util.Objects;
+
 public class Factura {
 
     private static int nextId = 0;
@@ -43,6 +45,19 @@ public class Factura {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Factura factura = (Factura) o;
+        return idFactura == factura.idFactura;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(idFactura);
     }
 
     @Override
