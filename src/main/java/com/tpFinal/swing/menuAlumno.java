@@ -9,6 +9,8 @@ import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -39,8 +41,12 @@ public class menuAlumno extends JDialog{
     private JLabel finInscripcion;
     private JList diaslist2;
     private JButton inscribirseAlCursoButton;
-    private JList facturaslist1;
+    private JList<Factura> facturaslist1;
     private JButton detalleFacturaButton;
+    private JLabel idfactura;
+    private JLabel alumnoFactura;
+    private JLabel cursoFactura;
+    private JLabel valorFactura;
 
     public menuAlumno(Alumno alumno, List<Curso> cursoList) {
         this.alumno = alumno;
@@ -55,6 +61,7 @@ public class menuAlumno extends JDialog{
         legajo.setText(alumno.getLegajo());
         inicializarJListCursos();
         inicializarInscripciones();
+        inicializarJListFacturas();
 
 
         logOutButton.addActionListener(e ->{
@@ -64,10 +71,12 @@ public class menuAlumno extends JDialog{
         });
 
 
+
     }
     private void inicializarInscripciones()
     {
         DefaultListModel<Curso> listModel = new DefaultListModel<>();
+
         for (Curso curso : cursoInscripcion) {
             listModel.addElement(curso);
         }
@@ -121,6 +130,7 @@ public class menuAlumno extends JDialog{
     }
     private void inicializarJListCursos(){
         DefaultListModel<Curso> listModel = new DefaultListModel<>();
+
         for (Curso curso : alumno.getCursosPagos()) {
             listModel.addElement(curso);
         }
@@ -151,6 +161,28 @@ public class menuAlumno extends JDialog{
 
 
     }
+    public void inicializarJListFacturas(){
+
+        DefaultListModel<Factura> listModel = new DefaultListModel<>();
+
+        for (Inscripcion inscripcion : alumno.getInscripciones()) {
+            listModel.addElement(inscripcion.getFactura());
+        }
+
+        facturaslist1.setModel(listModel);
+        configurarRendererJListFacturas();
+
+
+        detalleFacturaButton.addActionListener(e -> {
+           Factura factura = facturaslist1.getSelectedValue();
+           idfactura.setText(String.valueOf(factura.getIdFactura()));
+           alumnoFactura.setText(factura.getAlumno().getApellido());
+           cursoFactura.setText(factura.getCurso().name());
+           valorFactura.setText(String.valueOf(factura.getValor()));
+        });
+
+
+    }
     private void configurarRendererJListCursos() {
         cursosList.setCellRenderer(new ListCellRenderer<Curso>() {
             @Override
@@ -173,6 +205,23 @@ public class menuAlumno extends JDialog{
             @Override
             public Component getListCellRendererComponent(JList<? extends Curso> list, Curso value, int index, boolean isSelected, boolean cellHasFocus) {
                 JLabel label = new JLabel(value.getCursosNombre().name());
+                if (isSelected) {
+                    label.setBackground(list.getSelectionBackground());
+                    label.setForeground(list.getSelectionForeground());
+                } else {
+                    label.setBackground(list.getBackground());
+                    label.setForeground(list.getForeground());
+                }
+                label.setOpaque(true);
+                return label;
+            }
+        });
+    }
+    private void configurarRendererJListFacturas() {
+        facturaslist1.setCellRenderer(new ListCellRenderer<Factura>() {
+            @Override
+            public Component getListCellRendererComponent(JList<? extends Factura> list, Factura value, int index, boolean isSelected, boolean cellHasFocus) {
+                JLabel label = new JLabel(value.getCurso().name());
                 if (isSelected) {
                     label.setBackground(list.getSelectionBackground());
                     label.setForeground(list.getSelectionForeground());

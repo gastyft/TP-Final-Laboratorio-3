@@ -3,6 +3,7 @@ package com.tpFinal.sistema;
 import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.CursosNombre;
 import com.tpFinal.enumeraciones.DiaSemana;
+import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -25,8 +26,16 @@ public class Sistema {
        Fecha fecha = new Fecha(localDateTime,localDateTime.plusHours(4),diasemana);
        Fecha fecha2 = new Fecha(localDateTime,localDateTime.plusDays(2),diasemana);
        Curso curso = new Curso(CursosNombre.ALGORITMOS,profesor,fecha);
+       Factura factura = new Factura(alumno,CursosNombre.ALGORITMOS);
+       Inscripcion inscripcion = new Inscripcion(curso,alumno,factura);
        Curso curso1 = new Curso(CursosNombre.BASES_DE_DATOS,profesor,fecha2);
-       alumno.agregarCurso(curso);
+       try {
+           alumno.addInscripcion(inscripcion);
+           alumno.agregarCurso(curso);
+       }catch (ExceptionPersonalizada e){
+
+       }
+
        alumnos.add(alumno);
        cursos.add(curso);
        cursos.add(curso1);
