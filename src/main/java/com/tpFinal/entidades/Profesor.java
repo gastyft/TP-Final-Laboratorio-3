@@ -1,9 +1,11 @@
 package com.tpFinal.entidades;
 
+import java.io.Serializable;
 import java.util.TreeSet;
 
-public class Profesor extends Persona {
+public class Profesor extends Persona implements Serializable {
   private final TreeSet<Curso> cursos = new TreeSet<>();
+
 
   public Profesor(){
     super("PP");

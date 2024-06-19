@@ -1,13 +1,11 @@
 package com.tpFinal.seguridad.jwt;
 
-import com.tpFinal.entidades.Persona;
-import com.tpFinal.entidades.Profesor;
-import com.tpFinal.enumeraciones.RolNombre;
+
 import com.tpFinal.excepciones.ExceptionPersonalizada;
 import com.tpFinal.repository.Repository;
-import com.tpFinal.seguridad.entity.Rol;
+
 import com.tpFinal.seguridad.entity.Usuario;
-import io.jsonwebtoken.Claims;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -19,33 +17,25 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-public class JwtProvider {
+public class JwtProvider implements Serializable{
 
     Repository<Usuario> usuarioRepository = new Repository<>(Usuario.class);
-    private final String claveSecreta = "miClaveSecretaMauriYSofi"; // Debería ser cargada de forma segura
+    private final String claveSecreta = "miClaveSecretaesMauriYSofisecretsecretsecretsecretsecretsecretsecretsecretsecretsecret"; // Debería ser cargada de forma segura
     private final int duracionTokenEnSegundos = 86400; // 24 horas en segundos
-    private final String archivoTokens = "tokens.txt"; // Archivo para almacenar tokens (puedes ajustar la ruta según tu necesidad)
+ //   private final String archivoTokens = "tokens.txt"; // Archivo para almacenar tokens (puedes ajustar la ruta según tu necesidad)
 
-    public String generateToken(Usuario usuario) throws ExceptionPersonalizada {
-        Date fechaExpiracion = new Date(new Date().getTime() + duracionTokenEnSegundos * 1000);
-
-        if (validarCredenciales(usuario.getNombreUsuario(), usuario.getPassword())) {
-            String token = Jwts.builder()
-                    .setSubject(usuario.getNombreUsuario())
-                    .claim("password", usuario.getPassword()) // Solo incluir la contraseña
-                    .setIssuedAt(new Date())
-                    .setExpiration(fechaExpiracion)
-                    .signWith(SignatureAlgorithm.HS512, claveSecreta)
+    public String generateToken(String contrasenia) throws ExceptionPersonalizada {
+     //   Usuario usuarioValidado = validarCredenciales(usuario.getNombreUsuario(), usuario.getPassword());
+       // if (usuarioValidado != null) {
+            // Generar el token JWT con el claim de contraseña
+            return Jwts.builder()
+                    .claim("password", contrasenia) // Agregar la contraseña como claim
+                    .signWith(SignatureAlgorithm.HS512, claveSecreta) // Firmar con HS512 y la clave secreta
                     .compact();
-
-            // Guardar el token asociado al usuario en el archivo
-            guardarTokenEnArchivo(usuario, token);
-
-            return token;
-        } else {
-            mostrarMensajeError("Credenciales inválidas para el usuario: " + usuario.getNombreUsuario());
-            throw new ExceptionPersonalizada("Credenciales inválidas para el usuario: " + usuario.getNombreUsuario());
-        }
+     //   } else {
+         //   mostrarMensajeError("Credenciales inválidas para el usuario: " + usuario.getNombreUsuario());
+        //    throw new ExceptionPersonalizada("Credenciales inválidas para el usuario: " + usuario.getNombreUsuario());
+      //  }
     }
 
     public boolean validateToken(String token) {
@@ -58,7 +48,8 @@ public class JwtProvider {
         }
     }
 
-    private void guardarTokenEnArchivo(Usuario usuario, String token) throws ExceptionPersonalizada {
+ /* No se utilizara esta funcion
+  private void guardarTokenEnArchivo(Usuario usuario, String token) throws ExceptionPersonalizada {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoTokens, true))) {
             writer.write(usuario.getNombreUsuario() + ":" + token); // Aquí puedes ajustar el formato según tu necesidad
             writer.newLine();
@@ -66,6 +57,8 @@ public class JwtProvider {
             throw new ExceptionPersonalizada("Error al guardar token en archivo: " + e.getMessage());
         }
     }
+    */
+
 
     private void mostrarMensajeError(String mensaje) {
         SwingUtilities.invokeLater(() -> {
@@ -73,23 +66,31 @@ public class JwtProvider {
         });
     }
 
-    private boolean validarCredenciales(String nombreUsuario, String contrasenia) throws ExceptionPersonalizada {
-        Map<String, String> usuarios = cargarUsuariosDesdeArchivo();
-
+    private Usuario validarCredenciales(String nombreUsuario, String contrasenia) throws ExceptionPersonalizada {
+        Map<String, Usuario> usuarios = cargarUsuariosDesdeArchivo();
         if (usuarios.containsKey(nombreUsuario)) {
-            String contraseniaGuardada = usuarios.get(nombreUsuario);
-            return BCrypt.checkpw(contrasenia, contraseniaGuardada);
+            Usuario usuario  = usuarios.get(nombreUsuario);
+            String tokenGuardado = usuario.getPassword(); // El password es el token JWT almacenado
+            // Generar el token JWT a partir de la contraseña ingresada
+            String tokenIngresado = generateToken(contrasenia);
+            System.out.println(tokenIngresado);
+            // Comparar los tokens
+            if (tokenIngresado.equals(tokenGuardado)) {
+                return usuario; // Si los tokens son iguales, devolver el usuario
+            }
         }
 
-        return false;
+        return null;
     }
 
-    private Map<String, String> cargarUsuariosDesdeArchivo() throws ExceptionPersonalizada {
+    private Map<String, Usuario> cargarUsuariosDesdeArchivo() throws ExceptionPersonalizada {
         try {
-            Map<String, String> usuarios = new HashMap<>();
-            List<Usuario> usuarioList = usuarioRepository.listar();
-            for (Usuario usuario : usuarioList) {
-                usuarios.put(usuario.getNombreUsuario(), usuario.getPassword());
+            Map<String, Usuario> usuarios = new HashMap<>();
+
+
+            List<Usuario> usuariosDesdeRepository = usuarioRepository.listar(); // Obtener usuarios desde el Repository
+            for (Usuario usuario :  usuariosDesdeRepository) {
+                usuarios.put(usuario.getNombreUsuario(), usuario);
             }
             return usuarios;
         } catch (Exception e) {
@@ -98,7 +99,7 @@ public class JwtProvider {
     }
 
     private boolean usuarioExiste(String nombreUsuario) throws ExceptionPersonalizada {
-        Map<String, String> usuarios = cargarUsuariosDesdeArchivo();
+        Map<String, Usuario> usuarios = cargarUsuariosDesdeArchivo();
         return usuarios.containsKey(nombreUsuario);
     }
 
@@ -109,22 +110,24 @@ public class JwtProvider {
         }
         try {
             // Hashear la contraseña antes de guardarla
-            String hashedPassword = BCrypt.hashpw(usuario.getPassword(), BCrypt.gensalt());
-            usuario.setPassword(hashedPassword);
+   //         String hashedPassword = BCrypt.hashpw(usuario.getPassword(), BCrypt.gensalt());
+       //     usuario.setPassword(hashedPassword); //HASHEO CONTRASENIA
+           String token= generateToken(usuario.getPassword()); // GENERO TOKEN DE SEGURIDAD (Soy inseguro)
+            usuario.setPassword(token);
+       //     System.out.println(usuario.toString());
             usuarioRepository.agregar(usuario);
+            return true;
         } catch (Exception e) {
             mostrarMensajeError("Error al registrar usuario: " + e.getMessage());
             return false;
         }
-        return true;
+
     }
 
     public Usuario login(String nombreUsuario, String contrasenia) throws ExceptionPersonalizada {
 //FALTA TERMINAR
-        Persona pers = new Profesor("awd","awd","awd","awd");
-        Rol rol= new Rol(RolNombre.ROL_PROFESOR);
-        Usuario usuario = new Usuario("wad","awd","wad","242",rol,pers);
-        if (validarCredenciales(nombreUsuario, contrasenia)) {
+        Usuario usuario =validarCredenciales(nombreUsuario, contrasenia);
+        if (usuario!= null) {
             return usuario;
         } else {
             throw new ExceptionPersonalizada("Credenciales inválidas para el usuario: " + nombreUsuario);
