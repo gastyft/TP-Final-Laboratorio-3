@@ -4,8 +4,6 @@ import com.tpFinal.entidades.Curso;
 import com.tpFinal.entidades.Profesor;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MenuProfesor extends JDialog {
@@ -19,6 +17,8 @@ public class MenuProfesor extends JDialog {
     private JLabel apellido;
     private JLabel mail;
     private JLabel legajo;
+    private JList<Curso> cursoslist;
+    private JButton buscarButton;
 
     public MenuProfesor(Profesor profesor, List<Curso> cursosDisponibles) {
 
