@@ -73,7 +73,6 @@ public class JwtProvider implements Serializable{
             String tokenGuardado = usuario.getPassword(); // El password es el token JWT almacenado
             // Generar el token JWT a partir de la contraseña ingresada
             String tokenIngresado = generateToken(contrasenia);
-            System.out.println(tokenIngresado);
             // Comparar los tokens
             if (tokenIngresado.equals(tokenGuardado)) {
                 return usuario; // Si los tokens son iguales, devolver el usuario

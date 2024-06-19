@@ -2,6 +2,8 @@ package com.tpFinal.swing;
 
 import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.DiaSemana;
+import com.tpFinal.seguridad.SistemaLogin;
+import com.tpFinal.seguridad.entity.Usuario;
 import com.tpFinal.sistema.Sistema;
 
 import javax.swing.*;
@@ -10,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.TreeSet;
 
 public class MenuPrincipal {
     private JPanel panelprincipal;
@@ -21,19 +22,39 @@ public class MenuPrincipal {
     private JButton newUserButton;
     private final Sistema sistema = new Sistema();
 
+    private SistemaLogin sistemaLogin = new SistemaLogin();
 
     public MenuPrincipal() {
 
         logInButton.addActionListener(e -> {
 
+            String usuario = UsuarioField1.getText();
+              //Capturo el Array de char del password Field
+            String contraseniaStr = new String(passwordField1.getPassword());
+            Usuario usuario1 = sistemaLogin.login(usuario, contraseniaStr); //Convierto el array a String para
+            //trabajarlo dentro del metodo como String(Por plantearlo inicialmente asi)
+            // Limpiar el STRING de caracteres después de usarlo para que no quede en memoria
+            contraseniaStr = null;
 
-                 /// aca asigna si es un alumno y lo manda al menu alumno
-            List<Alumno> alumnos = sistema.devolverAlumnoslist();
-            List<Curso> cursoslist = sistema.devolverCursoslist();
-            Alumno alumno = alumnos.getFirst();
-                 ///
-                 menuAlumno menualumno = new menuAlumno(alumno,  cursoslist);
-                 menualumno.setVisible(true);
+            if (usuario1 != null) {
+                JOptionPane.showMessageDialog(null, "BIENVENIDO");
+                if(usuario1.getAlum()!= null){
+                    /// aca asigna si es un alumno y lo manda al menu alumno
+                    List<Alumno> alumnos = sistema.devolverAlumnoslist();
+                    Alumno alumno = alumnos.getFirst();
+                    ///TODO preguntar a mauri si es esa lista de cursos especificos del alumno o no.
+                    menuAlumno menualumno = new menuAlumno(usuario1.getAlum(),usuario1.getAlum().getCursosPagos());
+                    menualumno.setVisible(true);
+                }
+                else if(usuario1.getProf()!=null){
+                    /// aca asigna si es un alumno y lo manda al menu alumno
+                    List<Profesor> profesores = sistema.devolverProfesoreslist();
+                   Profesor profesor = profesores.getFirst();
+                    ///
+              //      MenuProfesor menuProfesor = new MenuProfesor(usuario1.getProf(),profesores);
+                //    menuProfesor.setVisible(true);
+                }
+            }
 
 
 
@@ -41,10 +62,10 @@ public class MenuPrincipal {
         });
         newUserButton.addActionListener(e -> {
 
-                MenuUsuario menuUsuario = new MenuUsuario();
-                menuUsuario.setVisible(true);
-                Persona persona = menuUsuario.getPersona();
-                System.out.println(persona);
+            MenuUsuario menuUsuario = new MenuUsuario();
+            menuUsuario.setVisible(true);
+            Persona persona = menuUsuario.getPersona();
+            System.out.println(persona);
 
 
         });
@@ -56,7 +77,7 @@ public class MenuPrincipal {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null); // La consola no queda en el borde
-        frame.setSize(500,200);
+        frame.setSize(500, 200);
         frame.setVisible(true);
 
     }

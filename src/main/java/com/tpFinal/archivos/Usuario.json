@@ -45,4 +45,51 @@
     "cursos" : [ ]
   },
   "alum" : null
+}, {
+  "nombre" : "Gasty",
+  "nombreUsuario" : "Gasty",
+  "email" : "gastyftarroba",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Ikdhc3R5ZnQifQ.4qLhVW8IjCNtNwBWUcsT5YMlcIaHTpVgIC-Hq6I3AqdvWzeNCXhnHnP44ckWWLm_p2wjmH_7eF0-iNVE53ijBA",
+  "rol" : "ROL_PROFESOR",
+  "prof" : {
+    "nombre" : "Gasty",
+    "apellido" : "Ft",
+    "email" : "gastyftarroba",
+    "contrasena" : "Gastyft",
+    "legajo" : "PP2",
+    "cursos" : [ ]
+  },
+  "alum" : null
+}, {
+  "nombre" : "Mauri",
+  "nombreUsuario" : "Mauri",
+  "email" : "Mauriarroba",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Ik1hdXJpIn0.Zndj779T0ZBYy6RoJ7jp2MxKNEK47m6AO7Xr2xArPPx4Z3kHI9WdbSr-quLuoVcR7qHnpqlrW95Fmo96GDvI8w",
+  "rol" : "ROL_ALUMNO",
+  "prof" : null,
+  "alum" : {
+    "nombre" : "Mauri",
+    "apellido" : "Martinez",
+    "email" : "Mauriarroba",
+    "contrasena" : "Mauri",
+    "legajo" : "AA2",
+    "inscripciones" : [ ],
+    "cursosPagos" : [ ]
+  }
+}, {
+  "nombre" : "Sofi",
+  "nombreUsuario" : "Sofi",
+  "email" : "sofiarrobaa",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IlNvZmkifQ.DFnDC21Gu3YvglqYCVX4h1G6Kgg281fHHKuVMJT9TfhlNwoK6isTYP3Yj4OP69dDC0iIcaR_QPmqESceYzoQtw",
+  "rol" : "ROL_ALUMNO",
+  "prof" : null,
+  "alum" : {
+    "nombre" : "Sofi",
+    "apellido" : "ST",
+    "email" : "sofiarrobaa",
+    "contrasena" : "Sofi",
+    "legajo" : "AA2",
+    "inscripciones" : [ ],
+    "cursosPagos" : [ ]
+  }
 } ]
