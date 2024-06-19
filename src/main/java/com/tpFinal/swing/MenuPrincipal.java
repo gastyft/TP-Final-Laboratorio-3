@@ -43,17 +43,18 @@ public class MenuPrincipal {
                     List<Alumno> alumnos = sistema.devolverAlumnoslist();
                     List<Curso> cursos = sistema.devolverCursoslist();
                     Alumno alumno = alumnos.getFirst();
-                    ///TODO preguntar a mauri si es esa lista de cursos especificos del alumno o no.
+                    sistema.agregarPersona(usuario1.getAlum());
                     menuAlumno menualumno = new menuAlumno(usuario1.getAlum(),cursos);
                     menualumno.setVisible(true);
                 }
                 else if(usuario1.getProf()!=null){
-                    /// aca asigna si es un alumno y lo manda al menu alumno
+
                     List<Profesor> profesores = sistema.devolverProfesoreslist();
                    Profesor profesor = profesores.getFirst();
-                    ///
-              //      MenuProfesor menuProfesor = new MenuProfesor(usuario1.getProf(),profesores);
-                //    menuProfesor.setVisible(true);
+
+                  sistema.agregarProfesor(usuario1.getProf());
+                 // MenuProfesor menuProfesor = new MenuProfesor(usuario1.getProf(),profesores);
+               //   menuProfesor.setVisible(true);
                 }
             }
 
