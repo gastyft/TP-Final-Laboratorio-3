@@ -2,6 +2,7 @@ package com.tpFinal.entidades;
 
 import com.tpFinal.enumeraciones.CursosNombre;
 
+import java.util.Objects;
 import java.util.TreeSet;
 
 public class Curso implements Comparable<Curso> {
@@ -51,8 +52,21 @@ public class Curso implements Comparable<Curso> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Curso curso = (Curso) o;
+        return cursosNombre == curso.cursosNombre && Objects.equals(profesor, curso.profesor) && Objects.equals(fecha, curso.fecha);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cursosNombre, profesor, fecha);
+    }
+
+    @Override
     public int compareTo(Curso o) {
-        return this.profesor.getLegajo().compareTo(o.getProfesor().getLegajo());
+        return this.cursosNombre.compareTo(o.getCursosNombre());
     }
     public boolean compararCurso(Curso o){
      return this.cursosNombre.equals(o.getCursosNombre()) && this.profesor.equals(o.getProfesor()) && this.fecha.equals(o.getFecha());

@@ -18,5 +18,9 @@ public class Profesor extends Persona implements Serializable {
   public TreeSet<Curso> getCursos() {
     return cursos;
   }
+  public void agregarCurso(Curso curso ){
+    cursos.add(curso);
+  }
+
 
 }
