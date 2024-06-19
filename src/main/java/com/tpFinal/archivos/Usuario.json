@@ -92,4 +92,20 @@
     "inscripciones" : [ ],
     "cursosPagos" : [ ]
   }
+}, {
+  "nombre" : "mauri",
+  "nombreUsuario" : "mauri",
+  "email" : "asdasd",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
+  "rol" : "ROL_ALUMNO",
+  "prof" : null,
+  "alum" : {
+    "nombre" : "mauri",
+    "apellido" : "mar",
+    "email" : "asdasd",
+    "contrasena" : "123",
+    "legajo" : "AA8",
+    "inscripciones" : [ ],
+    "cursosPagos" : [ ]
+  }
 } ]

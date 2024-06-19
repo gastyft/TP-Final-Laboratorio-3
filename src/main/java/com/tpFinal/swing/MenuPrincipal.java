@@ -41,9 +41,10 @@ public class MenuPrincipal {
                 if(usuario1.getAlum()!= null){
                     /// aca asigna si es un alumno y lo manda al menu alumno
                     List<Alumno> alumnos = sistema.devolverAlumnoslist();
+                    List<Curso> cursos = sistema.devolverCursoslist();
                     Alumno alumno = alumnos.getFirst();
                     ///TODO preguntar a mauri si es esa lista de cursos especificos del alumno o no.
-                    menuAlumno menualumno = new menuAlumno(usuario1.getAlum(),usuario1.getAlum().getCursosPagos());
+                    menuAlumno menualumno = new menuAlumno(usuario1.getAlum(),cursos);
                     menualumno.setVisible(true);
                 }
                 else if(usuario1.getProf()!=null){
