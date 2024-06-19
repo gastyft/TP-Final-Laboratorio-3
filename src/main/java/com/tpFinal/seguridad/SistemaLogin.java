@@ -24,7 +24,7 @@ public class SistemaLogin {
             Usuario usuario = new Usuario(nombre, nombreUsuario, email, password,rol,per);
             if( jwtProvider.registrarUsuario(usuario)) {
                 SwingUtilities.invokeLater(() -> {
-                    JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "APP", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "APP", JOptionPane.INFORMATION_MESSAGE);
                 });
             }
             else throw new  ExceptionPersonalizada("Error al crear nuevo usuario");
@@ -39,7 +39,7 @@ public class SistemaLogin {
             Usuario usuario = new Usuario(nombre, nombreUsuario, email, password, rol,per);
             if( jwtProvider.registrarUsuario(usuario)) {
                 SwingUtilities.invokeLater(() -> {
-                    JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "Error", JOptionPane.OK_OPTION);
+                    JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "APP", JOptionPane.INFORMATION_MESSAGE);
                 });
             }
             else throw new  ExceptionPersonalizada("Error al crear nuevo usuario");
