@@ -66,7 +66,7 @@ public class Curso implements Comparable<Curso> {
 
     @Override
     public int compareTo(Curso o) {
-        return this.profesor.getLegajo().compareTo(o.getProfesor().getLegajo());
+        return this.cursosNombre.compareTo(o.getCursosNombre());
     }
     public boolean compararCurso(Curso o){
      return this.cursosNombre.equals(o.getCursosNombre()) && this.profesor.equals(o.getProfesor()) && this.fecha.equals(o.getFecha());

@@ -24,9 +24,13 @@ public class Sistema {
        LocalDateTime localDateTime = LocalDateTime.now();
        List<DiaSemana> diasemana = Arrays.asList(DiaSemana.LUNES, DiaSemana.MIERCOLES, DiaSemana.VIERNES);
        Fecha fecha = new Fecha(localDateTime,localDateTime.plusHours(4),diasemana);
+       Fecha fecha2 = new Fecha(localDateTime,localDateTime.plusDays(2),diasemana);
        Curso curso = new Curso(CursosNombre.ALGORITMOS,profesor,fecha);
+       Curso curso1 = new Curso(CursosNombre.BASES_DE_DATOS,profesor,fecha2);
        alumno.agregarCurso(curso);
        alumnos.add(alumno);
+       cursos.add(curso);
+       cursos.add(curso1);
 
 
    }
@@ -36,6 +40,12 @@ public class Sistema {
    public void agregarProfesor(Profesor profesor){
        profesores.add(profesor);
    }
+   public void agregarCurso(Curso curso){
+       cursos.add(curso);
+   }
+   public void agregarInscripcion(Inscripcion inscripcion){
+       inscripciones.add(inscripcion);
+   }
 
    public List<Alumno> devolverAlumnoslist(){
 
@@ -44,6 +54,10 @@ public class Sistema {
     public List<Profesor> devolverProfesoreslist(){
        return profesores.stream().toList();
     }
+    public List<Curso> devolverCursoslist(){
+       return cursos.stream().toList();
+    }
+
 
 
 }

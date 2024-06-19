@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeSet;
 
 public class MenuPrincipal {
     private JPanel panelprincipal;
@@ -28,9 +29,10 @@ public class MenuPrincipal {
 
                  /// aca asigna si es un alumno y lo manda al menu alumno
             List<Alumno> alumnos = sistema.devolverAlumnoslist();
+            List<Curso> cursoslist = sistema.devolverCursoslist();
             Alumno alumno = alumnos.getFirst();
                  ///
-                 menuAlumno menualumno = new menuAlumno(alumno);
+                 menuAlumno menualumno = new menuAlumno(alumno,  cursoslist);
                  menualumno.setVisible(true);
 
 
