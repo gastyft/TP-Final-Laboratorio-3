@@ -1,5 +1,7 @@
 package com.tpFinal.entidades;
 
+import com.tpFinal.excepciones.ExceptionPersonalizada;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,13 +32,23 @@ public class Alumno extends Persona {
     public List<Curso> getCursosPagos() {
         return cursosPagos;
     }
+    public boolean addInscripcion(Inscripcion inscripcion) throws ExceptionPersonalizada {
+
+        Curso cursoInscripcion = inscripcion.getCurso();
+
+        boolean cursoPagado = cursosPagos.stream().anyMatch(curso -> curso.equals(cursoInscripcion));
+        if (!cursoPagado) {
+            inscripciones.add(inscripcion);
+            return true;
+        } else {
+           throw new ExceptionPersonalizada("Ya estas inscripto");
+        }
+    }
   public void agregarCurso(Curso curso) {
         cursosPagos.add(curso);
 
   }
-  public void agregarInscripcion(Inscripcion inscripcion) {
-        inscripciones.add(inscripcion);
-  }
+
 
 
 

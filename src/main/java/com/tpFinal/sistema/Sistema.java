@@ -16,7 +16,6 @@ public class Sistema {
     private final TreeSet<Alumno> alumnos = new TreeSet<Alumno>();
     private final TreeSet<Profesor> profesores = new TreeSet<>();
     private final TreeSet<Curso> cursos = new TreeSet<Curso>();
-    private final TreeSet<Inscripcion> inscripciones = new TreeSet<Inscripcion>();
 
    public Sistema(){
        Alumno alumno = new Alumno("Jose","Lodeiro","lodes@gmail.com","123");
@@ -42,9 +41,6 @@ public class Sistema {
    }
    public void agregarCurso(Curso curso){
        cursos.add(curso);
-   }
-   public void agregarInscripcion(Inscripcion inscripcion){
-       inscripciones.add(inscripcion);
    }
 
    public List<Alumno> devolverAlumnoslist(){

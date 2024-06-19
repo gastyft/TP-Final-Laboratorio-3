@@ -6,13 +6,11 @@ import java.util.Objects;
 public class Inscripcion implements Comparable<Inscripcion>{
   private Curso curso;
   private Alumno alumno;
-  private double valorCurso;
   private Factura factura;
 
-    public Inscripcion(Curso curso, Alumno alumno, double valorCurso, Factura factura) {
+    public Inscripcion(Curso curso, Alumno alumno, Factura factura) {
         this.curso = curso;
         this.alumno = alumno;
-        this.valorCurso = valorCurso;
         this.factura = factura;
     }
 
@@ -24,9 +22,7 @@ public class Inscripcion implements Comparable<Inscripcion>{
         return alumno;
     }
 
-    public double getValorCurso() {
-        return valorCurso;
-    }
+
 
     public Factura getFactura() {
         return factura;

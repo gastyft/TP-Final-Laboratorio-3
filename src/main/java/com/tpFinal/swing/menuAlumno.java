@@ -2,19 +2,20 @@ package com.tpFinal.swing;
 
 import com.tpFinal.entidades.Alumno;
 import com.tpFinal.entidades.Curso;
+import com.tpFinal.entidades.Factura;
+import com.tpFinal.entidades.Inscripcion;
 import com.tpFinal.enumeraciones.DiaSemana;
+import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class menuAlumno extends JDialog{
 
     private Alumno alumno;
-    private Curso Inscripcion;
+    private Curso cursonuevo;
     private List<Curso> cursoInscripcion;
     private JPanel panelAlumno;
     private JTabbedPane tabbedPane1;
@@ -38,6 +39,8 @@ public class menuAlumno extends JDialog{
     private JLabel finInscripcion;
     private JList diaslist2;
     private JButton inscribirseAlCursoButton;
+    private JList facturaslist1;
+    private JButton detalleFacturaButton;
 
     public menuAlumno(Alumno alumno, List<Curso> cursoList) {
         this.alumno = alumno;
@@ -60,6 +63,7 @@ public class menuAlumno extends JDialog{
             }
         });
 
+
     }
     private void inicializarInscripciones()
     {
@@ -74,6 +78,7 @@ public class menuAlumno extends JDialog{
         informacionDelCursoButton.addActionListener(e -> {
 
             Curso curso = inscripcionlist1.getSelectedValue();
+            this.cursonuevo = curso;
             nombreInscripcion.setText(curso.getCursosNombre().name());
             profesorInscripcion.setText(curso.getProfesor().getNombre());
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -87,6 +92,25 @@ public class menuAlumno extends JDialog{
                 diaSemanaModel.addElement(dia);
             }
             diaslist2.setModel(diaSemanaModel);
+
+
+
+        });
+
+        inscribirseAlCursoButton.addActionListener(e ->{
+
+            Factura factura = new Factura(alumno,cursonuevo.getCursosNombre());
+            Inscripcion inscripcion1 = new Inscripcion(cursonuevo,alumno,factura);
+            try {
+
+                alumno.addInscripcion(inscripcion1);
+                JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                cursonuevo.agregarAlumnos(alumno);
+                alumno.agregarCurso(cursonuevo);
+            }catch (ExceptionPersonalizada er){
+
+            }
+
 
 
 
