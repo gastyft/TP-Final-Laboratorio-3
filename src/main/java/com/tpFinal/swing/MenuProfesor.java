@@ -113,7 +113,7 @@ public class MenuProfesor extends JDialog {
             }
 
                Fecha fecha = new Fecha(fechaInicio,fechaFin,diaSemanas);
-               Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),profesor,fecha);
+               Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),profesor.getApellido(),fecha);
 
 
 
@@ -151,8 +151,8 @@ public class MenuProfesor extends JDialog {
             finCurso.setText(formattedDateTimefin);
 
             DefaultListModel<String> alumnoModel = new DefaultListModel<>();
-            for (Alumno alumno : cursoseleccionado.getAlumnosInscritos()) {
-                alumnoModel.addElement(alumno.getApellido());
+            for (String alumno : cursoseleccionado.getAlumnosInscriptos()) {
+                alumnoModel.addElement(alumno);
             }
             alumnoslist1.setModel(alumnoModel);
 
