@@ -3,8 +3,10 @@ package com.tpFinal.swing;
 import com.tpFinal.entidades.Alumno;
 import com.tpFinal.entidades.Persona;
 import com.tpFinal.entidades.Profesor;
+import com.tpFinal.enumeraciones.RolNombre;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
 import com.tpFinal.seguridad.SistemaLogin;
+import com.tpFinal.sistema.Sistema;
 
 import javax.swing.*;
 
@@ -18,7 +20,6 @@ public class MenuUsuario extends JDialog {
     private JRadioButton profesorRadioButton;
     private JRadioButton alumnoRadioButton;
     private JButton crearButton;
-
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
     public MenuUsuario() {
@@ -31,11 +32,16 @@ public class MenuUsuario extends JDialog {
         crearButton.addActionListener(e -> {
             {
                 if (profesorRadioButton.isSelected()) {
+                   persona = new Profesor(); //NO FUNCIONA PARA SISTEMA
+                     validar();
 
-                    persona = new Profesor();
-                    validar();
                     try {
-                        sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail(), persona.getContrasena(), (Profesor) persona);
+
+
+                        RolNombre rol =  RolNombre.ROL_PROFESOR;
+                       if(sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail(),  passwordField1.getText(), persona.getLegajo(),rol))
+
+
                         JOptionPane.showMessageDialog(MenuUsuario.this, "Profesor creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     } catch (ExceptionPersonalizada ex) {
                         JOptionPane.showMessageDialog(null, "No se pudo crear el Usuario " + ex, "APP", JOptionPane.ERROR_MESSAGE);
@@ -43,12 +49,18 @@ public class MenuUsuario extends JDialog {
                     dispose();
 
                 } else if (alumnoRadioButton.isSelected()) {
+                   persona = new Alumno(); //NO FUNCIONA PARA SISTEMA
+                 validar();
 
-                    persona = new Alumno();
-                    validar();
                     try {
-                        sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail(), persona.getContrasena(), (Alumno) persona);
-                        JOptionPane.showMessageDialog(MenuUsuario.this, "Alumno creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
+                        RolNombre rol =  RolNombre.ROL_ALUMNO;
+                       if(sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail(),  passwordField1.getText() , persona.getLegajo(),rol)) {
+
+                           JOptionPane.showMessageDialog(MenuUsuario.this, "Alumno creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+
+                       }
+
 
                     } catch (ExceptionPersonalizada ex) {
                         JOptionPane.showMessageDialog(null, "No se pudo crear el Usuario " + ex, "APP", JOptionPane.ERROR_MESSAGE);
@@ -67,7 +79,6 @@ public class MenuUsuario extends JDialog {
         this.persona.setNombre(nombreField1.getText());
         this.persona.setApellido(apellidoField1.getText());
         this.persona.setEmail(mailField2.getText());
-        this.persona.setContrasena(passwordField1.getText());
     }
 
     public Persona getPersona() {

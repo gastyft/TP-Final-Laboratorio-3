@@ -18,29 +18,21 @@ public class Usuario implements Serializable {
     private String email;
     private String password;
     private RolNombre rol;
-    private Profesor prof; //VER COMO HACER PARA QUE SEA PROFESOR O ALUMNO porque con Persona no se puede
-    private Alumno alum;
+private String legajo;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String nombreUsuario, String email, String password, Rol rol, Profesor prof) {
+    public Usuario(String nombre, String nombreUsuario, String email, String password, RolNombre rol, String legajo) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
-        this.rol = rol.getRolNombre();
-        this.prof = prof;
+        this.rol = rol;
+        this.legajo= legajo;
     }
 
-    public Usuario(String nombre, String nombreUsuario, String email, String password, Rol rol, Alumno alum) {
-        this.nombre = nombre;
-        this.nombreUsuario = nombreUsuario;
-        this.email = email;
-        this.password = password;
-        this.rol = rol.getRolNombre();
-        this.alum = alum;
-    }
+
 
     public String getNombre() {
         return nombre;
@@ -82,33 +74,24 @@ public class Usuario implements Serializable {
         this.rol = rol;
     }
 
-    public Profesor getProf() {
-        return prof;
+    public String getLegajo() {
+        return legajo;
     }
 
-    public void setProf(Profesor prof) {
-        this.prof = prof;
-    }
-
-    public Alumno getAlum() {
-        return alum;
-    }
-
-    public void setAlum(Alumno alum) {
-        this.alum = alum;
+    public void setLegajo(String legajo) {
+        this.legajo = legajo;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Usuario usuario)) return false;
-        return Objects.equals(getNombre(), usuario.getNombre()) && Objects.equals(getNombreUsuario(), usuario.getNombreUsuario()) && Objects.equals(getEmail(), usuario.getEmail()) && Objects.equals(getPassword(), usuario.getPassword()) && getRol() == usuario.getRol() && Objects.equals(prof, usuario.prof) && Objects.equals(alum, usuario.alum);
+        return Objects.equals(getNombre(), usuario.getNombre()) && Objects.equals(getNombreUsuario(), usuario.getNombreUsuario()) && Objects.equals(getEmail(), usuario.getEmail()) && Objects.equals(getPassword(), usuario.getPassword()) && getRol() == usuario.getRol() && Objects.equals(getLegajo(), usuario.getLegajo());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNombre(), getNombreUsuario(), getEmail(), getPassword(), getRol(), prof, alum);
+        return Objects.hash(getNombre(), getNombreUsuario(), getEmail(), getPassword(), getRol(), getLegajo());
     }
-
 
 }

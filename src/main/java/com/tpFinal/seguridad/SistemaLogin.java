@@ -17,36 +17,26 @@ public class SistemaLogin {
     JwtProvider jwtProvider = new JwtProvider();
 
 
-    public void crearUsuario(String nombre, String nombreUsuario, String email, String password, Profesor per) throws ExceptionPersonalizada {
+    public boolean crearUsuario(String nombre, String nombreUsuario, String email, String password, String legajo,RolNombre rol) throws ExceptionPersonalizada {
 
         try {
-            Rol rol = new Rol(RolNombre.ROL_PROFESOR);
-            Usuario usuario = new Usuario(nombre, nombreUsuario, email, password,rol,per);
+
+            Usuario usuario = new Usuario(nombre, nombreUsuario, email, password,rol,legajo);
             if( jwtProvider.registrarUsuario(usuario)) {
                 SwingUtilities.invokeLater(() -> {
                     JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "APP", JOptionPane.INFORMATION_MESSAGE);
                 });
+                return true;
             }
-            else throw new  ExceptionPersonalizada("Error al crear nuevo usuario");
+            else{
+                throw new  ExceptionPersonalizada("Error al crear nuevo usuario");
+
+            }
         } catch (Exception e) {
             throw new ExceptionPersonalizada("Error al crear nuevo usuario" + e);
         }
     }
-    public void crearUsuario(String nombre, String nombreUsuario, String email, String password, Alumno per) throws ExceptionPersonalizada {
 
-        try {
-            Rol rol = new Rol(RolNombre.ROL_ALUMNO);
-            Usuario usuario = new Usuario(nombre, nombreUsuario, email, password, rol,per);
-            if( jwtProvider.registrarUsuario(usuario)) {
-                SwingUtilities.invokeLater(() -> {
-                    JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "APP", JOptionPane.INFORMATION_MESSAGE);
-                });
-            }
-            else throw new  ExceptionPersonalizada("Error al crear nuevo usuario");
-        } catch (Exception e) {
-            throw new ExceptionPersonalizada("Error al crear nuevo usuario"+e);
-        }
-    }
 
     public Usuario login(String nombreUsuario,String contrasenia)
     {

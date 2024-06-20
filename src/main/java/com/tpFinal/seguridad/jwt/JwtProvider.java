@@ -21,7 +21,7 @@ public class JwtProvider implements Serializable{
 
     Repository<Usuario> usuarioRepository = new Repository<>(Usuario.class);
     private final String claveSecreta = "miClaveSecretaesMauriYSofisecretsecretsecretsecretsecretsecretsecretsecretsecretsecret"; // Debería ser cargada de forma segura
-    private final int duracionTokenEnSegundos = 86400; // 24 horas en segundos
+  //  private final int duracionTokenEnSegundos = 86400; // 24 horas en segundos
  //   private final String archivoTokens = "tokens.txt"; // Archivo para almacenar tokens (puedes ajustar la ruta según tu necesidad)
 
     public String generateToken(String contrasenia) throws ExceptionPersonalizada {

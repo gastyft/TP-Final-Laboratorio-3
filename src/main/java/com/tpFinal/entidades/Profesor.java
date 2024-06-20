@@ -13,8 +13,8 @@ public class Profesor extends Persona implements Serializable {
     super("PP");
   }
 
-  public Profesor(String nombre, String apellido, String email, String contrasena) {
-    super(nombre, apellido, email, contrasena,"PP");
+  public Profesor(String nombre, String apellido, String email ) {
+    super(nombre, apellido, email ,"PP");
   }
   public boolean addCurso(Curso cursonuevo) throws ExceptionPersonalizada {
 
