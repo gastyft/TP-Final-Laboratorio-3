@@ -5,6 +5,7 @@ import com.tpFinal.excepciones.ExceptionPersonalizada;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Alumno extends Persona {
 
@@ -15,12 +16,12 @@ public class Alumno extends Persona {
         super("AA");
     }
 
-    public Alumno(String nombre, String apellido, String email, String contrasena) {
-        super(nombre, apellido, email, contrasena,"AA");
+    public Alumno(String nombre, String apellido, String email) {
+        super(nombre, apellido, email ,"AA");
     }
 
-    public Alumno(String nombre, String apellido, String email, String contrasena, List<Inscripcion> inscripciones, List<Curso> cursosPagos) {
-        super(nombre, apellido, email, contrasena,"AA");
+    public Alumno(String nombre, String apellido, String email, List<Inscripcion> inscripciones, List<Curso> cursosPagos) {
+        super(nombre, apellido, email ,"AA");
         this.inscripciones = inscripciones;
         this.cursosPagos = cursosPagos;
     }
@@ -46,9 +47,7 @@ public class Alumno extends Persona {
     }
   public void agregarCurso(Curso curso) {
         cursosPagos.add(curso);
-
   }
-
 
 
 

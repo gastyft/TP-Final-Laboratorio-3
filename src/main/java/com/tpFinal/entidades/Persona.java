@@ -12,7 +12,7 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
     private String nombre;
     private String apellido;
     private String email;
-    private String contrasena;
+
     private String legajo;
 
     public Persona() {
@@ -22,11 +22,11 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
         this.legajo = legajo + idPersona++;
     }
 
-    public Persona(String nombre, String apellido, String email, String contrasena,String legajo) {
+    public Persona(String nombre, String apellido, String email,String legajo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
-        this.contrasena = contrasena;
+
         this.legajo = legajo + idPersona++;
 
     }
@@ -47,10 +47,6 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
         return email;
     }
 
-    public String getContrasena() {
-        return contrasena;
-    }
-
     public String getLegajo() {
         return legajo;
     }
@@ -67,9 +63,7 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
         this.email = email;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -93,8 +87,7 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
                 Nombre: %s
                 Apellido: %s
                 Email: %s
-                Contrasena: %s
                 Legajo: %s
-                """,nombre,apellido,email,contrasena,legajo);
+                """,nombre,apellido,email,legajo);
     }
 }
