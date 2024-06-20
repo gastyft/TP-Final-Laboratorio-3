@@ -2,13 +2,18 @@ package com.tpFinal.swing;
 
 import com.tpFinal.entidades.Alumno;
 import com.tpFinal.entidades.Curso;
+import com.tpFinal.entidades.Fecha;
 import com.tpFinal.entidades.Profesor;
+import com.tpFinal.enumeraciones.CursosNombre;
+import com.tpFinal.enumeraciones.DiaSemana;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuProfesor extends JDialog {
@@ -24,15 +29,24 @@ public class MenuProfesor extends JDialog {
     private JLabel legajo;
     private JList<Curso> cursoslist;
     private JButton buscarButton;
-    private JList<Alumno> alumnoslist1;
+    private JList<String> alumnoslist1;
     private JLabel nombrecurso;
     private JLabel inicioCurso;
     private JLabel finCurso;
+    private JComboBox<CursosNombre> materiaBox1;
+    private JRadioButton lunesRadioButton;
+    private JRadioButton martesRadioButton;
+    private JRadioButton miercolesRadioButton;
+    private JRadioButton juevesRadioButton;
+    private JRadioButton viernesRadioButton;
+    private JComboBox horaBox;
+    private JComboBox mesBox;
+    private JButton crearCursoButton;
 
-    public MenuProfesor(Profesor profesor, List<Curso> cursosDisponibles) {
+    public MenuProfesor(Profesor profesor, List<Curso> cursos) {
 
         this.profesor = profesor;
-        this.cursosDisponibles = cursosDisponibles;
+        this.cursosDisponibles = cursos;
         setContentPane(panel1);
         setLocation(600,200);
         setSize(500, 500);
@@ -42,12 +56,77 @@ public class MenuProfesor extends JDialog {
         mail.setText(profesor.getEmail());
         legajo.setText(profesor.getLegajo());
 
+            inicializarCursos();
+            inicializarCrearCurso();
+
 
         logOutButton.addActionListener(e ->{
             {
                 setVisible(false);
             }
         });
+
+
+    }
+    private void inicializarCrearCurso(){
+
+        for (CursosNombre curso : CursosNombre.values()) {
+            materiaBox1.addItem(curso);
+        }
+
+        for (Integer i = 6; i <= 10; i++){
+            mesBox.addItem(i);
+        }
+        for(Integer i = 8; i<=22; i++){
+            horaBox.addItem(i);
+        }
+
+
+        crearCursoButton.addActionListener( e ->{
+
+            int mesSeleccionado = (int) mesBox.getSelectedItem();
+            int horaSeleccionada = (int) horaBox.getSelectedItem();
+
+            LocalDateTime fechaInicio = LocalDateTime.of(2024, mesSeleccionado, 1, horaSeleccionada, 0);
+            LocalDateTime fechaFin = fechaInicio.plusMonths(2);
+            fechaFin = fechaInicio.plusDays(2);
+
+            List<DiaSemana> diaSemanas = new ArrayList<>();
+
+            if(lunesRadioButton.isSelected()){
+                diaSemanas.add(DiaSemana.LUNES);
+            }
+            if(martesRadioButton.isSelected()){
+                diaSemanas.add(DiaSemana.MARTES);
+            }
+            if(miercolesRadioButton.isSelected()){
+                diaSemanas.add(DiaSemana.MIERCOLES);
+            }
+            if(juevesRadioButton.isSelected()){
+                diaSemanas.add(DiaSemana.JUEVES);
+            }
+            if(viernesRadioButton.isSelected()){
+                diaSemanas.add(DiaSemana.VIERNES);
+            }
+            if (diaSemanas.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Debe seleccionar al menos un día.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+               Fecha fecha = new Fecha(fechaInicio,fechaFin,diaSemanas);
+               Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),profesor,fecha);
+
+
+
+
+
+
+
+
+        });
+
+
+
+
 
     }
 
@@ -70,6 +149,12 @@ public class MenuProfesor extends JDialog {
             String formattedDateTimefin = cursoseleccionado.getFecha().getFechaFin().format(formatter);
             inicioCurso.setText(formattedDateTimeinicio);
             finCurso.setText(formattedDateTimefin);
+
+            DefaultListModel<String> alumnoModel = new DefaultListModel<>();
+            for (Alumno alumno : cursoseleccionado.getAlumnosInscritos()) {
+                alumnoModel.addElement(alumno.getApellido());
+            }
+            alumnoslist1.setModel(alumnoModel);
 
 
         });

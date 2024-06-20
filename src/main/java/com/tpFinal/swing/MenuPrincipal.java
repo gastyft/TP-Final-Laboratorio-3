@@ -42,8 +42,11 @@ public class MenuPrincipal {
                     /// aca asigna si es un alumno y lo manda al menu alumno
                     List<Alumno> alumnos = sistema.devolverAlumnoslist();
                     List<Curso> cursos = sistema.devolverCursoslist();
+                    List<Profesor>profesores = sistema.devolverProfesoreslist();
                     Alumno alumno = alumnos.getFirst();
+                    Profesor profesor = profesores.getFirst();
                     sistema.agregarPersona(usuario1.getAlum());
+
                     menuAlumno menualumno = new menuAlumno(usuario1.getAlum(),cursos);
                     menualumno.setVisible(true);
                 }

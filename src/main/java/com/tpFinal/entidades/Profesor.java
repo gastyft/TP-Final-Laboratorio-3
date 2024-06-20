@@ -3,10 +3,12 @@ package com.tpFinal.entidades;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
 public class Profesor extends Persona implements Serializable {
-  private final TreeSet<Curso> cursos = new TreeSet<>();
+  private final List<Curso> cursos = new ArrayList<>();
 
 
   public Profesor(){
@@ -28,7 +30,7 @@ public class Profesor extends Persona implements Serializable {
     }
   }
 
-  public TreeSet<Curso> getCursos() {
+  public List<Curso> getCursos() {
     return cursos;
   }
 

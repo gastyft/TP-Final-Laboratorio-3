@@ -26,6 +26,8 @@ public class Sistema {
        Fecha fecha = new Fecha(localDateTime,localDateTime.plusHours(4),diasemana);
        Fecha fecha2 = new Fecha(localDateTime,localDateTime.plusDays(2),diasemana);
        Curso curso = new Curso(CursosNombre.ALGORITMOS,profesor,fecha);
+       curso.agregarAlumnos(alumno);
+       profesor.agregarCurso(curso);
        Factura factura = new Factura(alumno,CursosNombre.ALGORITMOS);
        Inscripcion inscripcion = new Inscripcion(curso,alumno,factura);
        Curso curso1 = new Curso(CursosNombre.BASES_DE_DATOS,profesor,fecha2);
@@ -37,6 +39,7 @@ public class Sistema {
        }
 
        alumnos.add(alumno);
+       profesores.add(profesor);
        cursos.add(curso);
        cursos.add(curso1);
 
