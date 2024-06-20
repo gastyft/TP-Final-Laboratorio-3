@@ -3,12 +3,24 @@ package com.tpFinal.entidades;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.tpFinal.repository.Repository;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 public abstract class Persona implements Comparable<Persona>,Serializable {
-    private static int idPersona = 0;
+    private static int idPersona;
+    private static Repository<Persona> r;
+
+
+    static { //TODO AUTOINCREMENTAL CON MANEJO DE ARCHIVOS PARA AGREGAR NUEVOS ELEMENTOS
+        try {
+            r = new Repository<>(Persona.class);
+            idPersona = r.lastId()+1;
+        } catch (Exception e) {
+            e.printStackTrace(); // Manejar la excepción según tus necesidades
+        }
+    }
     private String nombre;
     private String apellido;
     private String email;

@@ -1,12 +1,18 @@
 package com.tpFinal.entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonMerge;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Inscripcion implements Comparable<Inscripcion>{
-  private Curso curso;
-  private Alumno alumno;
-  private Factura factura;
+public class Inscripcion implements Comparable<Inscripcion> {
+
+    private Curso curso;
+
+    private Alumno alumno;
+    private Factura factura;
 
     public Inscripcion(Curso curso, Alumno alumno, Factura factura) {
         this.curso = curso;
@@ -21,7 +27,6 @@ public class Inscripcion implements Comparable<Inscripcion>{
     public Alumno getAlumno() {
         return alumno;
     }
-
 
 
     public Factura getFactura() {

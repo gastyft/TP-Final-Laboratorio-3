@@ -11,13 +11,17 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Sistema {
-    private final  TreeSet<Alumno> alumnos = new TreeSet<>();
-    private final TreeSet<Profesor> profesores = new TreeSet<>();
-    private final TreeSet<Curso> cursos = new TreeSet<>();
-
+    private final  List<Alumno> alumnos;
+    private final  List<Profesor> profesores;
+    private final  List<Curso> cursos;
+    private final  List<Inscripcion> inscripcions;
+    private Repository<Alumno> alumnosRepository = new Repository<>(Alumno.class);
+    private Repository<Profesor> profesorRepository = new Repository<>(Profesor.class);
+    private Repository<Curso> cursoRepository = new Repository<>(Curso.class);
+    private Repository<Inscripcion> inscripcionRepository = new Repository<>(Inscripcion.class);
 
     public Sistema() {
-           Repository<Alumno> alumnosRepository = new Repository<>(Alumno.class);
+
 
         Alumno alumno = new Alumno("Jose", "Lodeiro", "lodes@gmail.com");
         Profesor profesor = new Profesor("Pedro", "Lopez", "lopes@gmail.com");
@@ -25,52 +29,58 @@ public class Sistema {
         List<DiaSemana> diasemana = Arrays.asList(DiaSemana.LUNES, DiaSemana.MIERCOLES, DiaSemana.VIERNES);
         Fecha fecha = new Fecha(localDateTime, localDateTime.plusHours(4), diasemana);
         Fecha fecha2 = new Fecha(localDateTime, localDateTime.plusDays(2), diasemana);
-        Curso curso = new Curso(CursosNombre.ALGORITMOS, profesor, fecha);
-        Factura factura = new Factura(alumno, CursosNombre.ALGORITMOS);
+        Curso curso = new Curso(CursosNombre.ALGORITMOS, profesor.getNombre(), fecha);
+        Factura factura = new Factura( CursosNombre.ALGORITMOS);
         Inscripcion inscripcion = new Inscripcion(curso, alumno, factura);
-        Curso curso1 = new Curso(CursosNombre.BASES_DE_DATOS, profesor, fecha2);
-        try {
-            alumno.addInscripcion(inscripcion);
-            alumno.agregarCurso(curso);
-        } catch (ExceptionPersonalizada e) {
+        Curso curso1 = new Curso(CursosNombre.BASES_DE_DATOS, profesor.getNombre(), fecha2);
+        //   try {
+        //     alumno.addInscripcion(inscripcion);
+        //     alumno.agregarCurso(curso);
+        // } catch (ExceptionPersonalizada e) {
+        //  }
+        //   alumnos.add(alumno);
+        alumnos = new ArrayList<>(alumnosRepository.listar());
+        profesores = new ArrayList<>(profesorRepository.listar());
+        cursos = new ArrayList<>(cursoRepository.listar());
+        inscripcions= new ArrayList<>(inscripcionRepository.listar());
 
-        }
+        agregarCurso(curso1);
+        agregarCurso(curso);
 
-        alumnos.add(alumno);
-        cursos.add(curso);
-        cursos.add(curso1);
-
-
+        agregarInscripciones(inscripcion);
     }
 
     public void agregarPersona(Alumno alumno) {
         alumnos.add(alumno);
+        alumnosRepository.agregar(alumno);
 
     }
-    public void mostrar(){
-        for (Alumno alumno : alumnos){
-            System.out.println(alumno);
-        }
-    }
+
     public void agregarProfesor(Profesor profesor) {
 
         profesores.add(profesor);
+        profesorRepository.agregar(profesor);
     }
 
     public void agregarCurso(Curso curso) {
         cursos.add(curso);
+        cursoRepository.agregar(curso);
     }
 
     public List<Alumno> devolverAlumnoslist() {
-        return alumnos.stream().toList();
+        return alumnos;
     }
 
     public List<Profesor> devolverProfesoreslist() {
-        return profesores.stream().toList();
+        return profesores ;
     }
 
     public List<Curso> devolverCursoslist() {
-        return cursos.stream().toList();
+        return cursos ;
+    }
+
+    public List<Inscripcion> devolverInscripcionsList() {
+        return inscripcions.stream().toList();
     }
 
     public Profesor buscarPorLegajoProfesor(String legajoABuscar) {
@@ -85,9 +95,7 @@ public class Sistema {
 
     public Alumno buscarPorLegajoAlumno(String legajoABuscar) {
         Alumno alumno = null;
-        System.out.println(legajoABuscar);
         for (Alumno alum : alumnos) {
-            System.out.println(alum);
             if (alum.getLegajo().equals(legajoABuscar)) {
                 alumno = alum;
             }
@@ -95,4 +103,28 @@ public class Sistema {
         return alumno;
     }
 
+    public void modificar(Alumno alumno) throws ExceptionPersonalizada {
+       /* Alumno alumnoArchivo = alumnosRepository.listar().get(alumnosRepository.listar().indexOf(alumno));
+        int indexAlumno = alumnosRepository.listar().indexOf(alumnoArchivo);
+        System.out.println(indexAlumno);
+        alumnoArchivo.setNombre(alumno.getNombre());
+        alumnoArchivo.setApellido(alumno.getApellido());
+        alumnoArchivo.setEmail(alumno.getEmail());
+        alumnoArchivo.setInscripciones(new ArrayList<>(alumno.getInscripciones()));
+        alumnosRepository.modificar(alumnoArchivo, indexAlumno);
+        */
+        alumnosRepository.modificar(alumno, alumnosRepository.listar().indexOf(alumno));
+    }
+
+    public void modificarCurso(Curso curso) {
+        cursoRepository.modificar(curso, alumnosRepository.listar().indexOf(curso));
+    }
+public void agregarInscripciones(Inscripcion inscripcion)
+{
+    inscripcions.add(inscripcion);
+    inscripcionRepository.agregar(inscripcion);
 }
+}
+
+
+

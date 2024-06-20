@@ -3,6 +3,8 @@ package com.tpFinal.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -12,12 +14,14 @@ public class Repository<T> implements IRepository<T> {
         private final File archivo;
 
 
-        private final ObjectMapper mapper = new ObjectMapper();
+        private final ObjectMapper mapper ;
         private List<T> listaArchivos;
         private final Class<T> typeParameterClass;
 
         public Repository(Class<T> typeParameterClass ) {
             this.typeParameterClass = typeParameterClass;
+            this.mapper = new ObjectMapper();
+       this.mapper.registerModule(new JavaTimeModule());
             this.archivo = new File("src/main/java/com/tpFinal/archivos/"+typeParameterClass.getSimpleName()+".json");
         }
 
@@ -49,7 +53,7 @@ public class Repository<T> implements IRepository<T> {
         @Override
         public void agregar(T... objeto) {
             cargar();
-            this.listaArchivos.addAll(List.of(objeto));
+            this.listaArchivos.addAll(Arrays.asList(objeto));
             guardar();
         }
 

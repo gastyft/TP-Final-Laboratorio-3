@@ -2,15 +2,14 @@ package com.tpFinal.swing;
 
 import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.DiaSemana;
+import com.tpFinal.enumeraciones.RolNombre;
+import com.tpFinal.excepciones.ExceptionPersonalizada;
 import com.tpFinal.seguridad.SistemaLogin;
 import com.tpFinal.seguridad.entity.Usuario;
 import com.tpFinal.sistema.Sistema;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
-import java.util.Arrays;
+
 import java.util.List;
 
 public class MenuPrincipal {
@@ -20,8 +19,7 @@ public class MenuPrincipal {
     private JPasswordField passwordField1;
     private JButton logInButton;
     private JButton newUserButton;
-    private final Sistema sistema = new Sistema();
-
+    private  Sistema sistema = new Sistema();
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
     public MenuPrincipal() {
@@ -29,7 +27,7 @@ public class MenuPrincipal {
         logInButton.addActionListener(e -> {
 
             String usuario = UsuarioField1.getText();
-              //Capturo el Array de char del password Field
+            //Capturo el Array de char del password Field
             String contraseniaStr = new String(passwordField1.getPassword());
             Usuario usuario1 = sistemaLogin.login(usuario, contraseniaStr); //Convierto el array a String para
             //trabajarlo dentro del metodo como String(Por plantearlo inicialmente asi)
@@ -38,30 +36,60 @@ public class MenuPrincipal {
 
             if (usuario1 != null) {
                 JOptionPane.showMessageDialog(null, "BIENVENIDO");
-                if(usuario1.getAlum()!= null){
-                    /// aca asigna si es un alumno y lo manda al menu alumno
-                    List<Alumno> alumnos = sistema.devolverAlumnoslist();
-                    List<Curso> cursos = sistema.devolverCursoslist();
-                    List<Profesor>profesores = sistema.devolverProfesoreslist();
-                    Alumno alumno = alumnos.getFirst();
-                    Profesor profesor = profesores.getFirst();
-                    sistema.agregarPersona(usuario1.getAlum());
+                //TODO BUSCARR POR LEGAJO Y DEVOLVER ALUMNO O PROFESOR
 
-                    menuAlumno menualumno = new menuAlumno(usuario1.getAlum(),cursos);
+                if (usuario1.getRol().equals(RolNombre.ROL_ALUMNO)) {
+
+                    /// aca asigna si es un alumno y lo manda al menu alumno
+
+                   Alumno alumno = sistema.buscarPorLegajoAlumno(usuario1.getLegajo());
+
+                   // List<Alumno> alumnos = sistema.devolverAlumnoslist();
+                    List<Curso> cursos = sistema.devolverCursoslist();
+                    for(Curso curso : cursos){
+                        System.out.println(curso);
+                    }
+
+                     menuAlumno menualumno = new menuAlumno(alumno , cursos,sistema);
                     menualumno.setVisible(true);
-                }
-                else if(usuario1.getProf()!=null){
+
+                    if(menualumno.isActive()) {
+                        try {
+                            sistema.modificar(menualumno.getAlumno());
+                            for (Curso curso : menualumno.getCursoInscripcion()) {
+                                sistema.modificarCurso(curso);
+                            }
+                        } catch (ExceptionPersonalizada ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+
+
+
+                 //
+              //       try {
+                //         Alumno alumno1 = menualumno.getAlumno();
+                 //        sistema.modificar(alumno1);
+
+                  //   }catch (ExceptionPersonalizada ex){
+
+                  //   }
+                     //  sistema.modificarCurso(menualumno.getCursonuevo());
+
+
+
+
+
+                //Modificar alumno, curso e incripcion si es que se modifican
+                } else if (usuario1.getRol().equals(RolNombre.ROL_PROFESOR)) {
+                    Profesor profesor = sistema.buscarPorLegajoProfesor(usuario1.getLegajo());
 
                     List<Profesor> profesores = sistema.devolverProfesoreslist();
-                   Profesor profesor = profesores.getFirst();
 
-                  sistema.agregarProfesor(usuario1.getProf());
-                 // MenuProfesor menuProfesor = new MenuProfesor(usuario1.getProf(),profesores);
-               //   menuProfesor.setVisible(true);
+                    // MenuProfesor menuProfesor = new MenuProfesor(usuario1.getProf(),profesores);
+                    //   menuProfesor.setVisible(true);
                 }
             }
-
-
 
 
         });
@@ -70,7 +98,10 @@ public class MenuPrincipal {
             MenuUsuario menuUsuario = new MenuUsuario();
             menuUsuario.setVisible(true);
             Persona persona = menuUsuario.getPersona();
-            System.out.println(persona);
+            if(persona instanceof Alumno alumno)
+            sistema.agregarPersona(alumno);
+            else if(persona instanceof Profesor profesor)
+                sistema.agregarProfesor(profesor);
 
 
         });

@@ -6,6 +6,8 @@ import com.tpFinal.entidades.Factura;
 import com.tpFinal.entidades.Inscripcion;
 import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
+import com.tpFinal.repository.Repository;
+import com.tpFinal.sistema.Sistema;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,14 +49,16 @@ public class menuAlumno extends JDialog{
     private JLabel alumnoFactura;
     private JLabel cursoFactura;
     private JLabel valorFactura;
+    private Sistema sistema;
 
-    public menuAlumno(Alumno alumno, List<Curso> cursoList) {
+    public menuAlumno(Alumno alumno, List<Curso> cursoList, Sistema sistema) {
         this.alumno = alumno;
         this.cursoInscripcion = cursoList;
         setContentPane(panelAlumno);
         setLocation(600,200);
         setSize(500, 500);
         setModal(true);
+        this.sistema = sistema;
         nombre.setText(alumno.getNombre());
         apellido.setText(alumno.getApellido());
         mail.setText(alumno.getEmail());
@@ -67,6 +71,7 @@ public class menuAlumno extends JDialog{
         logOutButton.addActionListener(e ->{
             {
              setVisible(false);
+
             }
         });
 
@@ -75,6 +80,7 @@ public class menuAlumno extends JDialog{
     }
     private void inicializarInscripciones()
     {
+        actualizarListaInscripciones();
         DefaultListModel<Curso> listModel = new DefaultListModel<>();
 
         for (Curso curso : cursoInscripcion) {
@@ -89,7 +95,7 @@ public class menuAlumno extends JDialog{
             Curso curso = inscripcionlist1.getSelectedValue();
             this.cursonuevo = curso;
             nombreInscripcion.setText(curso.getCursosNombre().name());
-            profesorInscripcion.setText(curso.getProfesor().getNombre());
+            profesorInscripcion.setText(curso.getProfesor()); // ES EL NOMBRE
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             String formattedDateTimeinicio = curso.getFecha().getFechaInicio().format(formatter);
             String formattedDateTimefin = curso.getFecha().getFechaFin().format(formatter);
@@ -108,21 +114,25 @@ public class menuAlumno extends JDialog{
 
         inscribirseAlCursoButton.addActionListener(e ->{
 
-            Factura factura = new Factura(alumno,cursonuevo.getCursosNombre());
-            Inscripcion inscripcion1 = new Inscripcion(cursonuevo,alumno,factura);
-            try {
+            if (cursonuevo != null) {
+                Factura factura = new Factura( cursonuevo.getCursosNombre());
+                Inscripcion inscripcion1 = new Inscripcion(cursonuevo, alumno, factura);
 
-                alumno.addInscripcion(inscripcion1);
-                cursonuevo.agregarAlumnos(alumno);
-                alumno.agregarCurso(cursonuevo);
-                JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                try {
+                    alumno.addInscripcion(inscripcion1);
+                    cursonuevo.agregarAlumnos(alumno);
+                    alumno.agregarCurso(cursonuevo);
 
-            }catch (ExceptionPersonalizada er){
-
+                    JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    actualizarListaCursos();
+                    actualizarListaInscripciones();
+                    actualizarListaFacturas();
+                } catch (ExceptionPersonalizada er) {
+                    JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No se ha seleccionado ningún curso.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
-
-
-
 
         });
 
@@ -130,6 +140,7 @@ public class menuAlumno extends JDialog{
 
     }
     private void inicializarJListCursos(){
+        actualizarListaCursos();
         DefaultListModel<Curso> listModel = new DefaultListModel<>();
 
         for (Curso curso : alumno.getCursosPagos()) {
@@ -142,7 +153,7 @@ public class menuAlumno extends JDialog{
 
               Curso cursoseleccionado= cursosList.getSelectedValue();
                 nombreCurso.setText(cursoseleccionado.getCursosNombre().name());
-                profesorNombre.setText(cursoseleccionado.getProfesor().getNombre());
+                profesorNombre.setText(cursoseleccionado.getProfesor()); //RECIBE EL NOMBRE
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
                 String formattedDateTimeinicio = cursoseleccionado.getFecha().getFechaInicio().format(formatter);
                 String formattedDateTimefin = cursoseleccionado.getFecha().getFechaFin().format(formatter);
@@ -163,11 +174,11 @@ public class menuAlumno extends JDialog{
 
     }
     public void inicializarJListFacturas(){
-
+                actualizarListaFacturas();
         DefaultListModel<Factura> listModel = new DefaultListModel<>();
 
-        for (Inscripcion inscripcion : alumno.getInscripciones()) {
-            listModel.addElement(inscripcion.getFactura());
+        for (Factura factura: alumno.getListFacturas()) {
+            listModel.addElement(factura);
         }
 
         facturaslist1.setModel(listModel);
@@ -177,7 +188,7 @@ public class menuAlumno extends JDialog{
         detalleFacturaButton.addActionListener(e -> {
            Factura factura = facturaslist1.getSelectedValue();
            idfactura.setText(String.valueOf(factura.getIdFactura()));
-           alumnoFactura.setText(factura.getAlumno().getApellido());
+           alumnoFactura.setText(alumno.getApellido());
            cursoFactura.setText(factura.getCurso().name());
            valorFactura.setText(String.valueOf(factura.getValor()));
         });
@@ -235,6 +246,39 @@ public class menuAlumno extends JDialog{
             }
         });
     }
+//TODO TRATANDO DE QUE ACTUALICE EN SESION SIN HACER LOGOUT Y LOGIN
+private void actualizarListaCursos() {
+    DefaultListModel<Curso> listModel = new DefaultListModel<>();
+    for (Curso curso : alumno.getCursosPagos()) {
+        listModel.addElement(curso);
+    }
+    cursosList.setModel(listModel);
+    configurarRendererJListCursos();
+}
 
+    private void actualizarListaInscripciones() {
+        DefaultListModel<Curso> listModel = new DefaultListModel<>();
+        for (Curso curso : cursoInscripcion) {
+            listModel.addElement(curso);
+        }
+        inscripcionlist1.setModel(listModel);
+        configurarRendererJListInscripciones();
+    }
 
+    private void actualizarListaFacturas() {
+        DefaultListModel<Factura> listModel = new DefaultListModel<>();
+        for (Factura factura: alumno.getListFacturas()) {
+            listModel.addElement(factura);
+        }
+        facturaslist1.setModel(listModel);
+        configurarRendererJListFacturas();
+    }
+
+    public Alumno getAlumno() {
+        return alumno;
+    }
+
+    public List<Curso> getCursoInscripcion() {
+        return cursoInscripcion;
+    }
 }

@@ -8,13 +8,12 @@ public class Factura {
 
     private static int nextId = 0;
     private int idFactura;
-    private Alumno alumno;
     private CursosNombre curso;
     private double valor;
 
-    public Factura( Alumno alumno, CursosNombre curso) {
+    public Factura( CursosNombre curso) {
         this.idFactura = nextId++;
-        this.alumno = alumno;
+
         this.curso = curso;
         this.valor = curso.getPrecio();
     }
@@ -23,9 +22,7 @@ public class Factura {
         return idFactura;
     }
 
-    public Alumno getAlumno() {
-        return alumno;
-    }
+
 
     public CursosNombre getCurso() {
         return curso;
@@ -35,9 +32,6 @@ public class Factura {
         return valor;
     }
 
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
-    }
 
     public void setCurso(CursosNombre curso) {
         this.curso = curso;
@@ -68,6 +62,6 @@ public class Factura {
                   curso: %s
                   valor: %.2f
                 
-                """,idFactura,alumno,curso,valor);
+                """,idFactura,curso,valor);
     }
 }

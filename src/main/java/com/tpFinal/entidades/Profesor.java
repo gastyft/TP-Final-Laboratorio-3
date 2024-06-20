@@ -1,14 +1,15 @@
 package com.tpFinal.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeSet;
+import java.util. List;
 
 public class Profesor extends Persona implements Serializable {
-  private final List<Curso> cursos = new ArrayList<>();
+
+  private final  List<Curso> cursos = new ArrayList<>();
 
 
   public Profesor(){
@@ -30,7 +31,7 @@ public class Profesor extends Persona implements Serializable {
     }
   }
 
-  public List<Curso> getCursos() {
+  public  List<Curso> getCursos() {
     return cursos;
   }
 

@@ -1,5 +1,8 @@
 package com.tpFinal.entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import java.io.Serializable;
@@ -9,8 +12,9 @@ import java.util.Objects;
 
 public class Alumno extends Persona {
 
-    List<Inscripcion> inscripciones = new ArrayList<>();
     List<Curso> cursosPagos = new ArrayList<>();
+
+    private List<Factura> listFacturas = new ArrayList<>();;
 
     public Alumno() {
         super("AA");
@@ -20,26 +24,35 @@ public class Alumno extends Persona {
         super(nombre, apellido, email ,"AA");
     }
 
-    public Alumno(String nombre, String apellido, String email, List<Inscripcion> inscripciones, List<Curso> cursosPagos) {
+    public Alumno(String nombre, String apellido, String email , List<Curso> cursosPagos) {
         super(nombre, apellido, email ,"AA");
-        this.inscripciones = inscripciones;
+
         this.cursosPagos = cursosPagos;
     }
 
-    public List<Inscripcion> getInscripciones() {
-        return inscripciones;
+
+    public void setCursosPagos(List<Curso> cursosPagos) {
+        this.cursosPagos = cursosPagos;
+    }
+
+    public List<Factura> getListFacturas() {
+        return listFacturas;
+    }
+
+    public void setListFacturas(List<Factura> listFacturas) {
+        this.listFacturas = listFacturas;
     }
 
     public List<Curso> getCursosPagos() {
         return cursosPagos;
     }
-    public boolean addInscripcion(Inscripcion inscripcion) throws ExceptionPersonalizada {
+    public boolean addInscripcion(Inscripcion inscripcion) throws ExceptionPersonalizada { //TODO
 
         Curso cursoInscripcion = inscripcion.getCurso();
 
         boolean cursoPagado = cursosPagos.stream().anyMatch(curso -> curso.equals(cursoInscripcion));
         if (!cursoPagado) {
-            inscripciones.add(inscripcion);
+            // inscripciones.add(inscripcion);
             return true;
         } else {
            throw new ExceptionPersonalizada("Ya estas inscripto");
@@ -49,7 +62,8 @@ public class Alumno extends Persona {
         cursosPagos.add(curso);
   }
 
+    public void agregarFactura(Factura factura){
+        listFacturas.add(factura);
 
-
-
+    }
 }
