@@ -2,8 +2,8 @@
   "idCurso" : 0,
   "cursosNombre" : "ALGORITMOS",
   "fecha" : {
-    "fechaInicio" : [ 2024, 6, 21, 2, 55, 24, 235303900 ],
-    "fechaFin" : [ 2024, 6, 21, 6, 55, 24, 235303900 ],
+    "fechaInicio" : [ 2024, 6, 21, 3, 57, 49, 876580300 ],
+    "fechaFin" : [ 2024, 6, 21, 7, 57, 49, 876580300 ],
     "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
   },
   "alumnosInscriptos" : [ ],

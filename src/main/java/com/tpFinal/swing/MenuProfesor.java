@@ -118,7 +118,13 @@ public class MenuProfesor extends JDialog {
 
                try {
 
-                       profesor.addCurso(curso);
+                      boolean ADDDD = profesor.addCurso(curso);
+                      if(true){
+                          System.out.println("Enecuentra");
+                      }else {
+                          System.out.println("NO ENCUETRAAAAAAAAAAAAAAAAAAAAA ");
+                      }
+                       cursosDisponibles.add(curso);
 
                    JOptionPane.showMessageDialog(null, "curso creado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                    actualizarCursos();

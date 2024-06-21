@@ -43,6 +43,13 @@ public class Sistema {
         profesores = new ArrayList<>(profesorRepository.listar());
         cursos = new ArrayList<>(cursoRepository.listar());
         inscripcions= new ArrayList<>(inscripcionRepository.listar());
+        curso1.agregarAlumnos(alumno);
+
+        try {
+            profesor.addCurso(curso1);
+        }catch (ExceptionPersonalizada EC){
+
+        }
 
         agregarCurso(curso1);
         agregarCurso(curso);

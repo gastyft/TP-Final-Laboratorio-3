@@ -52,13 +52,13 @@ public class MenuPrincipal {
                         System.out.println(curso);
                     }
 
-                  Profesor profesorr = sistema.buscarPorLegajoProfesor("PP23");
-                   MenuProfesor menuProfesor = new MenuProfesor(profesorr,cursos);
-                    menuProfesor.setVisible(true);
+                 // Profesor profesorr = sistema.buscarPorLegajoProfesor("PP1");
+                  // MenuProfesor menuProfesor = new MenuProfesor(profesorr,cursos);
+                   // menuProfesor.setVisible(true);
 
 
-                     // menuAlumno menualumno = new menuAlumno(alumno , cursos,sistema);
-                     // menualumno.setVisible(true);
+                     menuAlumno menualumno = new menuAlumno(alumno , cursos,sistema);
+                      menualumno.setVisible(true);
 
                   /*  if(menualumno.isActive()) {
                         try {

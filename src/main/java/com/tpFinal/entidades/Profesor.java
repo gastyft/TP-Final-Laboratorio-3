@@ -9,7 +9,7 @@ import java.util. List;
 
 public class Profesor extends Persona implements Serializable {
 
-  private final  List<Curso> cursos = new ArrayList<>();
+   List<Curso> cursos = new ArrayList<>();
 
 
   public Profesor(){
@@ -24,7 +24,7 @@ public class Profesor extends Persona implements Serializable {
   public boolean addCurso(Curso cursonuevo) throws ExceptionPersonalizada {
 
 
-    boolean agregarcurso = cursos.stream().anyMatch(curso1 -> curso1.equals(cursonuevo));
+    boolean agregarcurso = this.cursos.stream().anyMatch(curso1 -> curso1.equals(cursonuevo));
 
     if (!agregarcurso) {
       cursos.add(cursonuevo);
