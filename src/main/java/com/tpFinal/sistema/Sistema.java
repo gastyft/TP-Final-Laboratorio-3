@@ -133,7 +133,7 @@ public class Sistema {
                 .orElseThrow(() -> new ExceptionPersonalizada("Curso no encontrado"));
 
         int indexCurso = cursos.indexOf(cursoArchivo);
-        System.out.println(indexCurso);
+
         if (indexCurso != -1) {
             // Actualizar el curso en la lista interna
             cursos.set(indexCurso, curso);
@@ -143,9 +143,27 @@ public class Sistema {
             throw new ExceptionPersonalizada("Curso no encontrado en la lista interna");
         }
     }
+    public void modificarProfesor(Profesor profesor) throws ExceptionPersonalizada {
+            // Buscar el profesor en la lista interna del sistema
+            Profesor profesorArchivo = profesorRepository.listar().stream()
+                    .filter(a -> a.getLegajo().equals(profesor.getLegajo()))
+                    .findFirst()
+                    .orElseThrow(() -> new ExceptionPersonalizada("Alumno no encontrado"));
+
+            int indexProfesor = profesores.indexOf(profesorArchivo);
+            if (indexProfesor != -1) {
+                // Actualizar el Profesor en la lista interna
+                profesores.set(indexProfesor, profesor);
+                // Actualizar el Profesor en el repositorio
+                profesorRepository.modificar(profesor, indexProfesor);
+            } else {
+                throw new ExceptionPersonalizada("Profesor no encontrado en la lista interna");
+            }
+        }
 
 
-    public void agregarInscripciones(Inscripcion inscripcion) {
+
+        public void agregarInscripciones(Inscripcion inscripcion) {
         inscripcions.add(inscripcion);
         inscripcionRepository.agregar(inscripcion);
     }
@@ -183,6 +201,7 @@ public class Sistema {
                     cursoss.set(i, cursoPagado);
                     modificarCurso(cursoPagado);
                     actualizarAlumnosConCurso(cursoPagado);
+                    actualizarProfesoresConCurso(cursoPagado);
                     break;
                 }
             }
@@ -219,6 +238,51 @@ public class Sistema {
             alumnosRepository.modificar(alumnoActualizado, alumnos.indexOf(alumnoActualizado));
         }
     }
+
+    public void agregarCursoProfesor(List<Curso> cursosNuevosProfesor) throws ExceptionPersonalizada {
+        // Cargar la lista completa de cursos desde el repositorio
+        List<Curso> cursosExistentes = cursoRepository.listar();
+
+        for (Curso nuevoCurso : cursosNuevosProfesor) {
+            // Verificar si el curso ya existe en la lista completa
+            boolean cursoExiste = cursosExistentes.stream()
+                    .anyMatch(curso -> curso.getIdCurso() == nuevoCurso.getIdCurso());
+            if (!cursoExiste) {
+              agregarCurso(nuevoCurso);
+            }
+        }
+    }
+
+    private void actualizarProfesoresConCurso(Curso curso) throws ExceptionPersonalizada {
+        List<Profesor> profesoresActualizados = new ArrayList<>();
+
+        for (Profesor profesor : profesorRepository.listar()) {
+            boolean cursoActualizado = false;
+            for (int i = 0; i < profesor.getCursos().size(); i++) {
+                if (profesor.getCursos().get(i).getIdCurso() == curso.getIdCurso()) {
+                    profesor.getCursos().set(i, curso);
+                    cursoActualizado = true;
+                }
+            }
+            if (cursoActualizado) {
+                profesoresActualizados.add(profesor);
+            }
+        }
+
+        for (Profesor profesorActualizado : profesoresActualizados) {
+            // Actualizar el profesor en la lista interna si ya existe
+            int indexProfesor = profesores.indexOf(profesorActualizado);
+            if (indexProfesor != -1) {
+                profesores.set(indexProfesor, profesorActualizado);
+            } else {
+                // Si no existe en la lista interna, agregarlo
+                profesores.add(profesorActualizado);
+            }
+            // Actualizar el profesor en el repositorio
+            profesorRepository.modificar(profesorActualizado, profesores.indexOf(profesorActualizado));
+        }
+    }
+
 }
 
 
