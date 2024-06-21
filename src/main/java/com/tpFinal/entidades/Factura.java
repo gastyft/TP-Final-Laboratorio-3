@@ -17,7 +17,6 @@ public class Factura implements Serializable {
     }
     public Factura( CursosNombre curso) {
         this.idFactura = nextId++;
-
         this.curso = curso;
         this.valor = curso.getPrecio();
     }
