@@ -248,7 +248,7 @@ public class Sistema {
             boolean cursoExiste = cursosExistentes.stream()
                     .anyMatch(curso -> curso.getIdCurso() == nuevoCurso.getIdCurso());
             if (!cursoExiste) {
-              agregarCurso(nuevoCurso);
+              cursoRepository.agregar(nuevoCurso);
             }
         }
     }
