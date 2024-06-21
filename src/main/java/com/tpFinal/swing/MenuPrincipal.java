@@ -59,8 +59,8 @@ public class MenuPrincipal {
 
 
                     Alumno alumno1 = menualumno.getAlumno();
-                    List<Curso> cursosInsc =menualumno.getCursoInscripcion();
-                    Curso c =menualumno.getCursonuevo();
+
+
                     try {
 
                         sistema.modificar(alumno1); // Actualizar el alumno en el sistema
