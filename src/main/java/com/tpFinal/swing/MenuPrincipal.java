@@ -69,7 +69,7 @@ public class MenuPrincipal {
                        // sistema.verificarAlumnosEnCurso(alumno1); // Verificar inscripción en cursos
                     } catch (ExceptionPersonalizada ex) {
                         // Manejar excepción si ocurre alguna
-                        ex.printStackTrace(); // o imprimir un mensaje de error
+                        JOptionPane.showMessageDialog(null, "Error en parte menu Principal parte rol alumno", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     //Modificar alumno, curso e incripcion si es que se modifican
                 } else if (usuario1.getRol().equals(RolNombre.ROL_PROFESOR)) {
@@ -79,7 +79,15 @@ public class MenuPrincipal {
                     Profesor profesor1 = sistema.buscarPorLegajoProfesor(usuario1.getLegajo());
                     MenuProfesor menuProfesor = new MenuProfesor(profesor1, cursos);
                     menuProfesor.setVisible(true);
-                }
+                    Profesor profesor2 = menuProfesor.getProfesor();
+                    try {
+                        sistema.modificarProfesor(profesor2);
+                        sistema.agregarCursoProfesor(profesor2.getCursos());
+                    }catch (ExceptionPersonalizada ex){
+                        JOptionPane.showMessageDialog(null, "Error en menu Principal parte Rol Profesor", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+
+                    }
             }
 
 

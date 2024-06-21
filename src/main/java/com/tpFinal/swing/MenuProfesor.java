@@ -218,5 +218,9 @@ public class MenuProfesor extends JDialog {
         configurarRendererJListCursos();
 
     }
+
+    public Profesor getProfesor() {
+        return profesor;
+    }
 }
 
