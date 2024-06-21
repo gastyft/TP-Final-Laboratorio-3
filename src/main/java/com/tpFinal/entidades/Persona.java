@@ -4,18 +4,19 @@ package com.tpFinal.entidades;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.tpFinal.repository.Repository;
+import com.tpFinal.seguridad.entity.Usuario;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 public abstract class Persona implements Comparable<Persona>,Serializable {
     private static int idPersona;
-    private static Repository<Persona> r;
+    private static Repository<Usuario> r;
 
 
     static { //TODO AUTOINCREMENTAL CON MANEJO DE ARCHIVOS PARA AGREGAR NUEVOS ELEMENTOS
         try {
-            r = new Repository<>(Persona.class);
+            r = new Repository<>(Usuario.class);
             idPersona = r.lastId()+1;
         } catch (Exception e) {
             e.printStackTrace(); // Manejar la excepción según tus necesidades
@@ -29,6 +30,7 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
 
     public Persona() {
         // Constructor sin argumentos
+        this.legajo = legajo + idPersona++;
     }
     public Persona(String legajo) {
         this.legajo = legajo + idPersona++;

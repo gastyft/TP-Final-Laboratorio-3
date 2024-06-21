@@ -59,6 +59,7 @@ public class menuAlumno extends JDialog{
         setSize(500, 500);
         setModal(true);
         this.sistema = sistema;
+
         nombre.setText(alumno.getNombre());
         apellido.setText(alumno.getApellido());
         mail.setText(alumno.getEmail());
@@ -116,18 +117,20 @@ public class menuAlumno extends JDialog{
 
             if (cursonuevo != null) {
                 Factura factura = new Factura( cursonuevo.getCursosNombre());
+                Inscripcion inscripcion1 = new Inscripcion(cursonuevo, alumno, factura);
+
 
                 try {
+                    alumno.addInscripcion(inscripcion1);
                     cursonuevo.agregarAlumnos(alumno);
-                    alumno.addInscripcion(cursonuevo);
-                    alumno.agregarFactura(factura);
+                    alumno.agregarCurso(cursonuevo);
 
 
                     JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                     actualizarListaCursos();
                     actualizarListaInscripciones();
                     actualizarListaFacturas();
-                } catch (ExceptionPersonalizada er) {
+                }   catch (ExceptionPersonalizada er) {
                     JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
@@ -151,7 +154,7 @@ public class menuAlumno extends JDialog{
 
         informacionButton.addActionListener(e-> {
 
-              Curso cursoseleccionado= cursosList.getSelectedValue();
+                Curso cursoseleccionado= cursosList.getSelectedValue();
                 nombreCurso.setText(cursoseleccionado.getCursosNombre().name());
                 profesorNombre.setText(cursoseleccionado.getProfesor()); //RECIBE EL NOMBRE
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -185,7 +188,7 @@ public class menuAlumno extends JDialog{
         configurarRendererJListFacturas();
 
 
-        detalleFacturaButton.addActionListener(e -> {
+           detalleFacturaButton.addActionListener(e -> {
            Factura factura = facturaslist1.getSelectedValue();
            idfactura.setText(String.valueOf(factura.getIdFactura()));
            alumnoFactura.setText(alumno.getApellido());
@@ -276,6 +279,10 @@ private void actualizarListaCursos() {
 
     public Alumno getAlumno() {
         return alumno;
+    }
+
+    public Curso getCursonuevo() {
+        return cursonuevo;
     }
 
     public List<Curso> getCursoInscripcion() {

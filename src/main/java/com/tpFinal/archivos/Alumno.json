@@ -1,12 +1,18 @@
 [ {
-  "nombre" : "Jose",
-  "apellido" : "Lodeiro",
-  "email" : "lodes@gmail.com",
-  "legajo" : "AA0",
-  "cursosPagos" : [ ],
-  "listFacturas" : [ {
-    "idFactura" : 0,
-    "curso" : "ALGORITMOS",
-    "valor" : 4500.0
-  } ]
+  "nombre" : "dd",
+  "apellido" : "dd",
+  "email" : "dd",
+  "legajo" : "AA1",
+  "cursosPagos" : [ {
+    "idCurso" : 0,
+    "cursosNombre" : "ALGORITMOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 21, 15, 47, 40, 463487000 ],
+      "fechaFin" : [ 2024, 6, 21, 19, 47, 40, 463487000 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "dd dd" ],
+    "profesor" : "Pedro"
+  } ],
+  "listFacturas" : [ ]
 } ]

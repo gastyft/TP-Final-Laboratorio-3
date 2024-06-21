@@ -10,7 +10,8 @@ public class Fecha {
     private LocalDateTime fechaInicio;
     private LocalDateTime fechaFin;
     public List<DiaSemana> diasemana;
-
+    public Fecha() {
+    }
     public Fecha(LocalDateTime fechaInicio, LocalDateTime fechaFin, List<DiaSemana> diasemana) {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;

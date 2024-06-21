@@ -21,7 +21,7 @@ public class Repository<T> implements IRepository<T> {
         public Repository(Class<T> typeParameterClass ) {
             this.typeParameterClass = typeParameterClass;
             this.mapper = new ObjectMapper();
-       this.mapper.registerModule(new JavaTimeModule());
+            this.mapper.registerModule(new JavaTimeModule());
             this.archivo = new File("src/main/java/com/tpFinal/archivos/"+typeParameterClass.getSimpleName()+".json");
         }
 
@@ -53,7 +53,8 @@ public class Repository<T> implements IRepository<T> {
         @Override
         public void agregar(T... objeto) {
             cargar();
-            this.listaArchivos.addAll(Arrays.asList(objeto));
+
+            this.listaArchivos.addAll(List.of(objeto));
             guardar();
         }
 
@@ -83,10 +84,12 @@ public class Repository<T> implements IRepository<T> {
         cargar();
         if (this.listaArchivos.isEmpty()) {
             return -1; // O cualquier otro valor predeterminado que desees
+
         }
         else {
             return this.listaArchivos.size() - 1;
         }
+
     }
 
 }

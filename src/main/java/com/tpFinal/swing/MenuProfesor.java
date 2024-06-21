@@ -1,14 +1,16 @@
 package com.tpFinal.swing;
 
+import com.tpFinal.entidades.Alumno;
 import com.tpFinal.entidades.Curso;
 import com.tpFinal.entidades.Fecha;
 import com.tpFinal.entidades.Profesor;
 import com.tpFinal.enumeraciones.CursosNombre;
 import com.tpFinal.enumeraciones.DiaSemana;
-import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -40,11 +42,10 @@ public class MenuProfesor extends JDialog {
     private JComboBox horaBox;
     private JComboBox mesBox;
     private JButton crearCursoButton;
-    private JList diaslist;
 
-    public MenuProfesor(Profesor profesor1, List<Curso> cursos) {
+    public MenuProfesor(Profesor profesor, List<Curso> cursos) {
 
-        this.profesor = profesor1;
+        this.profesor = profesor;
         this.cursosDisponibles = cursos;
         setContentPane(panel1);
         setLocation(600,200);
@@ -87,8 +88,8 @@ public class MenuProfesor extends JDialog {
             int horaSeleccionada = (int) horaBox.getSelectedItem();
 
             LocalDateTime fechaInicio = LocalDateTime.of(2024, mesSeleccionado, 1, horaSeleccionada, 0);
-
-            LocalDateTime fechaFin = fechaInicio.plusMonths(2).plusHours(2);
+            LocalDateTime fechaFin = fechaInicio.plusMonths(2);
+            fechaFin = fechaInicio.plusDays(2);
 
             List<DiaSemana> diaSemanas = new ArrayList<>();
 
@@ -112,22 +113,7 @@ public class MenuProfesor extends JDialog {
             }
 
                Fecha fecha = new Fecha(fechaInicio,fechaFin,diaSemanas);
-               String nombreProfesor = profesor.getNombre() + profesor.getApellido();
-
-               Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),nombreProfesor,fecha);
-
-               try {
-
-                       profesor.addCurso(curso);
-
-                   JOptionPane.showMessageDialog(null, "curso creado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                   actualizarCursos();
-
-               }catch (ExceptionPersonalizada er){
-                   JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-               }
-
-
+               Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),profesor.getApellido(),fecha);
 
 
 
@@ -154,9 +140,6 @@ public class MenuProfesor extends JDialog {
         cursoslist.setModel(listModel);
         configurarRendererJListCursos();
 
-
-
-
         buscarButton.addActionListener(e -> {
 
             Curso cursoseleccionado= cursoslist.getSelectedValue();
@@ -166,14 +149,6 @@ public class MenuProfesor extends JDialog {
             String formattedDateTimefin = cursoseleccionado.getFecha().getFechaFin().format(formatter);
             inicioCurso.setText(formattedDateTimeinicio);
             finCurso.setText(formattedDateTimefin);
-
-
-
-            DefaultListModel<DiaSemana> diaSemanaModel = new DefaultListModel<>();
-            for (DiaSemana dia : cursoseleccionado.getFecha().getDiasemana()) {
-                diaSemanaModel.addElement(dia);
-            }
-            diaslist.setModel(diaSemanaModel);
 
             DefaultListModel<String> alumnoModel = new DefaultListModel<>();
             for (String alumno : cursoseleccionado.getAlumnosInscriptos()) {
@@ -204,15 +179,4 @@ public class MenuProfesor extends JDialog {
             }
         });
     }
-    private void actualizarCursos(){
-        DefaultListModel<Curso> listModel = new DefaultListModel<>();
-
-        for (Curso curso : profesor.getCursos()) {
-            listModel.addElement(curso);
-        }
-        cursoslist.setModel(listModel);
-        configurarRendererJListCursos();
-
-    }
 }
-

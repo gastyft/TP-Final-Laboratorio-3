@@ -10,7 +10,6 @@ import java.util.Objects;
 public class Inscripcion implements Comparable<Inscripcion> {
 
     private Curso curso;
-
     private Alumno alumno;
     private Factura factura;
 
