@@ -76,10 +76,9 @@ public class MenuProfesor extends JDialog {
         for (Integer i = 6; i <= 10; i++){
             mesBox.addItem(i);
         }
-        for(Integer i = 8; i<=22; i++){
+        for (int i = 8; i <= 22; i += 2) {
             horaBox.addItem(i);
         }
-
 
         crearCursoButton.addActionListener( e ->{
 
