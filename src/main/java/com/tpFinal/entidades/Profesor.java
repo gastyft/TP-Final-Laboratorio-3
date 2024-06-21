@@ -1,6 +1,6 @@
 package com.tpFinal.entidades;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import java.io.Serializable;
@@ -22,7 +22,9 @@ public class Profesor extends Persona implements Serializable {
   public boolean addCurso(Curso cursonuevo) throws ExceptionPersonalizada {
 
 
-    boolean agregarcurso = cursos.stream().anyMatch(curso -> curso.equals(cursonuevo));
+ //   boolean agregarcurso = cursos.stream().anyMatch(curso -> curso.equals(cursonuevo));
+    boolean agregarcurso = this.cursos.stream().anyMatch(curso1 -> curso1.equals(cursonuevo));
+
     if (!agregarcurso) {
       cursos.add(cursonuevo);
       return true;
@@ -35,9 +37,6 @@ public class Profesor extends Persona implements Serializable {
     return cursos;
   }
 
-  public void agregarCurso(Curso curso ){
-    cursos.add(curso);
-  }
 
 
 }

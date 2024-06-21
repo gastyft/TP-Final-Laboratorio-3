@@ -43,11 +43,14 @@ public class MenuPrincipal {
                 if (usuario1.getRol().equals(RolNombre.ROL_ALUMNO)) {
 
                     /// aca asigna si es un alumno y lo manda al menu alumno
-                    System.out.println(usuario1.getLegajo());
-                    Alumno alumno = sistema.buscarPorLegajoAlumno(usuario1.getLegajo());
 
-                    List<Alumno> alumnos = sistema.devolverAlumnoslist();
+                   Alumno alumno = sistema.buscarPorLegajoAlumno(usuario1.getLegajo());
+
+
+                   // List<Alumno> alumnos = sistema.devolverAlumnoslist();
                     List<Curso> cursos = sistema.devolverCursoslist();
+
+
 
 
                     menuAlumno menualumno = new menuAlumno(alumno, cursos, sistema);
@@ -87,9 +90,9 @@ public class MenuPrincipal {
             MenuUsuario menuUsuario = new MenuUsuario();
             menuUsuario.setVisible(true);
             Persona persona = menuUsuario.getPersona();
-            if (persona instanceof Alumno alumno)
-                sistema.agregarPersona(alumno);
-            else if (persona instanceof Profesor profesor)
+            if(persona instanceof Alumno alumno)
+            sistema.agregarPersona(alumno);
+            else if(persona instanceof Profesor profesor)
                 sistema.agregarProfesor(profesor);
         });
     }
