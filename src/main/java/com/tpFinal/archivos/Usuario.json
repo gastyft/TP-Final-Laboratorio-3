@@ -1,0 +1,15 @@
+[ {
+  "nombre" : "asd",
+  "nombreUsuario" : "asd",
+  "email" : "asd",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImFzZCJ9.KxBByUJgNGf1pMV_NQTszrxCSYKVFZ_Q1C3DHwSoP8QLq1nJ2MUtEate51cwbY-oTA4Ny9ZpYPDBuN7_38dn8g",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA2"
+}, {
+  "nombre" : "jose",
+  "nombreUsuario" : "jose",
+  "email" : "kjose@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP10"
+} ]

@@ -1,0 +1,22 @@
+[ {
+  "nombre" : "asd",
+  "apellido" : "asd",
+  "email" : "asd",
+  "legajo" : "AA2",
+  "cursosPagos" : [ {
+    "idCurso" : 0,
+    "cursosNombre" : "ALGORITMOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 21, 19, 45, 32, 106571900 ],
+      "fechaFin" : [ 2024, 6, 21, 23, 45, 32, 106571900 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "asd asd" ],
+    "profesor" : "Pedro"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 0,
+    "curso" : "ALGORITMOS",
+    "valor" : 4500.0
+  } ]
+} ]

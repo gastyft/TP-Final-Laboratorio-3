@@ -43,9 +43,9 @@ public class Sistema {
         //  }
         //   alumnos.add(alumno);
 
-        //agregarCurso(curso);
+       // agregarCurso(curso);
         //  agregarInscripciones(inscripcion);
-       // agregarCurso(curso1);
+        //agregarCurso(curso1);
 
 
     }
