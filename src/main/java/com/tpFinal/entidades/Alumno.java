@@ -46,24 +46,20 @@ public class Alumno extends Persona {
     public List<Curso> getCursosPagos() {
         return cursosPagos;
     }
-    public boolean addInscripcion(Inscripcion inscripcion) throws ExceptionPersonalizada { //TODO
+    public boolean addInscripcion(Curso inscripcion) throws ExceptionPersonalizada { //TODO
 
-        Curso cursoInscripcion = inscripcion.getCurso();
 
-        boolean cursoPagado = cursosPagos.stream().anyMatch(curso -> curso.equals(cursoInscripcion));
+
+        boolean cursoPagado = cursosPagos.stream().anyMatch(curso -> curso.equals(inscripcion));
         if (!cursoPagado) {
-            // inscripciones.add(inscripcion);
+            cursosPagos.add(inscripcion);
             return true;
         } else {
            throw new ExceptionPersonalizada("Ya estas inscripto");
         }
     }
-  public void agregarCurso(Curso curso) {
-        cursosPagos.add(curso);
-  }
 
     public void agregarFactura(Factura factura){
         listFacturas.add(factura);
-
     }
 }

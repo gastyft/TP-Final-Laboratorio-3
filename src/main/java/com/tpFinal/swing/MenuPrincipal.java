@@ -26,6 +26,7 @@ public class MenuPrincipal {
 
         logInButton.addActionListener(e -> {
 
+
             String usuario = UsuarioField1.getText();
             //Capturo el Array de char del password Field
             String contraseniaStr = new String(passwordField1.getPassword());
@@ -44,16 +45,22 @@ public class MenuPrincipal {
 
                    Alumno alumno = sistema.buscarPorLegajoAlumno(usuario1.getLegajo());
 
+
                    // List<Alumno> alumnos = sistema.devolverAlumnoslist();
                     List<Curso> cursos = sistema.devolverCursoslist();
                     for(Curso curso : cursos){
                         System.out.println(curso);
                     }
 
-                     menuAlumno menualumno = new menuAlumno(alumno , cursos,sistema);
-                    menualumno.setVisible(true);
+                  Profesor profesorr = sistema.buscarPorLegajoProfesor("PP23");
+                   MenuProfesor menuProfesor = new MenuProfesor(profesorr,cursos);
+                    menuProfesor.setVisible(true);
 
-                    if(menualumno.isActive()) {
+
+                     // menuAlumno menualumno = new menuAlumno(alumno , cursos,sistema);
+                     // menualumno.setVisible(true);
+
+                  /*  if(menualumno.isActive()) {
                         try {
                             sistema.modificar(menualumno.getAlumno());
                             for (Curso curso : menualumno.getCursoInscripcion()) {
@@ -63,7 +70,7 @@ public class MenuPrincipal {
                             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-
+                  */
 
 
                  //

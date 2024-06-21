@@ -4,5 +4,47 @@
   "email" : "asd",
   "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImFzZCJ9.KxBByUJgNGf1pMV_NQTszrxCSYKVFZ_Q1C3DHwSoP8QLq1nJ2MUtEate51cwbY-oTA4Ny9ZpYPDBuN7_38dn8g",
   "rol" : "ROL_ALUMNO",
-  "legajo" : "AA3"
+  "legajo" : "AA20"
+}, {
+  "nombre" : "ert",
+  "nombreUsuario" : "ert",
+  "email" : "ert",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImVydCJ9.2cCBbNNRSXVcx-bZkmXDnYRYiC3TuYY8lcbwKhii3UaW3H6JytHDMVCtgjFujlh3ITX43k-TL20z18xbiCyF1Q",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP23"
+}, {
+  "nombre" : "sdf",
+  "nombreUsuario" : "sdf",
+  "email" : "sdf",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InNkZiJ9.B_OHpSTffy0W5_lZDrALunZPU6h6oG_hkLa1HuuE61PXI6AATP7AOIBn8MCYpYOXGLEVGwzljYavygzO-MlCFQ",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA29"
+}, {
+  "nombre" : "cvb",
+  "nombreUsuario" : "cvb",
+  "email" : "cvb",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImN2YiJ9.ql21t-bAudcHhvAqBf59Xr9k9sgWjeVix7IiA23tWoVx_AyGNYtHelEG5d5jVB_JuKEH7ENvtLZ5rnlA7OPjxQ",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA42"
+}, {
+  "nombre" : "xcv",
+  "nombreUsuario" : "xcv",
+  "email" : "xcv",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InhjdiJ9.ii5Jpn-MivfZ-7UZKCUNn3jd9XKQD2NZokRMFwOFANd0HYYGZ1nL2hGQOVT1iOLAn9WCb6fWWwX6fQ_aHJX0HA",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA48"
+}, {
+  "nombre" : "Maria",
+  "nombreUsuario" : "Maria",
+  "email" : "diazmaria@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA50"
+}, {
+  "nombre" : "ghj",
+  "nombreUsuario" : "ghj",
+  "email" : "ghj",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImdoaiJ9.oZBYzThthzI626cVRlmQD3rgS4QYOqwQZhEXenF5D2CacssOzHMOqy4dKgEV2tUjG6VYhjsxnLuniUamKwwIxA",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA92"
 } ]

@@ -1,1 +1,12 @@
-[ ]
+[ {
+  "nombre" : "Jose",
+  "apellido" : "Lodeiro",
+  "email" : "lodes@gmail.com",
+  "legajo" : "AA0",
+  "cursosPagos" : [ ],
+  "listFacturas" : [ {
+    "idFactura" : 0,
+    "curso" : "ALGORITMOS",
+    "valor" : 4500.0
+  } ]
+} ]
