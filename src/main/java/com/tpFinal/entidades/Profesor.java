@@ -23,7 +23,7 @@ public class Profesor extends Persona implements Serializable {
 
 
  //   boolean agregarcurso = cursos.stream().anyMatch(curso -> curso.equals(cursonuevo));
-    boolean agregarcurso = this.cursos.stream().anyMatch(curso1 -> curso1.equals(cursonuevo));
+    boolean agregarcurso = this.cursos.stream().anyMatch(curso1 -> curso1.compareTo(cursonuevo) == 0 && curso1.compararCurso(cursonuevo)&& curso1.compararDia(cursonuevo));
 
     if (!agregarcurso) {
       cursos.add(cursonuevo);

@@ -120,9 +120,25 @@ public class Curso implements Serializable, Comparable<Curso>  {
         return this.cursosNombre.compareTo(o.getCursosNombre());
     }
 
-    public boolean compararCurso(Curso o){
-     return this.cursosNombre.equals(o.getCursosNombre()) && this.nombreProfesor.equals(o.getProfesor()) && this.fecha.equals(o.getFecha());
+    public boolean compararCurso(Curso o) {
+        if (o == null || o.fecha == null || o.fecha.getFechaInicio() == null) {
+            return false;
+        }
+        if (this.fecha == null || this.fecha.getFechaInicio() == null) {
+            return false;
+        }
+        return this.fecha.getFechaInicio().equals(o.fecha.getFechaInicio());
     }
+    public boolean compararDia(Curso o) {
+        if (o == null || o.fecha == null || o.fecha.diasemana == null) {
+            return false;
+        }
+        if (this.fecha == null || this.fecha.diasemana == null) {
+            return false;
+        }
+        return this.fecha.diasemana.equals(o.fecha.diasemana);
+    }
+
     public boolean compararCurso(CursosNombre nombre) {
         return this.cursosNombre == nombre;
     }
