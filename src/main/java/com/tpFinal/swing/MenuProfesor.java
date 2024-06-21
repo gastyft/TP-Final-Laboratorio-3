@@ -40,7 +40,8 @@ public class MenuProfesor extends JDialog {
     private JComboBox horaBox;
     private JComboBox mesBox;
     private JButton crearCursoButton;
-    private JList diaslist;
+    private JList<DiaSemana> diasList;
+
     public MenuProfesor(Profesor profesor1, List<Curso> cursos) {
 
         this.profesor = profesor1;
@@ -108,37 +109,28 @@ public class MenuProfesor extends JDialog {
             }
             if (diaSemanas.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Debe seleccionar al menos un día.", "Error", JOptionPane.ERROR_MESSAGE);
+            }else{
+
+                Fecha fecha = new Fecha(fechaInicio,fechaFin,diaSemanas);
+                String nombreProfesor = profesor.getNombre() + profesor.getApellido();
+
+                Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),nombreProfesor,fecha);
+
+                try {
+
+                    profesor.addCurso(curso);
+                    cursosDisponibles.add(curso);
+
+                    JOptionPane.showMessageDialog(null, "curso creado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    actualizarCursos();
+
+                }catch (ExceptionPersonalizada er){
+                    JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+
+
             }
-
-               Fecha fecha = new Fecha(fechaInicio,fechaFin,diaSemanas);
-               String nombreProfesor = profesor.getNombre() + profesor.getApellido();
-
-               Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),nombreProfesor,fecha);
-
-               try {
-
-                      boolean ADDDD = profesor.addCurso(curso);
-                      if(true){
-                          System.out.println("Enecuentra");
-                      }else {
-                          System.out.println("NO ENCUETRAAAAAAAAAAAAAAAAAAAAA ");
-                      }
-                       cursosDisponibles.add(curso);
-
-                   JOptionPane.showMessageDialog(null, "curso creado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                   actualizarCursos();
-
-               }catch (ExceptionPersonalizada er){
-                   JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-               }
-
-
-
-
-
-
-
-
 
 
         });
@@ -178,7 +170,7 @@ public class MenuProfesor extends JDialog {
             for (DiaSemana dia : cursoseleccionado.getFecha().getDiasemana()) {
                 diaSemanaModel.addElement(dia);
             }
-            diaslist.setModel(diaSemanaModel);
+            diasList.setModel(diaSemanaModel);
 
             DefaultListModel<String> alumnoModel = new DefaultListModel<>();
             for (String alumno : cursoseleccionado.getAlumnosInscriptos()) {
