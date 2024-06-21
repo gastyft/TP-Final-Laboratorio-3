@@ -118,12 +118,10 @@ public class menuAlumno extends JDialog{
             if (cursonuevo != null) {
                 Factura factura = new Factura( cursonuevo.getCursosNombre());
 
-
-
                 try {
                     alumno.addInscripcion(cursonuevo);
                     cursonuevo.agregarAlumnos(alumno);
-                    alumno.agregarFactura(factura);
+                     alumno.agregarFactura(factura);
 
                     JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                     actualizarListaCursos();

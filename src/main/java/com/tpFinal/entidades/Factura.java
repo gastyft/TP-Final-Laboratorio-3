@@ -2,15 +2,19 @@ package com.tpFinal.entidades;
 
 import com.tpFinal.enumeraciones.CursosNombre;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Factura {
+public class Factura implements Serializable {
 
     private static int nextId = 0;
     private int idFactura;
     private CursosNombre curso;
     private double valor;
 
+    public Factura(){
+
+    }
     public Factura( CursosNombre curso) {
         this.idFactura = nextId++;
 

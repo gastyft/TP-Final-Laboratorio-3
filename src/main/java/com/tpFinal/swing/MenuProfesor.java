@@ -186,7 +186,6 @@ public class MenuProfesor extends JDialog {
             }
             alumnoslist1.setModel(alumnoModel);
 
-
         });
 
 
