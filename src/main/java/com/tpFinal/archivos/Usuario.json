@@ -1,36 +1,8 @@
 [ {
   "nombre" : "dd",
   "nombreUsuario" : "dd",
-  "email" : "dd",
+  "email" : "dd@gmail.com",
   "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImRkIn0.QRFhXymumRRdWTnLsekYG9NSjAj3ied4yTl6j4Per5WQq816yquDfrP_-k2Ji8NRt3cOrYfh-ARTlIToc3Mi8A",
-  "rol" : "ROL_PROFESOR",
-  "legajo" : "PP1"
-}, {
-  "nombre" : "aa",
-  "nombreUsuario" : "aa",
-  "email" : "aa",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImFhIn0.MWj5wd1n_1ZBYVEz2zAvNdehC-TTboWzbYECiVWzF3KoBH7cF81WlDaQ968imx5z6gfMOIxr9jbaj8C2TrmY6A",
   "rol" : "ROL_ALUMNO",
-  "legajo" : "AA4"
-}, {
-  "nombre" : "rr",
-  "nombreUsuario" : "rr",
-  "email" : "rr",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InJyIn0.Hr_7rwhs9hWB6jL7o6ztbPwiQtv9JR1GsLPGotWaqIGqCMPboWtohTvtO-uZzv38U2OpleIDZA-pbsdZ7lftEA",
-  "rol" : "ROL_ALUMNO",
-  "legajo" : "AA5"
-}, {
-  "nombre" : "Mauricio ",
-  "nombreUsuario" : "Mauricio ",
-  "email" : "maurimartinez@gmail.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Im1hdXJpIn0.Wya9-ZXnBCa6YMJ3PxvW1zqwK2HI_AzpfWPfYzVjnpgklY5ZBcXIs2fC7kph0oIwVnfY0952_2pIFWI0n2BEXw",
-  "rol" : "ROL_ALUMNO",
-  "legajo" : "AA7"
-}, {
-  "nombre" : "ee",
-  "nombreUsuario" : "ee",
-  "email" : "ee@ee.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImVlIn0.15pRf6c6X6dR2C3RvVc2r6aDXMlJqqeIP3tqFXZ9pXSX8oME4GiIp3Gyhn6uiBTWoE2hXeTUXoc9A0NoFuwoZQ",
-  "rol" : "ROL_ALUMNO",
-  "legajo" : "AA9"
+  "legajo" : "AA1"
 } ]
