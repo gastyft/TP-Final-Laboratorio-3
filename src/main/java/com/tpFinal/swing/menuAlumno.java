@@ -196,23 +196,24 @@ public class menuAlumno extends JDialog{
 
         imprimirFacturaButton.addActionListener(e -> {
            // Factura factura = facturaslist1.getSelectedValue();
-        //    if (factura != null) {
-                try {
-                    String nombreArchivo = "src/main/java/com/tpFinal/archivos/facturasGeneradas/facturas"+alumno.getLegajo()+".pdf";
+           if (!alumno.getListFacturas().isEmpty()) {
+               try {
+                   String nombreArchivo = "src/main/java/com/tpFinal/archivos/facturasGeneradas/facturas" + alumno.getLegajo() + ".pdf";
 
-                    PDFGenerator.generarFacturasPDF(alumno,nombreArchivo);
+                   PDFGenerator.generarFacturasPDF(alumno, nombreArchivo);
 
-                    // Obtener la ruta completa del archivo generado
-                    String rutaCompleta ="src/main/java/com/tpFinal/archivos/facturasGeneradas/facturas"+alumno.getLegajo()+".pdf"; // Reemplaza con la ruta real del archivo generado
+                   // Obtener la ruta completa del archivo generado
+                   String rutaCompleta = "src/main/java/com/tpFinal/archivos/facturasGeneradas/facturas" + alumno.getLegajo() + ".pdf"; // Reemplaza con la ruta real del archivo generado
 
-                    // Abrir el archivo PDF en el navegador
-                    Desktop.getDesktop().browse(new File(rutaCompleta).toURI());
+                   // Abrir el archivo PDF en el navegador
+                   Desktop.getDesktop().browse(new File(rutaCompleta).toURI());
 
-                    JOptionPane.showMessageDialog(null, "Factura impresa correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Error al imprimir la factura.", "Error", JOptionPane.ERROR_MESSAGE);
-                    ex.printStackTrace();
-                }
+                   JOptionPane.showMessageDialog(null, "Factura impresa correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+               } catch (IOException ex) {
+                   JOptionPane.showMessageDialog(null, "Error al imprimir la factura.", "Error", JOptionPane.ERROR_MESSAGE);
+                   ex.printStackTrace();
+               }
+           }else  JOptionPane.showMessageDialog(null, "No hay inscripciones realizadas", "Error", JOptionPane.ERROR_MESSAGE);
 
         });
 

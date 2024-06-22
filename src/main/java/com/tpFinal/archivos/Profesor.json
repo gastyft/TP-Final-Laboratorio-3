@@ -11,7 +11,7 @@
       "fechaFin" : [ 2024, 8, 1, 10, 0 ],
       "diasemana" : [ "MARTES", "JUEVES" ]
     },
-    "alumnosInscriptos" : [ "aa aa" ],
+    "alumnosInscriptos" : [ "aa aa", "rr rr", "ee ee" ],
     "profesor" : "dddd"
   } ]
 } ]
