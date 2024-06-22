@@ -25,6 +25,7 @@ public class MenuUsuario extends JDialog {
     private JButton crearButton;
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
+
     public MenuUsuario() {
         setContentPane(panelUsuario);
         setLocation(600, 200);

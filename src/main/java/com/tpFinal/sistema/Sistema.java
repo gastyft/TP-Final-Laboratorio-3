@@ -211,6 +211,7 @@ public class Sistema {
 
     }
 
+
     private void actualizarAlumnosConCurso(Curso curso) throws ExceptionPersonalizada, IOException {
         List<Alumno> alumnosActualizados = new ArrayList<>();
 

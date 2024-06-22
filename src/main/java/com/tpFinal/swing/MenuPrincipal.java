@@ -26,6 +26,7 @@ public class MenuPrincipal {
     private Sistema sistema = new Sistema();
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
+
     public MenuPrincipal() {
 
         logInButton.addActionListener(e -> {

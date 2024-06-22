@@ -194,6 +194,8 @@ public class menuAlumno extends JDialog{
            valorFactura.setText(String.valueOf(factura.getValor()));
         });
 
+
+
         imprimirFacturaButton.addActionListener(e -> {
            // Factura factura = facturaslist1.getSelectedValue();
            if (!alumno.getListFacturas().isEmpty()) {
