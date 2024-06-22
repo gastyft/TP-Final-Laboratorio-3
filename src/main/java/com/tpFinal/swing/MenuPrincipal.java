@@ -4,6 +4,7 @@ import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.enumeraciones.RolNombre;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
+import com.tpFinal.generadorPDF.PDFGenerator;
 import com.tpFinal.seguridad.SistemaLogin;
 import com.tpFinal.seguridad.entity.Usuario;
 import com.tpFinal.sistema.Sistema;
@@ -12,6 +13,7 @@ import javax.swing.*;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.List;
 
 public class MenuPrincipal {
@@ -23,6 +25,7 @@ public class MenuPrincipal {
     private JButton newUserButton;
     private Sistema sistema = new Sistema();
     private SistemaLogin sistemaLogin = new SistemaLogin();
+
 
     public MenuPrincipal() {
 
@@ -66,9 +69,13 @@ public class MenuPrincipal {
 
                         sistema.modificar(alumno1); // Actualizar el alumno en el sistema
                          sistema.actualizarCurso(alumno1.getCursosPagos());
+
+
+
+
                      //   sistema.modificarCurso(menualumno.getCursonuevo());
                        // sistema.verificarAlumnosEnCurso(alumno1); // Verificar inscripción en cursos
-                    } catch (ExceptionPersonalizada ex) {
+                    } catch (ExceptionPersonalizada | IOException ex) {
                         // Manejar excepción si ocurre alguna
                         JOptionPane.showMessageDialog(null, "Error en parte menu Principal parte rol alumno", "Error", JOptionPane.ERROR_MESSAGE);
                     }
