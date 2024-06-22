@@ -25,7 +25,6 @@ public class MenuUsuario extends JDialog {
     private JButton crearButton;
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
-
     public MenuUsuario() {
         setContentPane(panelUsuario);
         setLocation(600, 200);
@@ -34,15 +33,39 @@ public class MenuUsuario extends JDialog {
 
         crearButton.setEnabled(false); // Deshabilitar botón al inicio
 
-        mailField2.getDocument().addDocumentListener(new DocumentListener() {
+        nombreField1.getDocument().addDocumentListener(new DocumentListener() {
             public void insertUpdate(DocumentEvent e) {
-                validateEmail();
+                validateInputs();
             }
             public void removeUpdate(DocumentEvent e) {
-                validateEmail();
+                validateInputs();
             }
             public void changedUpdate(DocumentEvent e) {
-                validateEmail();
+                validateInputs();
+            }
+        });
+
+        mailField2.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void changedUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+        });
+
+        passwordField1.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void changedUpdate(DocumentEvent e) {
+                validateInputs();
             }
         });
 
@@ -77,15 +100,34 @@ public class MenuUsuario extends JDialog {
         });
     }
 
-    private void validateEmail() {
-        String email = mailField2.getText();
-        boolean isValid = isValidEmail(email);
-        crearButton.setEnabled(isValid);
-        if (!isValid) {
+    private void validateInputs() {
+        boolean isNameValid = isValidName(nombreField1.getText());
+        boolean isEmailValid = isValidEmail(mailField2.getText());
+       // boolean isPasswordValid = isValidPassword(new String(passwordField1.getPassword()));
+        crearButton.setEnabled(isNameValid && isEmailValid);//&& isPasswordValid);
+
+        if (!isNameValid) {
+            nombreField1.setBackground(Color.PINK);
+        } else {
+            nombreField1.setBackground(Color.WHITE);
+        }
+
+        if (!isEmailValid) {
             mailField2.setBackground(Color.PINK);
         } else {
             mailField2.setBackground(Color.WHITE);
         }
+
+    /*    if (!isPasswordValid) {
+            passwordField1.setBackground(Color.PINK);
+        } else {
+            passwordField1.setBackground(Color.WHITE);
+        }
+     */
+    }
+
+    public boolean isValidName(String name) {
+        return name != null && name.length() > 3;
     }
 
     public boolean isValidEmail(String email) {
@@ -93,6 +135,15 @@ public class MenuUsuario extends JDialog {
         Pattern pattern = Pattern.compile(emailRegex);
         return pattern.matcher(email).matches();
     }
+
+    /*public boolean isValidPassword(String password) {
+        // Debe contener al menos una letra mayúscula, un carácter especial y no tener espacios
+        String passwordRegex = "^(?=.*[A-Z])(?=.*[^\\w\\d])[^\\s]+$";
+        Pattern pattern = Pattern.compile(passwordRegex);
+        return pattern.matcher(password).matches();
+    }
+    */
+
 
     public void validar() {
         this.persona.setNombre(nombreField1.getText());

@@ -1,11 +1,15 @@
-<<<<<<< HEAD
-=======
 [ {
   "nombre" : "dd",
   "nombreUsuario" : "dd",
-  "email" : "dd@gmail.com",
+  "email" : "dd@g.com",
   "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImRkIn0.QRFhXymumRRdWTnLsekYG9NSjAj3ied4yTl6j4Per5WQq816yquDfrP_-k2Ji8NRt3cOrYfh-ARTlIToc3Mi8A",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP1"
+}, {
+  "nombre" : "aa",
+  "nombreUsuario" : "aa",
+  "email" : "aa@d.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImFhIn0.MWj5wd1n_1ZBYVEz2zAvNdehC-TTboWzbYECiVWzF3KoBH7cF81WlDaQ968imx5z6gfMOIxr9jbaj8C2TrmY6A",
   "rol" : "ROL_ALUMNO",
-  "legajo" : "AA1"
+  "legajo" : "AA2"
 } ]
->>>>>>> dc9adfa29d39a52f96bc0a4f7053242bd927e41f
