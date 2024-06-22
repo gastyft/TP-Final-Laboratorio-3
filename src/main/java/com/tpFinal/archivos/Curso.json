@@ -1,0 +1,81 @@
+[ {
+  "idCurso" : 0,
+  "cursosNombre" : "ALGORITMOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 21, 19, 45, 32, 106571900 ],
+    "fechaFin" : [ 2024, 6, 21, 23, 45, 32, 106571900 ],
+    "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+  },
+  "alumnosInscriptos" : [ "asd asd" ],
+  "profesor" : "Pedro"
+}, {
+  "idCurso" : 1,
+  "cursosNombre" : "BASES_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 21, 19, 45, 32, 106571900 ],
+    "fechaFin" : [ 2024, 6, 23, 19, 45, 32, 106571900 ],
+    "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "Pedro"
+}, {
+  "idCurso" : 16,
+  "cursosNombre" : "PROGRAMACION_JAVA",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+    "diasemana" : [ "LUNES", "MIERCOLES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+}, {
+  "idCurso" : 10,
+  "cursosNombre" : "PROGRAMACION_JAVA",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+}, {
+  "idCurso" : 13,
+  "cursosNombre" : "BASES_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+    "diasemana" : [ "JUEVES", "VIERNES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+}, {
+  "idCurso" : 34,
+  "cursosNombre" : "DESARROLLO_WEB",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 12, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 14, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+}, {
+  "idCurso" : 25,
+  "cursosNombre" : "PROGRAMACION_JAVA",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+}, {
+  "idCurso" : 27,
+  "cursosNombre" : "BASES_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+} ]

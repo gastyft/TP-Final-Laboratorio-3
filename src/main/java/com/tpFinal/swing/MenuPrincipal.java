@@ -59,6 +59,7 @@ public class MenuPrincipal {
                     // Esperar hasta que la ventana menualumno se cierre
 
 
+
                     Alumno alumno1 = menualumno.getAlumno();
 
 
