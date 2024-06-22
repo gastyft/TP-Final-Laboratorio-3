@@ -4,8 +4,10 @@ import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.CursosNombre;
 import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
+import com.tpFinal.generadorPDF.PDFGenerator;
 import com.tpFinal.repository.Repository;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -193,7 +195,7 @@ public class Sistema {
         }
     }
 
-    public void actualizarCurso(List<Curso> cursosPagos) throws ExceptionPersonalizada {
+    public void actualizarCurso(List<Curso> cursosPagos) throws ExceptionPersonalizada, IOException {
         List<Curso> cursoss = cursos;
         for (Curso cursoPagado : cursosPagos) {
             for (int i = 0; i < cursoss.size(); i++) {
@@ -209,7 +211,7 @@ public class Sistema {
 
     }
 
-    private void actualizarAlumnosConCurso(Curso curso) throws ExceptionPersonalizada {
+    private void actualizarAlumnosConCurso(Curso curso) throws ExceptionPersonalizada, IOException {
         List<Alumno> alumnosActualizados = new ArrayList<>();
 
         for (Alumno alumno : alumnosRepository.listar()) {
@@ -236,6 +238,12 @@ public class Sistema {
             }
             // Actualizar el alumno en el repositorio
             alumnosRepository.modificar(alumnoActualizado, alumnos.indexOf(alumnoActualizado));
+            PDFGenerator pdfGenerator = new PDFGenerator();
+            pdfGenerator.generarFacturasPDF(alumnoActualizado,"src/main/java/com/tpFinal/generadorPDF/factura"+alumnoActualizado.getLegajo());
+
+
+
+
         }
     }
 

@@ -12,6 +12,7 @@ import javax.swing.*;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.List;
 
 public class MenuPrincipal {
@@ -67,7 +68,7 @@ public class MenuPrincipal {
                          sistema.actualizarCurso(alumno1.getCursosPagos());
                      //   sistema.modificarCurso(menualumno.getCursonuevo());
                        // sistema.verificarAlumnosEnCurso(alumno1); // Verificar inscripción en cursos
-                    } catch (ExceptionPersonalizada ex) {
+                    } catch (ExceptionPersonalizada | IOException ex) {
                         // Manejar excepción si ocurre alguna
                         JOptionPane.showMessageDialog(null, "Error en parte menu Principal parte rol alumno", "Error", JOptionPane.ERROR_MESSAGE);
                     }
