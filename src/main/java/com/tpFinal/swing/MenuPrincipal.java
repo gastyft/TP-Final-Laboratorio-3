@@ -4,6 +4,7 @@ import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.enumeraciones.RolNombre;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
+import com.tpFinal.generadorPDF.PDFGenerator;
 import com.tpFinal.seguridad.SistemaLogin;
 import com.tpFinal.seguridad.entity.Usuario;
 import com.tpFinal.sistema.Sistema;
@@ -67,6 +68,10 @@ public class MenuPrincipal {
 
                         sistema.modificar(alumno1); // Actualizar el alumno en el sistema
                          sistema.actualizarCurso(alumno1.getCursosPagos());
+
+
+
+
                      //   sistema.modificarCurso(menualumno.getCursonuevo());
                        // sistema.verificarAlumnosEnCurso(alumno1); // Verificar inscripción en cursos
                     } catch (ExceptionPersonalizada | IOException ex) {

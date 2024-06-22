@@ -3,16 +3,15 @@ package com.tpFinal.swing;
 import com.tpFinal.entidades.Alumno;
 import com.tpFinal.entidades.Curso;
 import com.tpFinal.entidades.Factura;
-import com.tpFinal.entidades.Inscripcion;
 import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
-import com.tpFinal.repository.Repository;
+import com.tpFinal.generadorPDF.PDFGenerator;
 import com.tpFinal.sistema.Sistema;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -49,6 +48,7 @@ public class menuAlumno extends JDialog{
     private JLabel alumnoFactura;
     private JLabel cursoFactura;
     private JLabel valorFactura;
+    private JButton imprimirFacturaButton; // Nuevo botón para imprimir la factura
     private Sistema sistema;
 
     public menuAlumno(Alumno alumno, List<Curso> cursoList, Sistema sistema) {
@@ -122,6 +122,8 @@ public class menuAlumno extends JDialog{
                     alumno.addInscripcion(cursonuevo);
                     cursonuevo.agregarAlumnos(alumno);
                      alumno.agregarFactura(factura);
+
+
                     JOptionPane.showMessageDialog(null, "Inscripción añadida exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                     actualizarListaCursos();
                     actualizarListaInscripciones();
@@ -192,6 +194,27 @@ public class menuAlumno extends JDialog{
            valorFactura.setText(String.valueOf(factura.getValor()));
         });
 
+        imprimirFacturaButton.addActionListener(e -> {
+           // Factura factura = facturaslist1.getSelectedValue();
+        //    if (factura != null) {
+                try {
+                    String nombreArchivo = "src/main/java/com/tpFinal/archivos/facturasGeneradas/facturas"+alumno.getLegajo()+".pdf";
+
+                    PDFGenerator.generarFacturasPDF(alumno,nombreArchivo);
+
+                    // Obtener la ruta completa del archivo generado
+                    String rutaCompleta ="src/main/java/com/tpFinal/archivos/facturasGeneradas/facturas"+alumno.getLegajo()+".pdf"; // Reemplaza con la ruta real del archivo generado
+
+                    // Abrir el archivo PDF en el navegador
+                    Desktop.getDesktop().browse(new File(rutaCompleta).toURI());
+
+                    JOptionPane.showMessageDialog(null, "Factura impresa correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, "Error al imprimir la factura.", "Error", JOptionPane.ERROR_MESSAGE);
+                    ex.printStackTrace();
+                }
+
+        });
 
     }
     private void configurarRendererJListCursos() {
@@ -284,4 +307,6 @@ private void actualizarListaCursos() {
     public List<Curso> getCursoInscripcion() {
         return cursoInscripcion;
     }
+
+
 }

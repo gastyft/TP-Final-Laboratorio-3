@@ -22,14 +22,16 @@ import com.tpFinal.entidades.Factura;
 import java.io.IOException;
 import java.util.List;
 
+
+
 public class PDFGenerator{
     private static Image headerImage;
-    Alumno alumno;
-    String nombreArchivo;
-    public PDFGenerator(Alumno alumno, String nombreArchivo) {
-        this.alumno=alumno;
-        this.nombreArchivo=nombreArchivo;
-
+    private static Alumno alumno;
+    private static String nombreArchivo;
+    public PDFGenerator()//Alumno alumno, String nombreArchivo) {
+  //      this.alumno=alumno;
+     //   this.nombreArchivo=nombreArchivo;
+    {
     }
 
     public static void generarFacturasPDF(Alumno alumno, String nombreArchivo) throws IOException {
@@ -89,14 +91,10 @@ public class PDFGenerator{
       //  System.out.println("PDF generado correctamente: " + nombreArchivo);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-    /*    try {
-            generarFacturasPDF(alumno, nombreArchivo);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
+
+            generarFacturasPDF(  alumno, nombreArchivo);
 
     }
 
@@ -115,7 +113,7 @@ public class PDFGenerator{
             float y = rect.getTop() - 70;   // Ajustar la posición y
 
             try {
-                Image headerImage = new Image(ImageDataFactory.create("src/main/java/com/tpFinal/assets/UTN.jpeg"));
+                Image headerImage = new Image(ImageDataFactory.create("src/assets/UTN.jpeg"));
                 headerImage.setFixedPosition(x, y);
                 headerImage.setWidth(150);
                 new Canvas(canvas, pdfDoc, rect).add(headerImage);

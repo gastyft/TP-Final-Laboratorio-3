@@ -1,22 +1,22 @@
 [ {
-  "nombre" : "asd",
-  "apellido" : "asd",
-  "email" : "asd",
-  "legajo" : "AA2",
+  "nombre" : "aa",
+  "apellido" : "aa",
+  "email" : "aa",
+  "legajo" : "AA4",
   "cursosPagos" : [ {
-    "idCurso" : 0,
-    "cursosNombre" : "ALGORITMOS",
+    "idCurso" : 2,
+    "cursosNombre" : "PROGRAMACION_JAVA",
     "fecha" : {
-      "fechaInicio" : [ 2024, 6, 21, 19, 45, 32, 106571900 ],
-      "fechaFin" : [ 2024, 6, 21, 23, 45, 32, 106571900 ],
-      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "MARTES", "JUEVES" ]
     },
-    "alumnosInscriptos" : [ "asd asd" ],
-    "profesor" : "Pedro"
+    "alumnosInscriptos" : [ "aa aa" ],
+    "profesor" : "dddd"
   } ],
   "listFacturas" : [ {
     "idFactura" : 0,
-    "curso" : "ALGORITMOS",
-    "valor" : 4500.0
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
   } ]
 } ]

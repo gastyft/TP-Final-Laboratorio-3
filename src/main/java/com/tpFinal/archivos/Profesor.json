@@ -1,73 +1,17 @@
 [ {
-  "nombre" : "Mario",
-  "apellido" : "Lsun",
-  "email" : "LsMario@gmail.com",
-  "legajo" : "PP7",
-  "cursos" : [ ]
-}, {
-  "nombre" : "jose",
-  "apellido" : "kimd",
-  "email" : "kjose@gmail.com",
-  "legajo" : "PP10",
+  "nombre" : "dd",
+  "apellido" : "dd",
+  "email" : "dd",
+  "legajo" : "PP1",
   "cursos" : [ {
-    "idCurso" : 16,
+    "idCurso" : 2,
     "cursosNombre" : "PROGRAMACION_JAVA",
     "fecha" : {
       "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
       "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "LUNES", "MIERCOLES" ]
+      "diasemana" : [ "MARTES", "JUEVES" ]
     },
-    "alumnosInscriptos" : [ ],
-    "profesor" : "josekimd"
-  }, {
-    "idCurso" : 10,
-    "cursosNombre" : "PROGRAMACION_JAVA",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "MIERCOLES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ ],
-    "profesor" : "josekimd"
-  }, {
-    "idCurso" : 13,
-    "cursosNombre" : "BASES_DE_DATOS",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "JUEVES", "VIERNES" ]
-    },
-    "alumnosInscriptos" : [ ],
-    "profesor" : "josekimd"
-  }, {
-    "idCurso" : 34,
-    "cursosNombre" : "DESARROLLO_WEB",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 12, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 14, 0 ],
-      "diasemana" : [ "MIERCOLES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ ],
-    "profesor" : "josekimd"
-  }, {
-    "idCurso" : 25,
-    "cursosNombre" : "PROGRAMACION_JAVA",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 12, 0 ],
-      "diasemana" : [ "MIERCOLES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ ],
-    "profesor" : "josekimd"
-  }, {
-    "idCurso" : 27,
-    "cursosNombre" : "BASES_DE_DATOS",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
-      "diasemana" : [ "MIERCOLES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ ],
-    "profesor" : "josekimd"
+    "alumnosInscriptos" : [ "aa aa" ],
+    "profesor" : "dddd"
   } ]
 } ]
