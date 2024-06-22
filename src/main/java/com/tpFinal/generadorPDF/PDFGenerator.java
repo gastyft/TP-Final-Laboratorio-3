@@ -55,10 +55,7 @@ public class PDFGenerator{
             document.add(new Paragraph("Facturas del alumno").setBold().setFontSize(18).setTextAlignment(TextAlignment.CENTER));
             document.add(new Paragraph("\n"));
 
-            // Información del cliente
-            String nombreCliente = "Nombre del Cliente";
-            String legajoCliente = "12345"; // Ejemplo de legajo
-            String emailCliente = "cliente@example.com";
+
 
             // Crear tabla para el detalle del cliente
             // Crear tabla horizontal para el detalle del cliente
