@@ -238,9 +238,15 @@ public class Sistema {
             }
             // Actualizar el alumno en el repositorio
             alumnosRepository.modificar(alumnoActualizado, alumnos.indexOf(alumnoActualizado));
-            PDFGenerator pdfGenerator = new PDFGenerator();
-            pdfGenerator.generarFacturasPDF(alumnoActualizado,"src/main/java/com/tpFinal/generadorPDF/factura"+alumnoActualizado.getLegajo());
+         //   PDFGenerator pdfGenerator = new PDFGenerator();
+           // pdfGenerator.generarFacturasPDF(alumnoActualizado,"src/main/java/com/tpFinal/generadorPDF/facturasGeneradas/factura"+alumnoActualizado.getLegajo()+".pdf");
 
+            try {
+               PDFGenerator.generarFacturasPDF(alumnoActualizado, "src/main/java/factura" + alumnoActualizado.getLegajo()+".pdf");
+            } catch (IOException e) {//com/tpFinal/generadorPDF/facturasGeneradas/
+                e.printStackTrace();
+                throw new ExceptionPersonalizada("Error al generar el PDF para el alumno " + alumnoActualizado.getLegajo());
+            }
 
 
 

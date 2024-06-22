@@ -22,16 +22,17 @@ import com.tpFinal.entidades.Factura;
 import java.io.IOException;
 import java.util.List;
 
-public class PDFGenerator  {
+public class PDFGenerator{
     private static Image headerImage;
     Alumno alumno;
     String nombreArchivo;
-    public PDFGenerator() {
-         this.alumno=alumno;
-         this.nombreArchivo= nombreArchivo;
+    public PDFGenerator(Alumno alumno, String nombreArchivo) {
+        this.alumno=alumno;
+        this.nombreArchivo=nombreArchivo;
+
     }
 
-    public void generarFacturasPDF(Alumno alumno, String nombreArchivo) throws IOException {
+    public static void generarFacturasPDF(Alumno alumno, String nombreArchivo) throws IOException {
         PdfWriter writer = new PdfWriter(nombreArchivo);
         PdfDocument pdf = new PdfDocument(writer);
 
@@ -66,9 +67,9 @@ public class PDFGenerator  {
             detalleClienteTable.addCell(new Paragraph("Legajo:"));
             detalleClienteTable.addCell(new Paragraph("Cliente"));
             detalleClienteTable.addCell(new Paragraph("Email:"));
-            detalleClienteTable.addCell(new Paragraph(legajoCliente));
-            detalleClienteTable.addCell(new Paragraph(nombreCliente));
-            detalleClienteTable.addCell(new Paragraph(emailCliente));
+            detalleClienteTable.addCell(new Paragraph(alumno.getLegajo()));
+            detalleClienteTable.addCell(new Paragraph(alumno.getNombre()+" "+alumno.getApellido()));
+            detalleClienteTable.addCell(new Paragraph(alumno.getEmail()));
 
             document.add(detalleClienteTable);
         document.add(new Paragraph("\n"));
@@ -88,17 +89,18 @@ public class PDFGenerator  {
       //  System.out.println("PDF generado correctamente: " + nombreArchivo);
     }
 
- /*   public static void main(String[] args) {
+    public static void main(String[] args) {
 
-        try {
-            generarFacturasPDF(alumno, nombreArchivoPDF);
+    /*    try {
+            generarFacturasPDF(alumno, nombreArchivo);
         } catch (IOException e) {
             e.printStackTrace();
-        } */
+        }
+        */
+
     }
 
-
-      class  HeaderEventHandler implements IEventHandler {
+    static class HeaderEventHandler implements IEventHandler {
         @Override
         public void handleEvent(Event event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
@@ -113,7 +115,7 @@ public class PDFGenerator  {
             float y = rect.getTop() - 70;   // Ajustar la posición y
 
             try {
-                Image headerImage = new Image(ImageDataFactory.create("src/assets/UTN.jpeg"));
+                Image headerImage = new Image(ImageDataFactory.create("src/main/java/com/tpFinal/assets/UTN.jpeg"));
                 headerImage.setFixedPosition(x, y);
                 headerImage.setWidth(150);
                 new Canvas(canvas, pdfDoc, rect).add(headerImage);
@@ -125,7 +127,7 @@ public class PDFGenerator  {
         }
     }
 
-    class FooterEventHandler implements IEventHandler {
+    static class FooterEventHandler implements IEventHandler {
         @Override
         public void handleEvent(Event event) {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
@@ -174,3 +176,5 @@ public class PDFGenerator  {
 
 
     }
+}
+
