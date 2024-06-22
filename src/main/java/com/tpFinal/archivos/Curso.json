@@ -48,4 +48,34 @@
   },
   "alumnosInscriptos" : [ ],
   "profesor" : "josekimd"
+}, {
+  "idCurso" : 34,
+  "cursosNombre" : "DESARROLLO_WEB",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 12, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 14, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+}, {
+  "idCurso" : 25,
+  "cursosNombre" : "PROGRAMACION_JAVA",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
+}, {
+  "idCurso" : 27,
+  "cursosNombre" : "BASES_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "josekimd"
 } ]
