@@ -3,6 +3,7 @@ package com.tpFinal.entidades;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.tpFinal.excepciones.ExceptionPersonalizada;
 import com.tpFinal.repository.Repository;
 import com.tpFinal.seguridad.entity.Usuario;
 
@@ -65,7 +66,8 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
         return legajo;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre){
+
         this.nombre = nombre;
     }
 
@@ -73,7 +75,8 @@ public abstract class Persona implements Comparable<Persona>,Serializable {
         this.apellido = apellido;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email){
+
         this.email = email;
     }
 
