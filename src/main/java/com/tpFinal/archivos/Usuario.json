@@ -5,4 +5,11 @@
   "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InRpemkifQ._-TrhmDPdtiLM0iolFfooSrCqJlnQldN2m7vsCZ6B93EpQDCiyeBJdo4TjmVjNaFadek3-kkGKaJOakcj4xNGA",
   "rol" : "ROL_ALUMNO",
   "legajo" : "AA1"
+}, {
+  "nombre" : "jose",
+  "nombreUsuario" : "jose",
+  "email" : "lodeiro@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP4"
 } ]
