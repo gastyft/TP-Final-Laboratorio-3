@@ -111,7 +111,7 @@ public class MenuProfesor extends JDialog {
             }else{
 
                 Fecha fecha = new Fecha(fechaInicio,fechaFin,diaSemanas);
-                String nombreProfesor = profesor.getNombre() + profesor.getApellido();
+                String nombreProfesor = profesor.getNombre()+" " + profesor.getApellido();
 
                 Curso curso = new Curso((CursosNombre) materiaBox1.getSelectedItem(),nombreProfesor,fecha);
 

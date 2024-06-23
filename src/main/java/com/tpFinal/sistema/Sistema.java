@@ -16,17 +16,15 @@ public class Sistema {
     private final List<Alumno> alumnos;
     private final List<Profesor> profesores;
     private final List<Curso> cursos;
-    private final List<Inscripcion> inscripcions;
+
     private final Repository<Alumno> alumnosRepository = new Repository<>(Alumno.class);
     private final Repository<Profesor> profesorRepository = new Repository<>(Profesor.class);
     private final Repository<Curso> cursoRepository = new Repository<>(Curso.class);
-    private final Repository<Inscripcion> inscripcionRepository = new Repository<>(Inscripcion.class);
 
     public Sistema() {
         alumnos = alumnosRepository.listar();
         profesores = profesorRepository.listar();
         cursos = cursoRepository.listar();
-        inscripcions = inscripcionRepository.listar();
 
         //    Alumno alumno = new Alumno("Jose", "Lodeiro", "lodes@gmail.com");
         Profesor profesor = new Profesor("Pedro", "Lopez", "lopes@gmail.com");
@@ -55,19 +53,17 @@ public class Sistema {
     public void agregarPersona(Alumno alumno) {
 
         alumnosRepository.agregar(alumno);
-        alumnos.add(alumno);   //TODO ACTUALIZAR LA LISTA ACTUAL PARA QUE FUNCIONE EN SESIONN SINO
-        //TODO HAY QUE CERRAR Y VOLVER A ABRIR PARA QUE TRABAJE SOBRE ESE ELEMENTO
+        alumnos.add(alumno);
     }
 
     public void agregarProfesor(Profesor profesor) {
 
-        // profesores.add(profesor);
+
         profesorRepository.agregar(profesor);
         profesores.add(profesor);
     }
 
     public void agregarCurso(Curso curso3) {
-        //   cursos.add(curso3);
 
         cursoRepository.agregar(curso3);
         cursos.add(curso3);
@@ -85,9 +81,6 @@ public class Sistema {
         return cursos;
     }
 
-    public List<Inscripcion> devolverInscripcionsList() {
-        return inscripcions.stream().toList();
-    }
 
     public Profesor buscarPorLegajoProfesor(String legajoABuscar) {
         Profesor profesor = null;
@@ -165,35 +158,6 @@ public class Sistema {
 
 
 
-        public void agregarInscripciones(Inscripcion inscripcion) {
-        inscripcions.add(inscripcion);
-        inscripcionRepository.agregar(inscripcion);
-    }
-
-    public void actualizarCursos(List<Curso> nuevosCursosPorAlumno) throws ExceptionPersonalizada {
-        // Recorremos todos los cursos existentes en el repositorio
-        for (Curso cursoExistente : cursos) {
-            // Buscamos si existe un curso nuevo por alumno que coincida con el curso existente
-            for (Curso nuevoCurso : nuevosCursosPorAlumno) {
-                // Comparamos los cursos por nombre y fecha
-                if (cursoExistente.compararCurso(nuevoCurso.getCursosNombre())) {
-                    // Iteramos sobre los nombres de los alumnos inscritos en el nuevo curso
-                    for (String nombreAlumno : nuevoCurso.getAlumnosInscriptos()) {
-                        // Si el nombre del alumno no está en la lista de alumnos inscritos del curso existente, lo agregamos
-                        if (!cursoExistente.getAlumnosInscriptos().contains(nombreAlumno)) {
-                            cursoExistente.agregarAlumnos(nombreAlumno);
-                        }
-                    }
-                    // Guardamos los cambios en el repositorio después de agregar todos los alumnos necesarios
-                    try {
-                        modificarCurso(cursoExistente);
-                    } catch (ExceptionPersonalizada e) {
-                        e.printStackTrace(); // Manejar la excepción apropiadamente
-                    }
-                }
-            }
-        }
-    }
 
     public void actualizarCurso(List<Curso> cursosPagos) throws ExceptionPersonalizada, IOException {
         List<Curso> cursoss = cursos;
@@ -239,10 +203,6 @@ public class Sistema {
             }
             // Actualizar el alumno en el repositorio
             alumnosRepository.modificar(alumnoActualizado, alumnos.indexOf(alumnoActualizado));
-         //   PDFGenerator pdfGenerator = new PDFGenerator();
-           // pdfGenerator.generarFacturasPDF(alumnoActualizado,"src/main/java/com/tpFinal/generadorPDF/facturasGeneradas/factura"+alumnoActualizado.getLegajo()+".pdf");
-
-
 
 
         }
