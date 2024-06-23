@@ -1,36 +1,43 @@
 [ {
-  "nombre" : "aa",
-  "apellido" : "aa",
-  "email" : "aa@d.com",
-  "legajo" : "AA2",
+  "nombre" : "Lucas",
+  "apellido" : "Perez",
+  "email" : "lucas_perez@gmail.com",
+  "legajo" : "AA7",
   "cursosPagos" : [ {
-    "idCurso" : 2,
+    "idCurso" : 688,
     "cursosNombre" : "PROGRAMACION_JAVA",
     "fecha" : {
       "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
       "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "MARTES", "JUEVES" ]
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
     },
-    "alumnosInscriptos" : [ "aa aa" ],
-    "profesor" : "dddd"
-  }, {
-    "idCurso" : 5,
-    "cursosNombre" : "ALGORITMOS",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
-      "diasemana" : [ "MARTES", "MIERCOLES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ "aa aa" ],
-    "profesor" : "dddd"
+    "alumnosInscriptos" : [ "George Rusell", "Lucas Perez" ],
+    "profesor" : "Carlos Sanchez"
   } ],
   "listFacturas" : [ {
-    "idFactura" : 0,
+    "idFactura" : 6,
     "curso" : "PROGRAMACION_JAVA",
     "valor" : 5000.0
-  }, {
-    "idFactura" : 1,
-    "curso" : "ALGORITMOS",
-    "valor" : 4500.0
+  } ]
+}, {
+  "nombre" : "George",
+  "apellido" : "Rusell",
+  "email" : "georgef1@gmail.com",
+  "legajo" : "AA8",
+  "cursosPagos" : [ {
+    "idCurso" : 688,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "George Rusell", "Lucas Perez" ],
+    "profesor" : "Carlos Sanchez"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 2,
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
   } ]
 } ]

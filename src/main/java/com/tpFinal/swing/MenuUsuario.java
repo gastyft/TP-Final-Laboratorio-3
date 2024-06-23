@@ -102,7 +102,7 @@ public class MenuUsuario extends JDialog {
                 validar();
                 try {
                     RolNombre rol = RolNombre.ROL_ALUMNO;
-                    if (sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail(), passwordField1.getText(), persona.getLegajo(), rol)) {
+                    if (sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail().toLowerCase(), passwordField1.getText(), persona.getLegajo(), rol)) {
                         JOptionPane.showMessageDialog(MenuUsuario.this, "Alumno creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } catch (ExceptionPersonalizada ex) {
@@ -152,7 +152,7 @@ public class MenuUsuario extends JDialog {
     public void validar() {
         this.persona.setNombre(nombreField1.getText());
         this.persona.setApellido(apellidoField1.getText());
-        this.persona.setEmail(mailField2.getText());
+        this.persona.setEmail(mailField2.getText().toLowerCase());
     }
 
     public Persona getPersona() {

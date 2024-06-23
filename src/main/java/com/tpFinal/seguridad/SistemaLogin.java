@@ -14,7 +14,7 @@ public class SistemaLogin {
 
     public boolean crearUsuario(String nombre, String nombreUsuario, String email, String password, String legajo, RolNombre rol) throws ExceptionPersonalizada {
         try {
-            Usuario usuario = new Usuario(nombre, nombreUsuario, email, password, rol, legajo);
+            Usuario usuario = new Usuario(nombre, nombreUsuario, email.toLowerCase(), password, rol, legajo);
             if (jwtProvider.registrarUsuario(usuario)) {
             /*    SwingUtilities.invokeLater(() -> {
                     JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "APP", JOptionPane.INFORMATION_MESSAGE);
