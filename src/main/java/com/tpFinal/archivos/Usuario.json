@@ -40,4 +40,18 @@
   "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
   "rol" : "ROL_PROFESOR",
   "legajo" : "PP4"
+}, {
+  "nombre" : "dadad",
+  "nombreUsuario" : "dadad",
+  "email" : "adadad@cc.co",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImRhZGFkIn0.2qnTYyTZZrfj_OvUbl2hPCKJePvU9-yz5yX6ko4vOrJdTmdwXPJ8Nc-d90pA9IUVVUyvGC9jepVJTEH3njGRRQ",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA12"
+}, {
+  "nombre" : "ssss",
+  "nombreUsuario" : "ssss",
+  "email" : "ssssss@gam.co",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InNzc3MifQ.weCYTezRBUFpjUOkMR9B--fz0T3O7sim3NbCKFUF_kRftBNUCO6XzLMd3K8Zai_DCR0JX1fKzIwNtKqVuOlm5w",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA24"
 } ]

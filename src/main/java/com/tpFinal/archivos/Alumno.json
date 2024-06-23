@@ -40,4 +40,18 @@
     "curso" : "PROGRAMACION_JAVA",
     "valor" : 5000.0
   } ]
+}, {
+  "nombre" : "dadad",
+  "apellido" : "dadad",
+  "email" : "adadad@cc.co",
+  "legajo" : "AA12",
+  "cursosPagos" : [ ],
+  "listFacturas" : [ ]
+}, {
+  "nombre" : "ssss",
+  "apellido" : "ssss",
+  "email" : "ssssss@gam.co",
+  "legajo" : "AA24",
+  "cursosPagos" : [ ],
+  "listFacturas" : [ ]
 } ]
