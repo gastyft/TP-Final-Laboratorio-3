@@ -113,6 +113,7 @@ public class MenuUsuario extends JDialog {
                 JOptionPane.showMessageDialog(this, "Elija un radio button", "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
+
     }
 
     private void validateInputs() {

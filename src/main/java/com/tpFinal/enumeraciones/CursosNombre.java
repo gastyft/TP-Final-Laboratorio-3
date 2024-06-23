@@ -5,7 +5,9 @@ public enum CursosNombre {
     DESARROLLO_WEB(4000.0),
     BASES_DE_DATOS(3000.0),
     ALGORITMOS(4500.0),
-    ESTRUCTURAS_DE_DATOS(3500.0);
+    ESTRUCTURAS_DE_DATOS(3500.0),
+    DATA_SCIENCE(2500),
+    SPRING_BOOT(7000);
 
     private final double precio;
 
