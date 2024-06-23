@@ -45,6 +45,8 @@ public class MenuUsuario extends JDialog {
                 validateInputs();
             }
         });
+        profesorRadioButton.addActionListener(e -> validateInputs());
+        alumnoRadioButton.addActionListener(e -> validateInputs());
 
         apellidoField1.getDocument().addDocumentListener(new DocumentListener() {
             public void insertUpdate(DocumentEvent e) {
@@ -70,7 +72,7 @@ public class MenuUsuario extends JDialog {
             }
         });
 
-        passwordField1.getDocument().addDocumentListener(new DocumentListener() {
+     /*   passwordField1.getDocument().addDocumentListener(new DocumentListener() {
             public void insertUpdate(DocumentEvent e) {
                 validateInputs();
             }
@@ -80,7 +82,7 @@ public class MenuUsuario extends JDialog {
             public void changedUpdate(DocumentEvent e) {
                 validateInputs();
             }
-        });
+        }); */
 
         crearButton.addActionListener(e -> {
             if (profesorRadioButton.isSelected()) {
@@ -120,7 +122,7 @@ public class MenuUsuario extends JDialog {
       //  boolean isPasswordValid = isValidPassword(new String(passwordField1.getPassword()));
         boolean isRadioButtonSelected = profesorRadioButton.isSelected() || alumnoRadioButton.isSelected();
 
-        crearButton.setEnabled(isNameValid && isApellidoValid && isEmailValid && isRadioButtonSelected); //&& isPasswordValid
+        crearButton.setEnabled(isRadioButtonSelected && isNameValid && isApellidoValid && isEmailValid); //&& isPasswordValid
 
          // Cambiar color de fondo según la validez
         nombreField1.setBackground(isNameValid ? Color.GREEN : Color.PINK);
