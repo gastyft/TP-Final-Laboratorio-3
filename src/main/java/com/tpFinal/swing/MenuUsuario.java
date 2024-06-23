@@ -90,7 +90,7 @@ public class MenuUsuario extends JDialog {
                 validar();
                 try {
                     RolNombre rol = RolNombre.ROL_PROFESOR;
-                    if (sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail(), passwordField1.getText(), persona.getLegajo(), rol)) {
+                    if (sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail().toLowerCase(), passwordField1.getText(), persona.getLegajo(), rol)) {
                         JOptionPane.showMessageDialog(MenuUsuario.this, "Profesor creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } catch (ExceptionPersonalizada ex) {

@@ -1,0 +1,8 @@
+[ {
+  "nombre" : "Tiziano",
+  "apellido" : "Counago",
+  "email" : "tizi_123@gmail.com",
+  "legajo" : "AA1",
+  "cursosPagos" : [ ],
+  "listFacturas" : [ ]
+} ]
