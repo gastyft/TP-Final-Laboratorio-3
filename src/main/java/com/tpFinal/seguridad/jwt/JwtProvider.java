@@ -86,7 +86,6 @@ public class JwtProvider implements Serializable{
         try {
             Map<String, Usuario> usuarios = new HashMap<>();
 
-
             List<Usuario> usuariosDesdeRepository = usuarioRepository.listar(); // Obtener usuarios desde el Repository
             for (Usuario usuario :  usuariosDesdeRepository) {
                 usuarios.put(usuario.getNombreUsuario(), usuario);
@@ -109,11 +108,11 @@ public class JwtProvider implements Serializable{
         }
         try {
             // Hashear la contraseña antes de guardarla
-   //         String hashedPassword = BCrypt.hashpw(usuario.getPassword(), BCrypt.gensalt());
+       //         String hashedPassword = BCrypt.hashpw(usuario.getPassword(), BCrypt.gensalt());
        //     usuario.setPassword(hashedPassword); //HASHEO CONTRASENIA
            String token= generateToken(usuario.getPassword()); // GENERO TOKEN DE SEGURIDAD (Soy inseguro)
             usuario.setPassword(token);
-       //     System.out.println(usuario.toString());
+
             usuarioRepository.agregar(usuario);
             return true;
         } catch (Exception e) {

@@ -28,9 +28,7 @@ public class PDFGenerator{
     private static Image headerImage;
     private static Alumno alumno;
     private static String nombreArchivo;
-    public PDFGenerator()//Alumno alumno, String nombreArchivo) {
-  //      this.alumno=alumno;
-     //   this.nombreArchivo=nombreArchivo;
+    public PDFGenerator()
     {
     }
 
@@ -52,7 +50,7 @@ public class PDFGenerator{
 
 
             // Agregar contenido al PDF TITULO
-            document.add(new Paragraph("Facturas del alumno").setBold().setFontSize(18).setTextAlignment(TextAlignment.CENTER));
+            document.add(new Paragraph("Facturas de "+alumno.getNombre()+" "+alumno.getApellido()).setBold().setFontSize(18).setTextAlignment(TextAlignment.CENTER));
             document.add(new Paragraph("\n"));
 
 
@@ -64,7 +62,7 @@ public class PDFGenerator{
                     .setWidth( pdf.getDefaultPageSize().getWidth() - 120); // Ajustar posición y tamaño de la tabla
             // Agregar filas a la tabla con la información del cliente
             detalleClienteTable.addCell(new Paragraph("Legajo:"));
-            detalleClienteTable.addCell(new Paragraph("Cliente"));
+            detalleClienteTable.addCell(new Paragraph("Alumno"));
             detalleClienteTable.addCell(new Paragraph("Email:"));
             detalleClienteTable.addCell(new Paragraph(alumno.getLegajo()));
             detalleClienteTable.addCell(new Paragraph(alumno.getNombre()+" "+alumno.getApellido()));
@@ -73,7 +71,7 @@ public class PDFGenerator{
             document.add(detalleClienteTable);
         document.add(new Paragraph("\n"));
             for (Factura factura : alumno.getListFacturas()) {
-                document.add(new Paragraph("Número de Factura: " + factura.getIdFactura()));
+                document.add(new Paragraph("Código: " + factura.getIdFactura()));
                 document.add(new Paragraph("Curso: " + factura.getCurso().name()));
                 document.add(new Paragraph("Precio: $" + factura.getCurso().getPrecio()));
                 document.add(new Paragraph("------------------------------------------------------------------------------------------------------------------------------------------"));
@@ -85,7 +83,6 @@ public class PDFGenerator{
 
         }
 
-      //  System.out.println("PDF generado correctamente: " + nombreArchivo);
     }
 
     public static void main(String[] args) throws IOException {

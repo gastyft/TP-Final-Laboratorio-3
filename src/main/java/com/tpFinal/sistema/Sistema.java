@@ -26,7 +26,6 @@ public class Sistema {
         profesores = profesorRepository.listar();
         cursos = cursoRepository.listar();
 
-
         //    Alumno alumno = new Alumno("Jose", "Lodeiro", "lodes@gmail.com");
         Profesor profesor = new Profesor("Pedro", "Lopez", "lopes@gmail.com");
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -44,7 +43,7 @@ public class Sistema {
         //  }
         //   alumnos.add(alumno);
 
-        //agregarCurso(curso);
+       // agregarCurso(curso);
         //  agregarInscripciones(inscripcion);
         //agregarCurso(curso1);
 
@@ -54,19 +53,17 @@ public class Sistema {
     public void agregarPersona(Alumno alumno) {
 
         alumnosRepository.agregar(alumno);
-        alumnos.add(alumno);   //TODO ACTUALIZAR LA LISTA ACTUAL PARA QUE FUNCIONE EN SESIONN SINO
-        //TODO HAY QUE CERRAR Y VOLVER A ABRIR PARA QUE TRABAJE SOBRE ESE ELEMENTO
+        alumnos.add(alumno);
     }
 
     public void agregarProfesor(Profesor profesor) {
 
-        // profesores.add(profesor);
+
         profesorRepository.agregar(profesor);
         profesores.add(profesor);
     }
 
     public void agregarCurso(Curso curso3) {
-        //   cursos.add(curso3);
 
         cursoRepository.agregar(curso3);
         cursos.add(curso3);
@@ -83,7 +80,6 @@ public class Sistema {
     public List<Curso> devolverCursoslist() {
         return cursos;
     }
-
 
 
     public Profesor buscarPorLegajoProfesor(String legajoABuscar) {
@@ -163,9 +159,6 @@ public class Sistema {
 
 
 
-
-
-
     public void actualizarCurso(List<Curso> cursosPagos) throws ExceptionPersonalizada, IOException {
         List<Curso> cursoss = cursos;
         for (Curso cursoPagado : cursosPagos) {
@@ -210,10 +203,6 @@ public class Sistema {
             }
             // Actualizar el alumno en el repositorio
             alumnosRepository.modificar(alumnoActualizado, alumnos.indexOf(alumnoActualizado));
-         //   PDFGenerator pdfGenerator = new PDFGenerator();
-           // pdfGenerator.generarFacturasPDF(alumnoActualizado,"src/main/java/com/tpFinal/generadorPDF/facturasGeneradas/factura"+alumnoActualizado.getLegajo()+".pdf");
-
-
 
 
         }

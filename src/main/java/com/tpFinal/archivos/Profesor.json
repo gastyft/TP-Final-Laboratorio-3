@@ -1,0 +1,27 @@
+[ {
+  "nombre" : "dd",
+  "apellido" : "dd",
+  "email" : "dd@g.com",
+  "legajo" : "PP1",
+  "cursos" : [ {
+    "idCurso" : 2,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "MARTES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "aa aa" ],
+    "profesor" : "dddd"
+  }, {
+    "idCurso" : 5,
+    "cursosNombre" : "ALGORITMOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+      "diasemana" : [ "MARTES", "MIERCOLES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "aa aa" ],
+    "profesor" : "dddd"
+  } ]
+} ]

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -69,14 +70,15 @@ public class Repository<T> implements IRepository<T> {
         public void modificar(T objetoOriginal, int index) { //Recibe el original o se puede
             //modificar para que reciba el index. Y el objeto nuevo modificado
             cargar();
-            //System.out.println(index);
+
             if (index != -1) {
                 this.listaArchivos.set(index, objetoOriginal);
-                System.out.println("Se modifico correctamente "+ objetoOriginal);
+
             } else {
                 // Si el objeto no está en la lista, puedes manejarlo según sea necesario,
                 // por ejemplo, lanzar una excepción, agregarlo, etc.
-                System.out.println("El objeto no existe en la lista.");
+                JOptionPane.showMessageDialog(null, "Error en archivo", "Error", JOptionPane.ERROR_MESSAGE);
+
             }
             guardar();
         }

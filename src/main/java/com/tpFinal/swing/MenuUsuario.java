@@ -25,7 +25,6 @@ public class MenuUsuario extends JDialog {
     private JButton crearButton;
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
-
     public MenuUsuario() {
         setContentPane(panelUsuario);
         setLocation(600, 200);
@@ -34,15 +33,52 @@ public class MenuUsuario extends JDialog {
 
         crearButton.setEnabled(false); // Deshabilitar botón al inicio
 
-        mailField2.getDocument().addDocumentListener(new DocumentListener() {
+        // Añadir DocumentListener a todos los campos relevantes
+        nombreField1.getDocument().addDocumentListener(new DocumentListener() {
             public void insertUpdate(DocumentEvent e) {
-                validateEmail();
+                validateInputs();
             }
             public void removeUpdate(DocumentEvent e) {
-                validateEmail();
+                validateInputs();
             }
             public void changedUpdate(DocumentEvent e) {
-                validateEmail();
+                validateInputs();
+            }
+        });
+
+        apellidoField1.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void changedUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+        });
+
+        mailField2.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void changedUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+        });
+
+        passwordField1.getDocument().addDocumentListener(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validateInputs();
+            }
+            public void changedUpdate(DocumentEvent e) {
+                validateInputs();
             }
         });
 
@@ -77,23 +113,40 @@ public class MenuUsuario extends JDialog {
         });
     }
 
-    private void validateEmail() {
-        String email = mailField2.getText();
-        boolean isValid = isValidEmail(email);
-        crearButton.setEnabled(isValid);
-        if (!isValid) {
-            mailField2.setBackground(Color.PINK);
-        } else {
-            mailField2.setBackground(Color.WHITE);
-        }
+    private void validateInputs() {
+        boolean isNameValid = isValidName(nombreField1.getText());
+        boolean isApellidoValid = isValidName(apellidoField1.getText());
+        boolean isEmailValid = isValidEmail(mailField2.getText());
+      //  boolean isPasswordValid = isValidPassword(new String(passwordField1.getPassword()));
+        boolean isRadioButtonSelected = profesorRadioButton.isSelected() || alumnoRadioButton.isSelected();
+
+        crearButton.setEnabled(isNameValid && isApellidoValid && isEmailValid && isRadioButtonSelected); //&& isPasswordValid
+
+         // Cambiar color de fondo según la validez
+        nombreField1.setBackground(isNameValid ? Color.GREEN : Color.PINK);
+        apellidoField1.setBackground(isApellidoValid ? Color.GREEN : Color.PINK);
+        mailField2.setBackground(isEmailValid ? Color.GREEN : Color.PINK);
+       // passwordField1.setBackground(isPasswordValid ? Color.WHITE : Color.PINK);
     }
 
+    public boolean isValidName(String name) {
+        String nameRegex = "^[a-zA-Z]{4,}$";
+        Pattern pattern = Pattern.compile(nameRegex);
+        return name != null && pattern.matcher(name).matches();
+    }
     public boolean isValidEmail(String email) {
         String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
         Pattern pattern = Pattern.compile(emailRegex);
         return pattern.matcher(email).matches();
     }
-
+/*
+    public boolean isValidPassword(String password) {
+        // Debe contener al menos una letra mayúscula, un carácter especial y no tener espacios
+        String passwordRegex = "^(?=.*[A-Z])(?=.*[^\\w\\d])[^\\s]+$";
+        Pattern pattern = Pattern.compile(passwordRegex);
+        return pattern.matcher(password).matches();
+    }
+*/
     public void validar() {
         this.persona.setNombre(nombreField1.getText());
         this.persona.setApellido(apellidoField1.getText());

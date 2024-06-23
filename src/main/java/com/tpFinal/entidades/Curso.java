@@ -8,10 +8,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.TreeSet;
+
 
 public class Curso implements Serializable, Comparable<Curso>  {
-  private static int idCursoAuto;
+
+    private static int idCursoAuto;
     private final int idCurso;
     private static Repository<Curso> r;
 
@@ -68,13 +69,7 @@ public class Curso implements Serializable, Comparable<Curso>  {
              actualizarAlumnosInscriptosEnRepo(); // Actualizar el curso en el repositorio
         }
     }
-    public void agregarAlumnos(String alumno){
 
-        if (!alumnosInscriptos.contains(alumno)) {
-            alumnosInscriptos.add(alumno);
-            actualizarAlumnosInscriptosEnRepo(); // Actualizar el curso en el repositorio
-        }
-    }
      private void actualizarAlumnosInscriptosEnRepo() {
         try {
             r.modificar(this, r.listar().indexOf(this)); // r es tu repositorio de cursos
@@ -94,14 +89,7 @@ public class Curso implements Serializable, Comparable<Curso>  {
     public void setFecha(Fecha fecha) {
         this.fecha = fecha;
     }
-/*
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Curso curso = (Curso) o;
-        return cursosNombre == curso.cursosNombre && Objects.equals(nombreProfesor, curso.nombreProfesor) && Objects.equals(fecha, curso.fecha);
-    } */
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
