@@ -10,6 +10,8 @@ import com.tpFinal.swing.MenuAdmin.MenuAdmin;
 
 import javax.swing.*;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -20,20 +22,21 @@ public class MenuPrincipal {
     private JPasswordField passwordField1;
     private JButton logInButton;
     private JButton newUserButton;
+    private JPanel imagenField;
     private Sistema sistema = new Sistema();
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
 
 
     public MenuPrincipal() {
-
-    /*    try {
+/*
+       try {
             sistemaLogin.crearUsuario("admin","admin","admin@admin.ar","admin","admin",RolNombre.ROL_ADMIN);
         } catch (ExceptionPersonalizada e) {
             throw new RuntimeException(e);
         }
-        */
-
+  */
+setupImagenField();
         logInButton.addActionListener(e -> {
 
             String usuario = UsuarioField1.getText();
@@ -42,8 +45,8 @@ public class MenuPrincipal {
             Usuario usuario1 = sistemaLogin.login(usuario, contraseniaStr); //Convierto el array a String para
             //trabajarlo dentro del metodo como String(Por plantearlo inicialmente asi)
             // Limpiar el STRING de caracteres después de usarlo para que no quede en memoria
-            contraseniaStr = null;
-
+            contraseniaStr ="";
+            passwordField1.setText("");
             if (usuario1 != null) {
                 JOptionPane.showMessageDialog(null, "BIENVENIDO");
                 //TODO BUSCARR POR LEGAJO Y DEVOLVER ALUMNO O PROFESOR
@@ -75,16 +78,11 @@ public class MenuPrincipal {
                         sistema.modificar(alumno1); // Actualizar el alumno en el sistema
                          sistema.actualizarCurso(alumno1.getCursosPagos());
 
-
-
-
-                     //   sistema.modificarCurso(menualumno.getCursonuevo());
-                       // sistema.verificarAlumnosEnCurso(alumno1); // Verificar inscripción en cursos
                     } catch (ExceptionPersonalizada | IOException ex) {
                         // Manejar excepción si ocurre alguna
                         JOptionPane.showMessageDialog(null, "Error en parte menu Principal parte rol alumno", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-                    //Modificar alumno, curso e incripcion si es que se modifican
+
                 } else if (usuario1.getRol().equals(RolNombre.ROL_PROFESOR)) {
 
                     List<Curso> cursos = sistema.devolverCursoslist();
@@ -121,15 +119,53 @@ public class MenuPrincipal {
             else if(persona instanceof Profesor profesor)
                 sistema.agregarProfesor(profesor);
         });
-    }
 
+    }
+    private void setupImagenField() {
+        // Crear un JLabel para la imagen
+        JLabel imageLabel = new JLabel();
+
+        // Cargar la imagen desde un archivo y redimensionarla
+        try {
+            // Cambia la ruta de acuerdo a donde tengas almacenada tu imagen
+            File imgFile = new File("src/assets/UTN.jpeg");
+            ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath()); // Cargar la imagen como ImageIcon
+
+            // Redimensionar la imagen al tamaño deseado
+            Image image = icon.getImage().getScaledInstance(300, 98,Image.SCALE_SMOOTH); // Ancho x Alto.
+            // SMOOTH aumenta la calidad de imagen
+            icon.setImage(image); // Establecer la imagen redimensionada en el ImageIcon
+
+            imageLabel.setIcon(icon); // Establecer el ImageIcon en el JLabel
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Configurar el layout del JPanel imagenField
+       // imagenField.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 10));
+        imagenField.setLayout(new FlowLayout());
+
+        // Configurar el layout del JPanel imagenField
+        imagenField.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+     //   gbc.gridx = 0;
+      //  gbc.gridy = 0;
+      //  gbc.gridwidth = 1; // Asegura que ocupa una sola columna
+      //  gbc.gridheight = 1; // Asegura que ocupa una sola fila
+     //   gbc.anchor = GridBagConstraints.CENTER;
+        gbc.insets = new Insets(30, -80, 0, -70); // Espacios alrededor de la imagen
+
+        // Agregar el JLabel de la imagen al JPanel imagenField
+        imagenField.add(imageLabel, gbc);
+
+    }
     public static void main(String[] args) {
         JFrame frame = new JFrame("MenuPrincipal");
         frame.setContentPane(new MenuPrincipal().panelprincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null); // La consola no queda en el borde
-        frame.setSize(500, 200);
+        frame.setSize(700, 200);
         frame.setVisible(true);
 
     }

@@ -1,0 +1,22 @@
+[ {
+  "nombre" : "admin",
+  "nombreUsuario" : "admin",
+  "email" : "admin@admin.ar",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImFkbWluIn0.EfgNS19NHwLvaXSz1iJ6jIecrfEH7wWl6JVkgRcPMssjFMJzvVcsiYXEvMcgbqw83mzcav8Fhl0H6TuvgV83sQ",
+  "rol" : "ROL_ADMIN",
+  "legajo" : "admin"
+}, {
+  "nombre" : "Sofia",
+  "nombreUsuario" : "sofia",
+  "email" : "sofi123@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InNvZmlhIn0.sb6WylVEalAgKhZw47HZwKQlK5guS1AtPXubc_nhjk0G7oQ5zTHrT-gpy0YYJVqvYgIen382NISLwh6vx7lGhg",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP2"
+}, {
+  "nombre" : "Tiziano",
+  "nombreUsuario" : "tiziano",
+  "email" : "tizi123@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InRpemlhbm8ifQ.rN9_PwFS_CCYojqxOWOmoCng4YSajJD34iIDmdPM8avheOItsfBgjZFpM3-jt2qbsGk5YsWbH2_kC1W7ZfQcyw",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA4"
+} ]
