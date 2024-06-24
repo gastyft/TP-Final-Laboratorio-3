@@ -1,6 +1,5 @@
 package com.tpFinal.entidades;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tpFinal.enumeraciones.CursosNombre;
 import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.repository.Repository;
@@ -69,6 +68,12 @@ public class Curso implements Serializable, Comparable<Curso>  {
             alumnosInscriptos.add(nombreCompleto);
              actualizarAlumnosInscriptosEnRepo(); // Actualizar el curso en el repositorio
         }
+    }
+    //Eliminar un alumno del curso
+    public void eliminarAlumno(Alumno alumno) {
+        String nombreCompleto = alumno.getNombre() + " " + alumno.getApellido();
+        alumnosInscriptos.remove(nombreCompleto);
+        actualizarAlumnosInscriptosEnRepo(); // Update the course in the repository
     }
 
      private void actualizarAlumnosInscriptosEnRepo() {

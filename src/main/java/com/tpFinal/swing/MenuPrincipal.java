@@ -1,18 +1,15 @@
 package com.tpFinal.swing;
 
 import com.tpFinal.entidades.*;
-import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.enumeraciones.RolNombre;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
-import com.tpFinal.generadorPDF.PDFGenerator;
 import com.tpFinal.seguridad.SistemaLogin;
 import com.tpFinal.seguridad.entity.Usuario;
 import com.tpFinal.sistema.Sistema;
+import com.tpFinal.swing.MenuAdmin.MenuAdmin;
 
 import javax.swing.*;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.List;
 
@@ -27,7 +24,15 @@ public class MenuPrincipal {
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
 
+
     public MenuPrincipal() {
+
+    /*    try {
+            sistemaLogin.crearUsuario("admin","admin","admin@admin.ar","admin","admin",RolNombre.ROL_ADMIN);
+        } catch (ExceptionPersonalizada e) {
+            throw new RuntimeException(e);
+        }
+        */
 
         logInButton.addActionListener(e -> {
 
@@ -81,8 +86,7 @@ public class MenuPrincipal {
                     }
                     //Modificar alumno, curso e incripcion si es que se modifican
                 } else if (usuario1.getRol().equals(RolNombre.ROL_PROFESOR)) {
-                    Profesor profesor = sistema.buscarPorLegajoProfesor(usuario1.getLegajo());
-                    List<Profesor> profesores = sistema.devolverProfesoreslist();
+
                     List<Curso> cursos = sistema.devolverCursoslist();
                     Profesor profesor1 = sistema.buscarPorLegajoProfesor(usuario1.getLegajo());
                     MenuProfesor menuProfesor = new MenuProfesor(profesor1, cursos);
@@ -96,6 +100,12 @@ public class MenuPrincipal {
                     }
 
                     }
+                else if(usuario1.getRol().equals(RolNombre.ROL_ADMIN))
+                {
+                    MenuAdmin menuAdmin = new MenuAdmin(sistema,sistemaLogin);
+                    menuAdmin.setVisible(true);
+
+                }
             }
 
 

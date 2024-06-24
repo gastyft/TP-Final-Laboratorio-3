@@ -3,6 +3,7 @@ package com.tpFinal.sistema;
 import com.tpFinal.entidades.*;
 import com.tpFinal.enumeraciones.CursosNombre;
 import com.tpFinal.enumeraciones.DiaSemana;
+import com.tpFinal.enumeraciones.RolNombre;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
 import com.tpFinal.generadorPDF.PDFGenerator;
 import com.tpFinal.repository.Repository;
@@ -89,8 +90,28 @@ public class Sistema {
                 profesor = profe;
             }
         }
+
         return profesor;
     }
+    public  Profesor buscarPofesorPorNombre(String nombreProfesor){
+        Profesor profesor = null;
+        for(Profesor profesor1 : profesores){
+            if((profesor1.getNombre() + " " + profesor1.getApellido()).equals(nombreProfesor)){
+                profesor=profesor1;
+            }
+        }
+        return profesor;
+    }
+
+   public Curso buscarCursoPorNombre(CursosNombre nombreCursoABuscar){
+        Curso cursoAdevolver =null;
+        for(Curso curso1 : cursos){
+            if(curso1.compararCurso(nombreCursoABuscar)){
+                cursoAdevolver = curso1;
+            }
+        }
+        return cursoAdevolver;
+   }
 
     public Alumno buscarPorLegajoAlumno(String legajoABuscar) {
         Alumno alumno = null;
@@ -156,6 +177,10 @@ public class Sistema {
             }
         }
 
+    public void eliminarCurso(Curso cursoEliminar){
+        cursos.remove(cursoEliminar);
+        cursoRepository.eliminar(cursoEliminar);
+    }
 
 
 
@@ -176,7 +201,7 @@ public class Sistema {
     }
 
 
-    private void actualizarAlumnosConCurso(Curso curso) throws ExceptionPersonalizada, IOException {
+    public void actualizarAlumnosConCurso(Curso curso) throws ExceptionPersonalizada, IOException {
         List<Alumno> alumnosActualizados = new ArrayList<>();
 
         for (Alumno alumno : alumnosRepository.listar()) {

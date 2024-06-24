@@ -23,6 +23,7 @@ public class MenuUsuario extends JDialog {
     private JRadioButton profesorRadioButton;
     private JRadioButton alumnoRadioButton;
     private JButton crearButton;
+    private JTextField nombreUsuarioField;
     private SistemaLogin sistemaLogin = new SistemaLogin();
 
     public MenuUsuario() {
@@ -90,7 +91,7 @@ public class MenuUsuario extends JDialog {
                 validar();
                 try {
                     RolNombre rol = RolNombre.ROL_PROFESOR;
-                    if (sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail().toLowerCase(), passwordField1.getText(), persona.getLegajo(), rol)) {
+                    if (sistemaLogin.crearUsuario(persona.getNombre(),nombreUsuarioField.getText(), persona.getEmail().toLowerCase(), passwordField1.getText(), persona.getLegajo(), rol)) {
                         JOptionPane.showMessageDialog(MenuUsuario.this, "Profesor creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } catch (ExceptionPersonalizada ex) {
@@ -102,7 +103,7 @@ public class MenuUsuario extends JDialog {
                 validar();
                 try {
                     RolNombre rol = RolNombre.ROL_ALUMNO;
-                    if (sistemaLogin.crearUsuario(persona.getNombre(), persona.getNombre(), persona.getEmail().toLowerCase(), passwordField1.getText(), persona.getLegajo(), rol)) {
+                    if (sistemaLogin.crearUsuario(persona.getNombre(),nombreUsuarioField.getText(), persona.getEmail().toLowerCase(), passwordField1.getText(), persona.getLegajo(), rol)) {
                         JOptionPane.showMessageDialog(MenuUsuario.this, "Alumno creado", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } catch (ExceptionPersonalizada ex) {
