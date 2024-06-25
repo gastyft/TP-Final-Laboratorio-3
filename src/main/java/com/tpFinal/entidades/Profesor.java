@@ -16,11 +16,12 @@ public class Profesor extends Persona implements Serializable {
     super("PP");
   }
 
-  public Profesor(String nombre, String apellido, String email ) {
+  public Profesor(String nombre, String apellido, String email )
+  {
     super(nombre, apellido, email ,"PP");
   }
-  public boolean addCurso(Curso cursonuevo) throws ExceptionPersonalizada {
-
+  public boolean addCurso(Curso cursonuevo) throws ExceptionPersonalizada
+  {
 
  //   boolean agregarcurso = cursos.stream().anyMatch(curso -> curso.equals(cursonuevo));
     boolean agregarcurso = this.cursos.stream().anyMatch(curso1 -> curso1.compareTo(cursonuevo) == 0 && curso1.compararCurso(cursonuevo)&& curso1.compararDia(cursonuevo));
@@ -31,6 +32,14 @@ public class Profesor extends Persona implements Serializable {
     } else {
       throw new ExceptionPersonalizada("Ya estas en el curso");
     }
+  }
+  public boolean eliminarCurso(Curso curso) throws ExceptionPersonalizada {
+      if(!curso.tieneAlumnosInscriptos()){
+        return cursos.remove(curso);
+      }else{
+        throw new ExceptionPersonalizada("el Curso tiene alumnos");
+      }
+
   }
 
   public  List<Curso> getCursos() {

@@ -29,13 +29,13 @@ public class MenuPrincipal {
 
 
     public MenuPrincipal() {
-/*
+     /*
        try {
             sistemaLogin.crearUsuario("admin","admin","admin@admin.ar","admin","admin",RolNombre.ROL_ADMIN);
         } catch (ExceptionPersonalizada e) {
             throw new RuntimeException(e);
         }
-  */
+     */
 setupImagenField();
         logInButton.addActionListener(e -> {
 

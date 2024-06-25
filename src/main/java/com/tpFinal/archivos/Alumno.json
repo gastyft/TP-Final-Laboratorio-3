@@ -1,21 +1,56 @@
 [ {
-  "nombre" : "Tiziano",
-  "apellido" : "Counago",
-  "email" : "tizi123@gmail.com",
-  "legajo" : "AA4",
+  "nombre" : "aa",
+  "apellido" : "aa",
+  "email" : "aa@d.com",
+  "legajo" : "AA2",
   "cursosPagos" : [ {
     "idCurso" : 2,
     "cursosNombre" : "PROGRAMACION_JAVA",
     "fecha" : {
       "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
       "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+      "diasemana" : [ "MARTES", "JUEVES" ]
     },
-    "alumnosInscriptos" : [ "Tiziano Counago" ],
-    "profesor" : "Sofia Stejskal"
+    "alumnosInscriptos" : [ "aa aa" ],
+    "profesor" : "dddd"
+  }, {
+    "idCurso" : 5,
+    "cursosNombre" : "ALGORITMOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+      "diasemana" : [ "MARTES", "MIERCOLES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "aa aa" ],
+    "profesor" : "dddd"
   } ],
   "listFacturas" : [ {
+    "idFactura" : 0,
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
+  }, {
     "idFactura" : 1,
+    "curso" : "ALGORITMOS",
+    "valor" : 4500.0
+  } ]
+}, {
+  "nombre" : "tomas",
+  "apellido" : "Pantera",
+  "email" : "tomasp@gmail.com",
+  "legajo" : "AA6",
+  "cursosPagos" : [ {
+    "idCurso" : 6,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES" ]
+    },
+    "alumnosInscriptos" : [ "tomas Pantera" ],
+    "profesor" : "jose lodeiro"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 7,
     "curso" : "PROGRAMACION_JAVA",
     "valor" : 5000.0
   } ]

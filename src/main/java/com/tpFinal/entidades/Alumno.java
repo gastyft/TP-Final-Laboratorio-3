@@ -46,7 +46,7 @@ public class Alumno extends Persona {
     public List<Curso> getCursosPagos() {
         return cursosPagos;
     }
-    public boolean addInscripcion(Curso inscripcion) throws ExceptionPersonalizada { //TODO
+    public boolean addInscripcion(Curso inscripcion) throws ExceptionPersonalizada {
 
         Curso cursoInscripcion = inscripcion;
 

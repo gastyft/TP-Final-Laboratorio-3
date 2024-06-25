@@ -1,22 +1,36 @@
 [ {
+  "nombre" : "Tiziano",
+  "nombreUsuario" : "Tiziano",
+  "email" : "tizi_123@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InRpemkifQ._-TrhmDPdtiLM0iolFfooSrCqJlnQldN2m7vsCZ6B93EpQDCiyeBJdo4TjmVjNaFadek3-kkGKaJOakcj4xNGA",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA1"
+}, {
+  "nombre" : "jose",
+  "nombreUsuario" : "jose",
+  "email" : "lodeiro@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP4"
+}, {
+  "nombre" : "tomas",
+  "nombreUsuario" : "tomas",
+  "email" : "tomasp@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA6"
+}, {
+  "nombre" : "maria",
+  "nombreUsuario" : "maria",
+  "email" : "maria@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP32"
+}, {
   "nombre" : "admin",
   "nombreUsuario" : "admin",
   "email" : "admin@admin.ar",
   "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImFkbWluIn0.EfgNS19NHwLvaXSz1iJ6jIecrfEH7wWl6JVkgRcPMssjFMJzvVcsiYXEvMcgbqw83mzcav8Fhl0H6TuvgV83sQ",
   "rol" : "ROL_ADMIN",
   "legajo" : "admin"
-}, {
-  "nombre" : "Sofia",
-  "nombreUsuario" : "sofia",
-  "email" : "sofi123@gmail.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InNvZmlhIn0.sb6WylVEalAgKhZw47HZwKQlK5guS1AtPXubc_nhjk0G7oQ5zTHrT-gpy0YYJVqvYgIen382NISLwh6vx7lGhg",
-  "rol" : "ROL_PROFESOR",
-  "legajo" : "PP2"
-}, {
-  "nombre" : "Tiziano",
-  "nombreUsuario" : "tiziano",
-  "email" : "tizi123@gmail.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InRpemlhbm8ifQ.rN9_PwFS_CCYojqxOWOmoCng4YSajJD34iIDmdPM8avheOItsfBgjZFpM3-jt2qbsGk5YsWbH2_kC1W7ZfQcyw",
-  "rol" : "ROL_ALUMNO",
-  "legajo" : "AA4"
 } ]

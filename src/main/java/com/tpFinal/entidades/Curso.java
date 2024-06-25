@@ -60,7 +60,11 @@ public class Curso implements Serializable, Comparable<Curso>  {
     }
 
     public List<String> getAlumnosInscriptos() {
+
         return alumnosInscriptos;
+    }
+    public boolean tieneAlumnosInscriptos() {
+        return alumnosInscriptos.size()>0;
     }
     public void agregarAlumnos(Alumno alumno){
         String nombreCompleto = alumno.getNombre() + " " + alumno.getApellido();
