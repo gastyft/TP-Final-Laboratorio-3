@@ -89,16 +89,6 @@
   "alumnosInscriptos" : [ ],
   "profesor" : "jose lodeiro"
 }, {
-  "idCurso" : 28,
-  "cursosNombre" : "PROGRAMACION_JAVA",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "LUNES", "JUEVES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "maria ramanda"
-}, {
   "idCurso" : 29,
   "cursosNombre" : "DESARROLLO_WEB",
   "fecha" : {
@@ -119,12 +109,12 @@
   "alumnosInscriptos" : [ "tomas Pantera" ],
   "profesor" : "maria ramanda"
 }, {
-  "idCurso" : 40,
-  "cursosNombre" : "ALGORITMOS",
+  "idCurso" : 174,
+  "cursosNombre" : "PROGRAMACION_JAVA",
   "fecha" : {
     "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
     "fechaFin" : [ 2024, 8, 1, 12, 0 ],
-    "diasemana" : [ "MIERCOLES", "VIERNES" ]
+    "diasemana" : [ "LUNES", "MARTES" ]
   },
   "alumnosInscriptos" : [ ],
   "profesor" : "maria ramanda"

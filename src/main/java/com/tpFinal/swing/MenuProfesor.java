@@ -189,6 +189,7 @@ public class MenuProfesor extends JDialog {
             if(cursoslist.getSelectedValue() != null){
                 try {
                     profesor.eliminarCurso(cursoseleccionado);
+                    cursosDisponibles.remove(cursoseleccionado);
                     JOptionPane.showMessageDialog(null, "curso eliminado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                     actualizarCursos();
                 }catch (ExceptionPersonalizada er){
