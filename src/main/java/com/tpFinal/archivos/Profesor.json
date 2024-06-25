@@ -29,5 +29,25 @@
   "apellido" : "ramanda",
   "email" : "maria@gmail.com",
   "legajo" : "PP32",
-  "cursos" : [ ]
+  "cursos" : [ {
+    "idCurso" : 29,
+    "cursosNombre" : "DESARROLLO_WEB",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "MARTES", "MIERCOLES" ]
+    },
+    "alumnosInscriptos" : [ "tomas Pantera" ],
+    "profesor" : "maria ramanda"
+  }, {
+    "idCurso" : 30,
+    "cursosNombre" : "SPRING_BOOT",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "tomas Pantera" ],
+    "profesor" : "maria ramanda"
+  } ]
 } ]

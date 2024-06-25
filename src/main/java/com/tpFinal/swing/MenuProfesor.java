@@ -185,13 +185,20 @@ public class MenuProfesor extends JDialog {
 
         });
         eliminarCursoButton.addActionListener(es -> {
-            try {
-                profesor.eliminarCurso(cursoseleccionado);
-                JOptionPane.showMessageDialog(null, "curso eliminado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            }catch (ExceptionPersonalizada er){
-                JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 
+            if(cursoslist.getSelectedValue() != null){
+                try {
+                    profesor.eliminarCurso(cursoseleccionado);
+                    JOptionPane.showMessageDialog(null, "curso eliminado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                }catch (ExceptionPersonalizada er){
+                    JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+                }
+
+            }else {
+                JOptionPane.showMessageDialog(null, "No se seleccionó ningún curso para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
             }
+
 
         });
 
