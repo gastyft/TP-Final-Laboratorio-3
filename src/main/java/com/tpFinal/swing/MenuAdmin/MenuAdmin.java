@@ -89,10 +89,10 @@ public class MenuAdmin  extends JDialog {
         // Verificar si el usuario ya existe antes de agregarlo
         try {
             RolNombre rol = RolNombre.ROL_ADMIN;
-            sistemaLogin.crearUsuario("", usuario, "", contrasenia, "ADMIN", rol);
+            sistemaLogin.crearUsuario("admin", usuario, "admin@admin.com", contrasenia, "ADMIN", rol);
+              JOptionPane.showMessageDialog(crearUsuarioFrame, "Usuario admin creado exitosamente.");
         } catch (ExceptionPersonalizada ex) {
             JOptionPane.showMessageDialog(null, "Error al crear el usuario Admin", "Error", JOptionPane.ERROR_MESSAGE);
-
         }
     }
 
@@ -149,7 +149,7 @@ public class MenuAdmin  extends JDialog {
                 String nuevaContrasena = new String(nuevaContrasenaField.getPassword());
 
                 agregarUsuario(nuevoUsuario, nuevaContrasena);
-                JOptionPane.showMessageDialog(crearUsuarioFrame, "Usuario creado exitosamente.");
+
                 nuevoUsuarioField.setText("");
                 nuevaContrasenaField.setText("");
                 crearUsuarioFrame.dispose();
