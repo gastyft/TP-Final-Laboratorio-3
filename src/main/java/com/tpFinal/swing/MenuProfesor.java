@@ -9,6 +9,8 @@ import com.tpFinal.excepciones.ExceptionPersonalizada;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ public class MenuProfesor extends JDialog {
 
     private Profesor profesor;
     private List<Curso> cursosDisponibles;
+    private Curso cursoseleccionado;
     private JTabbedPane tabbedPane1;
     private JPanel panel1;
     private JButton logOutButton;
@@ -41,6 +44,7 @@ public class MenuProfesor extends JDialog {
     private JComboBox mesBox;
     private JButton crearCursoButton;
     private JList<DiaSemana> diasList;
+    private JButton eliminarCursoButton;
 
     public MenuProfesor(Profesor profesor1, List<Curso> cursos) {
 
@@ -64,6 +68,7 @@ public class MenuProfesor extends JDialog {
                 setVisible(false);
             }
         });
+
 
 
     }
@@ -152,10 +157,9 @@ public class MenuProfesor extends JDialog {
 
 
 
-
         buscarButton.addActionListener(e -> {
+             cursoseleccionado = cursoslist.getSelectedValue();
 
-            Curso cursoseleccionado= cursoslist.getSelectedValue();
             nombrecurso.setText(cursoseleccionado.getCursosNombre().name());
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             String formattedDateTimeinicio = cursoseleccionado.getFecha().getFechaInicio().format(formatter);
@@ -176,6 +180,18 @@ public class MenuProfesor extends JDialog {
                 alumnoModel.addElement(alumno);
             }
             alumnoslist1.setModel(alumnoModel);
+
+
+
+        });
+        eliminarCursoButton.addActionListener(es -> {
+            try {
+                profesor.eliminarCurso(cursoseleccionado);
+                JOptionPane.showMessageDialog(null, "curso eliminado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            }catch (ExceptionPersonalizada er){
+                JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+            }
 
         });
 

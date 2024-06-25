@@ -68,4 +68,24 @@
   },
   "alumnosInscriptos" : [ ],
   "profesor" : "jose lodeiro"
+}, {
+  "idCurso" : 23,
+  "cursosNombre" : "ALGORITMOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+    "diasemana" : [ "MARTES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "jose lodeiro"
+}, {
+  "idCurso" : 25,
+  "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
+    "diasemana" : [ "MIERCOLES", "VIERNES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "jose lodeiro"
 } ]
