@@ -146,7 +146,7 @@ public class MenuProfesor extends JDialog {
     }
 
     private void inicializarCursos(){
-
+        actualizarCursos();
         DefaultListModel<Curso> listModel = new DefaultListModel<>();
 
         for (Curso curso : profesor.getCursos()) {
@@ -190,6 +190,7 @@ public class MenuProfesor extends JDialog {
                 try {
                     profesor.eliminarCurso(cursoseleccionado);
                     JOptionPane.showMessageDialog(null, "curso eliminado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    actualizarCursos();
                 }catch (ExceptionPersonalizada er){
                     JOptionPane.showMessageDialog(null, er.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 
