@@ -52,7 +52,7 @@ public class Alumno extends Persona {
 
         boolean cursoPagado = cursosPagos.stream().anyMatch(curso -> curso.getCursosNombre().equals(cursoInscripcion.getCursosNombre()));
         if (!cursoPagado) {
-            // inscripciones.add(inscripcion);
+
               cursosPagos.add(inscripcion);
             return true;
         } else {

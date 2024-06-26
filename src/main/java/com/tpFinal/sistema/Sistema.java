@@ -27,16 +27,6 @@ public class Sistema {
         profesores = profesorRepository.listar();
         cursos = cursoRepository.listar();
 
-        //    Alumno alumno = new Alumno("Jose", "Lodeiro", "lodes@gmail.com");
-        Profesor profesor = new Profesor("Pedro", "Lopez", "lopes@gmail.com");
-        LocalDateTime localDateTime = LocalDateTime.now();
-        List<DiaSemana> diasemana = Arrays.asList(DiaSemana.LUNES, DiaSemana.MIERCOLES, DiaSemana.VIERNES);
-        Fecha fecha = new Fecha(localDateTime, localDateTime.plusHours(4), diasemana);
-        Fecha fecha2 = new Fecha(localDateTime, localDateTime.plusDays(2), diasemana);
-        Curso curso = new Curso(CursosNombre.ALGORITMOS, profesor.getNombre(), fecha);
-
-        Curso curso1 = new Curso(CursosNombre.BASES_DE_DATOS, profesor.getNombre(), fecha2);
-        
 
     }
 
