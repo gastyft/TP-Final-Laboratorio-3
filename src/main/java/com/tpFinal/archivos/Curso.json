@@ -6,6 +6,16 @@
     "fechaFin" : [ 2024, 8, 1, 10, 0 ],
     "diasemana" : [ "MIERCOLES" ]
   },
-  "alumnosInscriptos" : [ "Lucas Perez" ],
+  "alumnosInscriptos" : [ "Lucas Perez", "Mariela Díaz", "Daniela Gutierrez" ],
   "profesor" : "Mai Berterreche"
+}, {
+  "idCurso" : 9,
+  "cursosNombre" : "PROGRAMACION_JAVA",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+    "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+  },
+  "alumnosInscriptos" : [ "Daniela Gutierrez" ],
+  "profesor" : "Gastón Ftacla"
 } ]

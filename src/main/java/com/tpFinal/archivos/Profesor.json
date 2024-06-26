@@ -38,11 +38,11 @@
   "email" : "gastyftacla1@gmail.com",
   "legajo" : "PP55",
   "cursos" : [ {
-    "idCurso" : 22,
+    "idCurso" : 9,
     "cursosNombre" : "PROGRAMACION_JAVA",
     "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 20, 0 ],
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
       "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
     },
     "alumnosInscriptos" : [ "Daniela Gutierrez" ],
