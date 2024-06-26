@@ -130,7 +130,7 @@ setupImagenField();
         JLabel imageLabel = new JLabel();
 
         // Cargar la imagen desde un archivo y redimensionarla
-        try {
+
             // Cambia la ruta de acuerdo a donde tengas almacenada tu imagen
             File imgFile = new File("src/assets/UTN.jpeg");
             ImageIcon icon = new ImageIcon(imgFile.getAbsolutePath()); // Cargar la imagen como ImageIcon
@@ -141,9 +141,7 @@ setupImagenField();
             icon.setImage(image); // Establecer la imagen redimensionada en el ImageIcon
 
             imageLabel.setIcon(icon); // Establecer el ImageIcon en el JLabel
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         // Configurar el layout del JPanel imagenField
        // imagenField.setLayout(new FlowLayout(FlowLayout.LEFT, 40, 10));
