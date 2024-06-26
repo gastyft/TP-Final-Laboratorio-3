@@ -3,129 +3,29 @@
   "apellido" : "Martinez",
   "email" : "maurisebastian@gmail.com",
   "legajo" : "PP1",
-  "cursos" : [ {
-    "idCurso" : 8,
-    "cursosNombre" : "ALGORITMOS",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 20, 0 ],
-      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
-    },
-    "alumnosInscriptos" : [ "Jose Lodeiro" ],
-    "profesor" : "Mauricio Martinez"
-  } ]
+  "cursos" : [ ]
 }, {
   "nombre" : "Sofia",
   "apellido" : "Stejskal",
   "email" : "sofia123@gmail.com",
   "legajo" : "PP2",
-  "cursos" : [ {
-    "idCurso" : 22,
-    "cursosNombre" : "BASES_DE_DATOS",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 9, 1, 18, 0 ],
-      "fechaFin" : [ 2024, 11, 1, 20, 0 ],
-      "diasemana" : [ "MARTES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ "Jose Lodeiro", "Mariela Díaz" ],
-    "profesor" : "Sofia Stejskal"
-  } ]
+  "cursos" : [ ]
 }, {
   "nombre" : "Tiziano",
   "apellido" : "Counago",
   "email" : "tizicounago@gmail.com",
   "legajo" : "PP4",
-  "cursos" : [ {
-    "idCurso" : 39,
-    "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 22, 0 ],
-      "diasemana" : [ "MARTES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ ],
-    "profesor" : "Tiziano Counago"
-  } ]
+  "cursos" : [ ]
 }, {
   "nombre" : "Mai",
   "apellido" : "Berterreche",
   "email" : "maicaberterreche@gmail.com",
   "legajo" : "PP8",
-  "cursos" : [ {
-    "idCurso" : 2,
-    "cursosNombre" : "PROGRAMACION_JAVA",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
-    },
-    "alumnosInscriptos" : [ "Lucas Perez", "Juan Perez", "Mariela Díaz", "Daniela Gutierrez", "Jose Lodeiro" ],
-    "profesor" : "Mai Berterreche"
-  }, {
-    "idCurso" : 3,
-    "cursosNombre" : "DESARROLLO_WEB",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "MARTES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ "Jose Lodeiro" ],
-    "profesor" : "Mai Berterreche"
-  }, {
-    "idCurso" : 4,
-    "cursosNombre" : "SPRING_BOOT",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
-      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
-    },
-    "alumnosInscriptos" : [ "Lucas Perez", "Jose Lodeiro", "Mariela Díaz" ],
-    "profesor" : "Mai Berterreche"
-  }, {
-    "idCurso" : 684,
-    "cursosNombre" : "DATA_SCIENCE",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 22, 0 ],
-      "diasemana" : [ "MIERCOLES" ]
-    },
-    "alumnosInscriptos" : [ "Jose Lodeiro" ],
-    "profesor" : "Mai Berterreche"
-  }, {
-    "idCurso" : 1161,
-    "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 9, 1, 14, 0 ],
-      "fechaFin" : [ 2024, 11, 1, 16, 0 ],
-      "diasemana" : [ "MARTES", "JUEVES" ]
-    },
-    "alumnosInscriptos" : [ "Jose Lodeiro" ],
-    "profesor" : "Mai Berterreche"
-  } ]
+  "cursos" : [ ]
 }, {
   "nombre" : "Gastón",
   "apellido" : "Ftacla",
   "email" : "gastyftacla1@gmail.com",
   "legajo" : "PP55",
-  "cursos" : [ {
-    "idCurso" : 66,
-    "cursosNombre" : "SPRING_BOOT",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 22, 0 ],
-      "diasemana" : [ "MIERCOLES", "JUEVES", "VIERNES" ]
-    },
-    "alumnosInscriptos" : [ "Juan Perez" ],
-    "profesor" : "Gastón Ftacla"
-  }, {
-    "idCurso" : 67,
-    "cursosNombre" : "DESARROLLO_WEB",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 20, 0 ],
-      "diasemana" : [ "LUNES", "MARTES" ]
-    },
-    "alumnosInscriptos" : [ "Lucas Perez" ],
-    "profesor" : "Gastón Ftacla"
-  } ]
+  "cursos" : [ ]
 } ]

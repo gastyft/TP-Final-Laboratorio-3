@@ -74,16 +74,6 @@ public class MenuAdmin  extends JDialog {
     }
 
 
-    // public Map<String, String> obtenerUsuarios() {
-    //   return usuarios;
-    // }
-
-  /*  public boolean login(String usuario, String contrasena) {
-
-        // Verificar si el usuario y contraseña coinciden con algún usuario del mapa
-        return usuarios.containsKey(usuario) && usuarios.get(usuario).equals(contrasena);
-    }
-*/
 
     public void agregarUsuario(String usuario, String contrasenia) {
         // Verificar si el usuario ya existe antes de agregarlo
@@ -97,14 +87,6 @@ public class MenuAdmin  extends JDialog {
     }
 
 
-    public Curso buscarCursoPorNombre(CursosNombre nombre) {
-        for (Curso curso : cursos) {
-            if (curso.getCursosNombre() == nombre) {
-                return curso;
-            }
-        }
-        return null;
-    }
 
 
     public void crearUsuarioAdmin() {
@@ -226,7 +208,6 @@ public class MenuAdmin  extends JDialog {
                     JOptionPane.showMessageDialog(eliminarFrame, "No se encontró ningún alumno con ese legajo.", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-
                 Curso curso = sistemaPrincipal.buscarCursoPorNombre(cursoNombreEnum);
                 if (curso == null) {
                     JOptionPane.showMessageDialog(eliminarFrame, "No se encontró ningún curso con ese nombre.", "Error", JOptionPane.ERROR_MESSAGE);
