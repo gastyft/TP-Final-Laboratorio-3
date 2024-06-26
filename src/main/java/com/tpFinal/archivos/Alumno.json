@@ -11,7 +11,7 @@
       "fechaFin" : [ 2024, 8, 1, 10, 0 ],
       "diasemana" : [ "MIERCOLES" ]
     },
-    "alumnosInscriptos" : [ "Lucas Perez" ],
+    "alumnosInscriptos" : [ "Lucas Perez", "Mariela Díaz", "Daniela Gutierrez" ],
     "profesor" : "Mai Berterreche"
   } ],
   "listFacturas" : [ {
@@ -38,13 +38,55 @@
   "apellido" : "Díaz",
   "email" : "mari_diaz_96@gmail.com",
   "legajo" : "AA16",
-  "cursosPagos" : [ ],
-  "listFacturas" : [ ]
+  "cursosPagos" : [ {
+    "idCurso" : 7,
+    "cursosNombre" : "SPRING_BOOT",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "MIERCOLES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez", "Mariela Díaz", "Daniela Gutierrez" ],
+    "profesor" : "Mai Berterreche"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 7,
+    "curso" : "SPRING_BOOT",
+    "valor" : 7000.0
+  } ]
 }, {
   "nombre" : "Daniela",
   "apellido" : "Gutierrez",
   "email" : "dani_34@gmail.com",
   "legajo" : "AA18",
-  "cursosPagos" : [ ],
-  "listFacturas" : [ ]
+  "cursosPagos" : [ {
+    "idCurso" : 7,
+    "cursosNombre" : "SPRING_BOOT",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "MIERCOLES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez", "Mariela Díaz", "Daniela Gutierrez" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 22,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 20, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "Daniela Gutierrez" ],
+    "profesor" : "Gastón Ftacla"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 18,
+    "curso" : "SPRING_BOOT",
+    "valor" : 7000.0
+  }, {
+    "idFactura" : 19,
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
+  } ]
 } ]
