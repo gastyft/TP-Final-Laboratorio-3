@@ -20,6 +20,7 @@ public class Profesor extends Persona implements Serializable {
   {
     super(nombre, apellido, email ,"PP");
   }
+
   public boolean addCurso(Curso cursonuevo) throws ExceptionPersonalizada
   {
     boolean agregarcurso = this.cursos.stream().anyMatch(curso1 -> curso1.compareTo(cursonuevo) == 0 && curso1.compararCurso(cursonuevo)&& curso1.compararDia(cursonuevo));
