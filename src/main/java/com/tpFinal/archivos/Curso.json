@@ -1,5 +1,5 @@
 [ {
-  "idCurso" : 2,
+  "idCurso" : 6,
   "cursosNombre" : "PROGRAMACION_JAVA",
   "fecha" : {
     "fechaInicio" : [ 2024, 6, 1, 8, 0 ],

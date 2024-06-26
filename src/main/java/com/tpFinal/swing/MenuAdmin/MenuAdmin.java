@@ -217,11 +217,13 @@ public class MenuAdmin  extends JDialog {
                         curso.eliminarAlumno(alumno);
                         List<Curso> curso1 = new ArrayList<>();
                         curso1.add(curso);
-                        alumno.getCursosPagos().remove(curso);
-                        sistemaPrincipal.actualizarCurso(curso1);
-                        sistemaPrincipal.modificar(alumno);
-                        JOptionPane.showMessageDialog(eliminarFrame, "Alumno eliminado del curso exitosamente.");
-
+                       if( alumno.getCursosPagos().remove(curso)) {
+                           sistemaPrincipal.modificar(alumno);
+                           sistemaPrincipal.actualizarCurso(curso1);
+                           legajoAlumnoField.setText("");
+                           JOptionPane.showMessageDialog(eliminarFrame, "Alumno eliminado del curso exitosamente.");
+                       }
+                       else  JOptionPane.showMessageDialog(eliminarFrame, "Alumno no tenia curso asignado");
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(eliminarFrame, "Error al eliminar alumno del curso.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -275,12 +277,12 @@ public class MenuAdmin  extends JDialog {
                   return;
                 }
 
-
                 String profesorViejo;
 
                 Curso curso = sistemaPrincipal.buscarCursoPorNombre(nombreCurso);
                 profesorViejo = curso.getProfesor();
                 Profesor profeViejo = sistemaPrincipal.buscarPofesorPorNombre(profesorViejo);
+                legajoProfesorField.setText("");
                 if (curso == null) {
                     JOptionPane.showMessageDialog(frame, "No se encontró ningún curso con ese nombre.", "Error", JOptionPane.ERROR_MESSAGE);
              return;
@@ -288,7 +290,7 @@ public class MenuAdmin  extends JDialog {
                     curso.setProfesor(profesor.getNombre() + " " + profesor.getApellido());
 
                     try {
-                        profesor.addCurso(curso); //ya verifica
+                        profesor.addCurso(curso); //ya verifica el addCurso
                         List<Curso> cursoList = new ArrayList<>();
                         cursoList.add(curso);
                         sistemaPrincipal.actualizarCurso(cursoList);

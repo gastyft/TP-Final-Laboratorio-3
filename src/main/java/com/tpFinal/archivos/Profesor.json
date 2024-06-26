@@ -21,7 +21,17 @@
   "apellido" : "Berterreche",
   "email" : "maicaberterreche@gmail.com",
   "legajo" : "PP8",
-  "cursos" : [ ]
+  "cursos" : [ {
+    "idCurso" : 6,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "MARTES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
+  } ]
 }, {
   "nombre" : "Gastón",
   "apellido" : "Ftacla",
