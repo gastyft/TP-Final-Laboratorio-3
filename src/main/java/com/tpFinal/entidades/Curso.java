@@ -74,12 +74,13 @@ public class Curso implements Serializable, Comparable<Curso>  {
         }
     }
     //Eliminar un alumno del curso
-    public void eliminarAlumno(Alumno alumno) {
+    public boolean eliminarAlumno(Alumno alumno) {
         String nombreCompleto = alumno.getNombre() + " " + alumno.getApellido();
-        alumnosInscriptos.remove(nombreCompleto);
-        actualizarAlumnosInscriptosEnRepo(); // Update the course in the repository
+        if (alumnosInscriptos.remove(nombreCompleto)) {
+            actualizarAlumnosInscriptosEnRepo(); // Update the course in the repository
+            return true;
+        } else return false;
     }
-
      private void actualizarAlumnosInscriptosEnRepo() {
         try {
             r.modificar(this, r.listar().indexOf(this)); // r es tu repositorio de cursos

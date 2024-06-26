@@ -202,7 +202,7 @@ public class MenuAdmin  extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 String legajoAlumno = legajoAlumnoField.getText().toUpperCase();
                 CursosNombre cursoNombreEnum = (CursosNombre) nombreCursoComboBox.getSelectedItem();
-
+                legajoAlumnoField.setText("");
                 Alumno alumno = sistemaPrincipal.buscarPorLegajoAlumno(legajoAlumno);
                 if (alumno == null) {
                     JOptionPane.showMessageDialog(eliminarFrame, "No se encontró ningún alumno con ese legajo.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -214,13 +214,14 @@ public class MenuAdmin  extends JDialog {
                     return;
                 } else {
                     try {
-                        curso.eliminarAlumno(alumno);
-                        List<Curso> curso1 = new ArrayList<>();
-                        curso1.add(curso);
-                       if( alumno.getCursosPagos().remove(curso)) {
+
+
+                       if( alumno.getCursosPagos().remove(curso) &&  curso.eliminarAlumno(alumno)) {
+                           List<Curso> curso1 = new ArrayList<>();
+                           curso1.add(curso);
                            sistemaPrincipal.modificar(alumno);
                            sistemaPrincipal.actualizarCurso(curso1);
-                           legajoAlumnoField.setText("");
+
                            JOptionPane.showMessageDialog(eliminarFrame, "Alumno eliminado del curso exitosamente.");
                        }
                        else  JOptionPane.showMessageDialog(eliminarFrame, "Alumno no tenia curso asignado");
@@ -270,7 +271,7 @@ public class MenuAdmin  extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 String legajoProfesor = legajoProfesorField.getText().toUpperCase();
                 CursosNombre nombreCurso = (CursosNombre) nombreCursoComboBox.getSelectedItem();
-
+                legajoProfesorField.setText("");
                 Profesor profesor = sistemaPrincipal.buscarPorLegajoProfesor(legajoProfesor);
                 if (profesor == null) {
                     JOptionPane.showMessageDialog(frame, "No se encontró ningún profesor con ese legajo.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -282,7 +283,7 @@ public class MenuAdmin  extends JDialog {
                 Curso curso = sistemaPrincipal.buscarCursoPorNombre(nombreCurso);
                 profesorViejo = curso.getProfesor();
                 Profesor profeViejo = sistemaPrincipal.buscarPofesorPorNombre(profesorViejo);
-                legajoProfesorField.setText("");
+
                 if (curso == null) {
                     JOptionPane.showMessageDialog(frame, "No se encontró ningún curso con ese nombre.", "Error", JOptionPane.ERROR_MESSAGE);
              return;

@@ -8,4 +8,14 @@
   },
   "alumnosInscriptos" : [ "Jose Lodeiro" ],
   "profesor" : "Mai Berterreche"
+}, {
+  "idCurso" : 7,
+  "cursosNombre" : "SPRING_BOOT",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+    "diasemana" : [ "MIERCOLES" ]
+  },
+  "alumnosInscriptos" : [ ],
+  "profesor" : "Mai Berterreche"
 } ]
