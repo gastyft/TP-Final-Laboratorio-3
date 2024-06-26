@@ -87,12 +87,13 @@ setupImagenField();
 
                     List<Curso> cursos = sistema.devolverCursoslist();
                     Profesor profesor1 = sistema.buscarPorLegajoProfesor(usuario1.getLegajo());
-                    MenuProfesor menuProfesor = new MenuProfesor(profesor1, cursos);
+                    MenuProfesor menuProfesor = new MenuProfesor(profesor1, cursos,sistema);
                     menuProfesor.setVisible(true);
                     Profesor profesor2 = menuProfesor.getProfesor();
                     try {
                         sistema.modificarProfesor(profesor2);
                         sistema.agregarCursoProfesor(profesor2.getCursos());
+
                     }catch (ExceptionPersonalizada ex){
                         JOptionPane.showMessageDialog(null, "Error en menu Principal parte Rol Profesor", "Error", JOptionPane.ERROR_MESSAGE);
                     }

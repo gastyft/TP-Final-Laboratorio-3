@@ -6,11 +6,10 @@ import com.tpFinal.entidades.Profesor;
 import com.tpFinal.enumeraciones.CursosNombre;
 import com.tpFinal.enumeraciones.DiaSemana;
 import com.tpFinal.excepciones.ExceptionPersonalizada;
+import com.tpFinal.sistema.Sistema;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -45,9 +44,10 @@ public class MenuProfesor extends JDialog {
     private JButton crearCursoButton;
     private JList<DiaSemana> diasList;
     private JButton eliminarCursoButton;
+    private Sistema sistema;
 
-    public MenuProfesor(Profesor profesor1, List<Curso> cursos) {
-
+    public MenuProfesor(Profesor profesor1, List<Curso> cursos, Sistema sistema) {
+        this.sistema = sistema;
         this.profesor = profesor1;
         this.cursosDisponibles = cursos;
         setContentPane(panel1);
@@ -188,8 +188,10 @@ public class MenuProfesor extends JDialog {
 
             if(cursoslist.getSelectedValue() != null){
                 try {
-                    profesor.eliminarCurso(cursoseleccionado);
+                    cursoseleccionado = cursoslist.getSelectedValue();
+                    profesor.eliminarCurso(cursoseleccionado);//Si salta excepcion no entra a sistema.eliminarCurso
                     cursosDisponibles.remove(cursoseleccionado);
+                    sistema.eliminarCurso(cursoseleccionado);
                     JOptionPane.showMessageDialog(null, "curso eliminado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                     actualizarCursos();
                 }catch (ExceptionPersonalizada er){
@@ -238,5 +240,7 @@ public class MenuProfesor extends JDialog {
     public Profesor getProfesor() {
         return profesor;
     }
+
+
 }
 

@@ -35,7 +35,8 @@ public class Profesor extends Persona implements Serializable {
   }
   public boolean eliminarCurso(Curso curso) throws ExceptionPersonalizada {
       if(!curso.tieneAlumnosInscriptos()){
-        return cursos.remove(curso);
+        cursos.remove(curso);
+        return true;
       }else{
         throw new ExceptionPersonalizada("el Curso tiene alumnos");
       }
