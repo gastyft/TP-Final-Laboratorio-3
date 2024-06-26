@@ -281,13 +281,13 @@ public class MenuAdmin  extends JDialog {
                 String profesorViejo;
 
                 Curso curso = sistemaPrincipal.buscarCursoPorNombre(nombreCurso);
-                profesorViejo = curso.getProfesor();
-                Profesor profeViejo = sistemaPrincipal.buscarPofesorPorNombre(profesorViejo);
 
                 if (curso == null) {
                     JOptionPane.showMessageDialog(frame, "No se encontró ningún curso con ese nombre.", "Error", JOptionPane.ERROR_MESSAGE);
              return;
                 } else {
+                    profesorViejo = curso.getProfesor();
+                    Profesor profeViejo = sistemaPrincipal.buscarPofesorPorNombre(profesorViejo);
                     curso.setProfesor(profesor.getNombre() + " " + profesor.getApellido());
 
                     try {
