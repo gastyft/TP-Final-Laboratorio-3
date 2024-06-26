@@ -106,22 +106,7 @@ public class MenuAdmin  extends JDialog {
         return null;
     }
 
-    // public static void main(String[] args) {
 
-
-    /* loginButton.addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
-             String usuario = usuarioField.getText();
-             String contrasena = new String(contrasenaField.getPassword());
-             if (sistema.login(usuario, contrasena)) {
-                 frame.dispose();
-                 mostrarMenu(sistema);
-             } else {
-                 JOptionPane.showMessageDialog(frame, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
-             }
-         }
-     }); */
     public void crearUsuarioAdmin() {
         MenuAdmin.this.setVisible(false);
 

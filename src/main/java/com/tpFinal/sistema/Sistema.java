@@ -34,20 +34,9 @@ public class Sistema {
         Fecha fecha = new Fecha(localDateTime, localDateTime.plusHours(4), diasemana);
         Fecha fecha2 = new Fecha(localDateTime, localDateTime.plusDays(2), diasemana);
         Curso curso = new Curso(CursosNombre.ALGORITMOS, profesor.getNombre(), fecha);
-        //   Factura factura = new Factura( CursosNombre.ALGORITMOS);
-        //  Inscripcion inscripcion = new Inscripcion(curso, alumno, factura);
+
         Curso curso1 = new Curso(CursosNombre.BASES_DE_DATOS, profesor.getNombre(), fecha2);
-        //   try {
-        //     alumno.addInscripcion(inscripcion);
-        //     alumno.agregarCurso(curso);
-        // } catch (ExceptionPersonalizada e) {
-        //  }
-        //   alumnos.add(alumno);
-
-       // agregarCurso(curso);
-        //  agregarInscripciones(inscripcion);
-        //agregarCurso(curso1);
-
+        
 
     }
 

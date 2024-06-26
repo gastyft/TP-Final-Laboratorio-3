@@ -1,36 +1,78 @@
 [ {
-  "nombre" : "Tiziano",
-  "nombreUsuario" : "Tiziano",
-  "email" : "tizi_123@gmail.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InRpemkifQ._-TrhmDPdtiLM0iolFfooSrCqJlnQldN2m7vsCZ6B93EpQDCiyeBJdo4TjmVjNaFadek3-kkGKaJOakcj4xNGA",
-  "rol" : "ROL_ALUMNO",
-  "legajo" : "AA1"
-}, {
-  "nombre" : "jose",
-  "nombreUsuario" : "jose",
-  "email" : "lodeiro@gmail.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
-  "rol" : "ROL_PROFESOR",
-  "legajo" : "PP4"
-}, {
-  "nombre" : "tomas",
-  "nombreUsuario" : "tomas",
-  "email" : "tomasp@gmail.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
-  "rol" : "ROL_ALUMNO",
-  "legajo" : "AA6"
-}, {
-  "nombre" : "maria",
-  "nombreUsuario" : "maria",
-  "email" : "maria@gmail.com",
-  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6IjEyMyJ9.f3JhZG58W0dmXFd7vo42qWi68j21g1VNCBquOq6x2RXxL0hRPhTZkB8zYeOzMRt6yL106dAJwXB2MwqMgOZGdg",
-  "rol" : "ROL_PROFESOR",
-  "legajo" : "PP32"
-}, {
   "nombre" : "admin",
   "nombreUsuario" : "admin",
   "email" : "admin@admin.ar",
   "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImFkbWluIn0.EfgNS19NHwLvaXSz1iJ6jIecrfEH7wWl6JVkgRcPMssjFMJzvVcsiYXEvMcgbqw83mzcav8Fhl0H6TuvgV83sQ",
   "rol" : "ROL_ADMIN",
   "legajo" : "admin"
+}, {
+  "nombre" : "Mauricio",
+  "nombreUsuario" : "mauri",
+  "email" : "maurisebastian@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Im1hdXJpIn0.Wya9-ZXnBCa6YMJ3PxvW1zqwK2HI_AzpfWPfYzVjnpgklY5ZBcXIs2fC7kph0oIwVnfY0952_2pIFWI0n2BEXw",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP1"
+}, {
+  "nombre" : "Sofia",
+  "nombreUsuario" : "sofi",
+  "email" : "sofia123@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InNvZmkifQ.OgHmDzbsdn26oxYsmXiDwwevjqxWt-8gjGPB_9Ji0COFX0xcf7VZFQ3j8t3gU8Jia66I7EcdwT2VANFfbikn_g",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP2"
+}, {
+  "nombre" : "Tiziano",
+  "nombreUsuario" : "tizi",
+  "email" : "tizicounago@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6InRpemkifQ._-TrhmDPdtiLM0iolFfooSrCqJlnQldN2m7vsCZ6B93EpQDCiyeBJdo4TjmVjNaFadek3-kkGKaJOakcj4xNGA",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP4"
+}, {
+  "nombre" : "Mai",
+  "nombreUsuario" : "mai",
+  "email" : "maicaberterreche@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Im1haSJ9.cbNXk9wwFU03EHaj7nBaEVXuoL6x8bvWGgXrdeZl6or82H1dV-rqU8F-iNB34Ut7cpcrAMF8SiOcGMUNKEJQQw",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP8"
+}, {
+  "nombre" : "Lucas",
+  "nombreUsuario" : "lucasperez",
+  "email" : "luqitasperez@yahoo.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Imx1Y2FzcGVyZXoifQ.eQ4yQzMntn_7qvn6zTWe5Bm6YPW9AkaI61MrqqSKUeixdhAlHMEYCr6irgNSYHBMZPpCxe69bNexkvxrmjzbpw",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA12"
+}, {
+  "nombre" : "Jose",
+  "nombreUsuario" : "JoseLodeiro",
+  "email" : "jose_lodeiro@hotmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Ikpvc2VMb2RlaXJvIn0.zU1CbsqlBeb_6H3h_ceOaPSC0Pau5A9BzMZBvDYG2JQwx5n05kVftirQarqbk0L3iaIUj00hOdzgNEAmCBFCiw",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA13"
+}, {
+  "nombre" : "Juan",
+  "nombreUsuario" : "juan123",
+  "email" : "juancito_perez@estudiante.mdp.utn.edu.ar",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Imp1YW4xMjMifQ.nBTyEIy8PfWZxzrHa0k833m33vpQdvrnZNESxUV8IFpAW2OtvEbfC-uv-AJIhnTXXlgJ0mySd-i1sSnhPuNlTg",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA15"
+}, {
+  "nombre" : "Mariela",
+  "nombreUsuario" : "mariela96",
+  "email" : "mari_diaz_96@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Im1hcmllbGE5NiJ9.HbMNhsyVWNUNMPdWEuTPYmAXX5yVYtXGZiiFsjO7EexY5k0d69b7yawd5Lder1zQBxkRJoMC1AvBYv-sC7vhvA",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA16"
+}, {
+  "nombre" : "Daniela",
+  "nombreUsuario" : "dani34",
+  "email" : "dani_34@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6ImRhbmkzNCJ9.VY_a1ZjsL436_4f_tr0awGi1AAsdXWQr4op001K3z3b8tedOV2tvtyZqaqCrJcJGKdZ6pNvuIAZMmlv1iq1SUA",
+  "rol" : "ROL_ALUMNO",
+  "legajo" : "AA18"
+}, {
+  "nombre" : "Gastón",
+  "nombreUsuario" : "gastyft",
+  "email" : "gastyftacla1@gmail.com",
+  "password" : "eyJhbGciOiJIUzUxMiJ9.eyJwYXNzd29yZCI6Imdhc3R5ZnQifQ.8YdIE2qisngDQZ8O_wj3VvNzFIabqUaQbfCLBkQlN4ls4qoCuif25NlYlbNM82G1uynTCvMGvamVEgtfk4rTBw",
+  "rol" : "ROL_PROFESOR",
+  "legajo" : "PP55"
 } ]

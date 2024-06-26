@@ -29,21 +29,24 @@ public class MenuPrincipal {
 
 
     public MenuPrincipal() {
+     // En caso de que haya surgido algún inconveniente con los archivos, podes borrarlos a todos
+     // y quieras crear un nuevo admin descomentar este comentario ejecutarlo una vez y luego volver a comentar.
      /*
-       try {
+        try {
             sistemaLogin.crearUsuario("admin","admin","admin@admin.ar","admin","admin",RolNombre.ROL_ADMIN);
         } catch (ExceptionPersonalizada e) {
             throw new RuntimeException(e);
         }
-     */
+      */
 setupImagenField();
         logInButton.addActionListener(e -> {
 
             String usuario = UsuarioField1.getText();
             //Capturo el Array de char del password Field
             String contraseniaStr = new String(passwordField1.getPassword());
-            Usuario usuario1 = sistemaLogin.login(usuario, contraseniaStr); //Convierto el array a String para
-            //trabajarlo dentro del metodo como String(Por plantearlo inicialmente asi)
+            Usuario usuario1 = sistemaLogin.login(usuario, contraseniaStr); //Convierto el array de
+            // caracteres passwordField  a String para trabajarlo dentro del metodo como
+            // String(Por plantearlo inicialmente asi)
             // Limpiar el STRING de caracteres después de usarlo para que no quede en memoria
             contraseniaStr ="";
             passwordField1.setText("");

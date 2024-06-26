@@ -134,7 +134,7 @@ public class MenuUsuario extends JDialog {
     }
 
     public boolean isValidName(String name) {
-        String nameRegex = "^[a-zA-Z]{4,}$";
+        String nameRegex = "^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]{3,}$";
         Pattern pattern = Pattern.compile(nameRegex);
         return name != null && pattern.matcher(name).matches();
     }

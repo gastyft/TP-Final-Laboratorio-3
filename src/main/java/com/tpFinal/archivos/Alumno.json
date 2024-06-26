@@ -1,85 +1,272 @@
 [ {
-  "nombre" : "aa",
-  "apellido" : "aa",
-  "email" : "aa@d.com",
-  "legajo" : "AA2",
+  "nombre" : "Lucas",
+  "apellido" : "Perez",
+  "email" : "luqitasperez@yahoo.com",
+  "legajo" : "AA12",
+  "cursosPagos" : [ {
+    "idCurso" : 4,
+    "cursosNombre" : "SPRING_BOOT",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez", "Jose Lodeiro", "Mariela Díaz" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 2,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez", "Juan Perez", "Mariela Díaz", "Daniela Gutierrez", "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 67,
+    "cursosNombre" : "DESARROLLO_WEB",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 20, 0 ],
+      "diasemana" : [ "LUNES", "MARTES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez" ],
+    "profesor" : "Gastón Ftacla"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 5,
+    "curso" : "SPRING_BOOT",
+    "valor" : 7000.0
+  }, {
+    "idFactura" : 6,
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
+  }, {
+    "idFactura" : 7,
+    "curso" : "DESARROLLO_WEB",
+    "valor" : 4000.0
+  } ]
+}, {
+  "nombre" : "Jose",
+  "apellido" : "Lodeiro",
+  "email" : "jose_lodeiro@hotmail.com",
+  "legajo" : "AA13",
+  "cursosPagos" : [ {
+    "idCurso" : 3,
+    "cursosNombre" : "DESARROLLO_WEB",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "MARTES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 4,
+    "cursosNombre" : "SPRING_BOOT",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez", "Jose Lodeiro", "Mariela Díaz" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 8,
+    "cursosNombre" : "ALGORITMOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 20, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "Jose Lodeiro" ],
+    "profesor" : "Mauricio Martinez"
+  }, {
+    "idCurso" : 22,
+    "cursosNombre" : "BASES_DE_DATOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 9, 1, 18, 0 ],
+      "fechaFin" : [ 2024, 11, 1, 20, 0 ],
+      "diasemana" : [ "MARTES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "Jose Lodeiro", "Mariela Díaz" ],
+    "profesor" : "Sofia Stejskal"
+  }, {
+    "idCurso" : 684,
+    "cursosNombre" : "DATA_SCIENCE",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 22, 0 ],
+      "diasemana" : [ "MIERCOLES" ]
+    },
+    "alumnosInscriptos" : [ "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 2,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez", "Juan Perez", "Mariela Díaz", "Daniela Gutierrez", "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 1161,
+    "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 9, 1, 14, 0 ],
+      "fechaFin" : [ 2024, 11, 1, 16, 0 ],
+      "diasemana" : [ "MARTES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 29,
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
+  }, {
+    "idFactura" : 30,
+    "curso" : "DESARROLLO_WEB",
+    "valor" : 4000.0
+  }, {
+    "idFactura" : 31,
+    "curso" : "SPRING_BOOT",
+    "valor" : 7000.0
+  }, {
+    "idFactura" : 32,
+    "curso" : "ALGORITMOS",
+    "valor" : 4500.0
+  }, {
+    "idFactura" : 33,
+    "curso" : "BASES_DE_DATOS",
+    "valor" : 3000.0
+  }, {
+    "idFactura" : 34,
+    "curso" : "ESTRUCTURAS_DE_DATOS",
+    "valor" : 3500.0
+  }, {
+    "idFactura" : 37,
+    "curso" : "DATA_SCIENCE",
+    "valor" : 2500.0
+  }, {
+    "idFactura" : 379,
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
+  }, {
+    "idFactura" : 774,
+    "curso" : "ESTRUCTURAS_DE_DATOS",
+    "valor" : 3500.0
+  } ]
+}, {
+  "nombre" : "Juan",
+  "apellido" : "Perez",
+  "email" : "juancito_perez@estudiante.mdp.utn.edu.ar",
+  "legajo" : "AA15",
   "cursosPagos" : [ {
     "idCurso" : 2,
     "cursosNombre" : "PROGRAMACION_JAVA",
     "fecha" : {
       "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
       "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "MARTES", "JUEVES" ]
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
     },
-    "alumnosInscriptos" : [ "aa aa" ],
-    "profesor" : "dddd"
+    "alumnosInscriptos" : [ "Lucas Perez", "Juan Perez", "Mariela Díaz", "Daniela Gutierrez", "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
   }, {
-    "idCurso" : 5,
-    "cursosNombre" : "ALGORITMOS",
+    "idCurso" : 66,
+    "cursosNombre" : "SPRING_BOOT",
     "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
-      "diasemana" : [ "MARTES", "MIERCOLES", "JUEVES" ]
+      "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 22, 0 ],
+      "diasemana" : [ "MIERCOLES", "JUEVES", "VIERNES" ]
     },
-    "alumnosInscriptos" : [ "aa aa" ],
-    "profesor" : "dddd"
+    "alumnosInscriptos" : [ "Juan Perez" ],
+    "profesor" : "Gastón Ftacla"
   } ],
   "listFacturas" : [ {
-    "idFactura" : 0,
+    "idFactura" : 176,
     "curso" : "PROGRAMACION_JAVA",
     "valor" : 5000.0
   }, {
-    "idFactura" : 1,
-    "curso" : "ALGORITMOS",
-    "valor" : 4500.0
+    "idFactura" : 177,
+    "curso" : "SPRING_BOOT",
+    "valor" : 7000.0
   } ]
 }, {
-  "nombre" : "tomas",
-  "apellido" : "Pantera",
-  "email" : "tomasp@gmail.com",
-  "legajo" : "AA6",
+  "nombre" : "Mariela",
+  "apellido" : "Díaz",
+  "email" : "mari_diaz_96@gmail.com",
+  "legajo" : "AA16",
   "cursosPagos" : [ {
-    "idCurso" : 6,
+    "idCurso" : 2,
     "cursosNombre" : "PROGRAMACION_JAVA",
     "fecha" : {
       "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
       "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "LUNES", "MIERCOLES" ]
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
     },
-    "alumnosInscriptos" : [ "tomas Pantera" ],
-    "profesor" : "jose lodeiro"
+    "alumnosInscriptos" : [ "Lucas Perez", "Juan Perez", "Mariela Díaz", "Daniela Gutierrez", "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
   }, {
-    "idCurso" : 29,
-    "cursosNombre" : "DESARROLLO_WEB",
-    "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "MARTES", "MIERCOLES" ]
-    },
-    "alumnosInscriptos" : [ "tomas Pantera" ],
-    "profesor" : "maria ramanda"
-  }, {
-    "idCurso" : 30,
+    "idCurso" : 4,
     "cursosNombre" : "SPRING_BOOT",
     "fecha" : {
-      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-      "diasemana" : [ "VIERNES" ]
+      "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
     },
-    "alumnosInscriptos" : [ "tomas Pantera" ],
-    "profesor" : "maria ramanda"
+    "alumnosInscriptos" : [ "Lucas Perez", "Jose Lodeiro", "Mariela Díaz" ],
+    "profesor" : "Mai Berterreche"
+  }, {
+    "idCurso" : 22,
+    "cursosNombre" : "BASES_DE_DATOS",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 9, 1, 18, 0 ],
+      "fechaFin" : [ 2024, 11, 1, 20, 0 ],
+      "diasemana" : [ "MARTES", "JUEVES" ]
+    },
+    "alumnosInscriptos" : [ "Jose Lodeiro", "Mariela Díaz" ],
+    "profesor" : "Sofia Stejskal"
   } ],
   "listFacturas" : [ {
-    "idFactura" : 7,
+    "idFactura" : 273,
     "curso" : "PROGRAMACION_JAVA",
     "valor" : 5000.0
   }, {
-    "idFactura" : 8,
-    "curso" : "DESARROLLO_WEB",
-    "valor" : 4000.0
-  }, {
-    "idFactura" : 10,
+    "idFactura" : 274,
     "curso" : "SPRING_BOOT",
     "valor" : 7000.0
+  }, {
+    "idFactura" : 275,
+    "curso" : "BASES_DE_DATOS",
+    "valor" : 3000.0
+  }, {
+    "idFactura" : 276,
+    "curso" : "ESTRUCTURAS_DE_DATOS",
+    "valor" : 3500.0
+  } ]
+}, {
+  "nombre" : "Daniela",
+  "apellido" : "Gutierrez",
+  "email" : "dani_34@gmail.com",
+  "legajo" : "AA18",
+  "cursosPagos" : [ {
+    "idCurso" : 2,
+    "cursosNombre" : "PROGRAMACION_JAVA",
+    "fecha" : {
+      "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
+      "fechaFin" : [ 2024, 8, 1, 10, 0 ],
+      "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+    },
+    "alumnosInscriptos" : [ "Lucas Perez", "Juan Perez", "Mariela Díaz", "Daniela Gutierrez", "Jose Lodeiro" ],
+    "profesor" : "Mai Berterreche"
+  } ],
+  "listFacturas" : [ {
+    "idFactura" : 539,
+    "curso" : "PROGRAMACION_JAVA",
+    "valor" : 5000.0
   } ]
 } ]

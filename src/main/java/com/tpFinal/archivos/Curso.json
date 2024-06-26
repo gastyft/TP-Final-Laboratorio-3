@@ -1,121 +1,101 @@
 [ {
-  "idCurso" : 6,
+  "idCurso" : 2,
   "cursosNombre" : "PROGRAMACION_JAVA",
   "fecha" : {
     "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
     "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "LUNES", "MIERCOLES" ]
+    "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
   },
-  "alumnosInscriptos" : [ "tomas Pantera" ],
-  "profesor" : "jose lodeiro"
+  "alumnosInscriptos" : [ "Lucas Perez", "Juan Perez", "Mariela Díaz", "Daniela Gutierrez", "Jose Lodeiro" ],
+  "profesor" : "Mai Berterreche"
 }, {
-  "idCurso" : 8,
-  "cursosNombre" : "DESARROLLO_WEB",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
-    "diasemana" : [ "LUNES", "MIERCOLES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 13,
-  "cursosNombre" : "BASES_DE_DATOS",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "MARTES", "JUEVES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 14,
-  "cursosNombre" : "ALGORITMOS",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
-    "diasemana" : [ "MARTES", "JUEVES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 15,
-  "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "VIERNES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 16,
-  "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
-    "diasemana" : [ "VIERNES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 17,
-  "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "LUNES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 23,
-  "cursosNombre" : "ALGORITMOS",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "MARTES", "JUEVES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 25,
-  "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
-  "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
-    "diasemana" : [ "MIERCOLES", "VIERNES" ]
-  },
-  "alumnosInscriptos" : [ ],
-  "profesor" : "jose lodeiro"
-}, {
-  "idCurso" : 29,
+  "idCurso" : 3,
   "cursosNombre" : "DESARROLLO_WEB",
   "fecha" : {
     "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
     "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "MARTES", "MIERCOLES" ]
+    "diasemana" : [ "MARTES", "JUEVES" ]
   },
-  "alumnosInscriptos" : [ "tomas Pantera" ],
-  "profesor" : "maria ramanda"
+  "alumnosInscriptos" : [ "Jose Lodeiro" ],
+  "profesor" : "Mai Berterreche"
 }, {
-  "idCurso" : 30,
+  "idCurso" : 4,
   "cursosNombre" : "SPRING_BOOT",
   "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 8, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 10, 0 ],
-    "diasemana" : [ "VIERNES" ]
+    "fechaInicio" : [ 2024, 6, 1, 14, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 16, 0 ],
+    "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
   },
-  "alumnosInscriptos" : [ "tomas Pantera" ],
-  "profesor" : "maria ramanda"
+  "alumnosInscriptos" : [ "Lucas Perez", "Jose Lodeiro", "Mariela Díaz" ],
+  "profesor" : "Mai Berterreche"
 }, {
-  "idCurso" : 174,
-  "cursosNombre" : "PROGRAMACION_JAVA",
+  "idCurso" : 8,
+  "cursosNombre" : "ALGORITMOS",
   "fecha" : {
-    "fechaInicio" : [ 2024, 6, 1, 10, 0 ],
-    "fechaFin" : [ 2024, 8, 1, 12, 0 ],
-    "diasemana" : [ "LUNES", "MARTES" ]
+    "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 20, 0 ],
+    "diasemana" : [ "LUNES", "MIERCOLES", "VIERNES" ]
+  },
+  "alumnosInscriptos" : [ "Jose Lodeiro" ],
+  "profesor" : "Mauricio Martinez"
+}, {
+  "idCurso" : 22,
+  "cursosNombre" : "BASES_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 9, 1, 18, 0 ],
+    "fechaFin" : [ 2024, 11, 1, 20, 0 ],
+    "diasemana" : [ "MARTES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ "Jose Lodeiro", "Mariela Díaz" ],
+  "profesor" : "Sofia Stejskal"
+}, {
+  "idCurso" : 39,
+  "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 22, 0 ],
+    "diasemana" : [ "MARTES", "JUEVES" ]
   },
   "alumnosInscriptos" : [ ],
-  "profesor" : "maria ramanda"
+  "profesor" : "Tiziano Counago"
+}, {
+  "idCurso" : 66,
+  "cursosNombre" : "SPRING_BOOT",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 22, 0 ],
+    "diasemana" : [ "MIERCOLES", "JUEVES", "VIERNES" ]
+  },
+  "alumnosInscriptos" : [ "Juan Perez" ],
+  "profesor" : "Gastón Ftacla"
+}, {
+  "idCurso" : 67,
+  "cursosNombre" : "DESARROLLO_WEB",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 18, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 20, 0 ],
+    "diasemana" : [ "LUNES", "MARTES" ]
+  },
+  "alumnosInscriptos" : [ "Lucas Perez" ],
+  "profesor" : "Gastón Ftacla"
+}, {
+  "idCurso" : 684,
+  "cursosNombre" : "DATA_SCIENCE",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 6, 1, 20, 0 ],
+    "fechaFin" : [ 2024, 8, 1, 22, 0 ],
+    "diasemana" : [ "MIERCOLES" ]
+  },
+  "alumnosInscriptos" : [ "Jose Lodeiro" ],
+  "profesor" : "Mai Berterreche"
+}, {
+  "idCurso" : 1161,
+  "cursosNombre" : "ESTRUCTURAS_DE_DATOS",
+  "fecha" : {
+    "fechaInicio" : [ 2024, 9, 1, 14, 0 ],
+    "fechaFin" : [ 2024, 11, 1, 16, 0 ],
+    "diasemana" : [ "MARTES", "JUEVES" ]
+  },
+  "alumnosInscriptos" : [ "Jose Lodeiro" ],
+  "profesor" : "Mai Berterreche"
 } ]

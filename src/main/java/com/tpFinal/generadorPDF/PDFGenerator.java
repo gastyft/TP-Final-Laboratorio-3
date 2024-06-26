@@ -41,7 +41,7 @@ public class PDFGenerator{
         headerImage.setWidth(150);
         headerImage.setMarginTop(30);
 
-        // Agregar eventos de encabezado y pie de página
+        //  eventos de encabezado y pie de página
         pdf.addEventHandler(PdfDocumentEvent.END_PAGE, new HeaderEventHandler());
         pdf.addEventHandler(PdfDocumentEvent.END_PAGE, new FooterEventHandler());
 
@@ -49,14 +49,14 @@ public class PDFGenerator{
             document.setMargins(60, 20, 120, 20); // Ajustar márgenes
 
 
-            // Agregar contenido al PDF TITULO
-            document.add(new Paragraph("Facturas de "+alumno.getNombre()+" "+alumno.getApellido()).setBold().setFontSize(18).setTextAlignment(TextAlignment.CENTER));
+            // TITULO PDF
+            document.add(new Paragraph("Factura de "+alumno.getNombre()+" "+alumno.getApellido()).setBold().setFontSize(18).setTextAlignment(TextAlignment.CENTER));
             document.add(new Paragraph("\n"));
 
 
 
-            // Crear tabla para el detalle del cliente
-            // Crear tabla horizontal para el detalle del cliente
+            //  tabla para el detalle del cliente
+            //  tabla horizontal para el detalle del cliente
             Table detalleClienteTable = new Table(3)
                     .setTextAlignment(TextAlignment.LEFT)
                     .setWidth( pdf.getDefaultPageSize().getWidth() - 120); // Ajustar posición y tamaño de la tabla
@@ -85,12 +85,6 @@ public class PDFGenerator{
 
     }
 
-    public static void main(String[] args) throws IOException {
-
-
-            generarFacturasPDF(  alumno, nombreArchivo);
-
-    }
 
     static class HeaderEventHandler implements IEventHandler {
         @Override
@@ -101,7 +95,7 @@ public class PDFGenerator{
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
 
             Rectangle pageSize = page.getPageSize();
-            // Obtener el tamaño de la página y ajustar la posición de la imagen
+            //  tamaño de la página y ajuste la posición de la imagen
             Rectangle rect = ((PdfPage) page).getPageSize();
             float x = rect.getLeft() + 20;  // Ajustar la posición x
             float y = rect.getTop() - 70;   // Ajustar la posición y
@@ -127,12 +121,12 @@ public class PDFGenerator{
             PdfPage page = docEvent.getPage();
             PdfCanvas canvas = new PdfCanvas(page.newContentStreamBefore(), page.getResources(), pdfDoc);
 
-            // Obtener el tamaño de la página y ajustar la posición del pie de página
+            //  tamaño de la página y ajuste la posición del pie de página
             Rectangle rect = page.getPageSize();
             float x = rect.getLeft() + 10;  // Ajustar la posición x
             float y = rect.getBottom() + 20;  // Ajustar la posición y
 
-            // Crear contenido para el pie de página
+            //  contenido para el pie de página
             Paragraph footer = new Paragraph("Dirección: Calle Buque Pesquero Dorrego N° 281, Mar del Plata, Argentina | Teléfono: (0223) 480-1220 | Email: \n" +
                     "informes@mdp.utn.edu.ar")
                     .setFontSize(10)
@@ -140,10 +134,10 @@ public class PDFGenerator{
 
             Link instagramLink = new Link("Intagram: @utnmardelplata", PdfAction.createURI("http://www.instagram.com/utnmardelplata"));
             Link paginaWeb = new Link("Sitio Web: mdp.utn.edu.ar ", PdfAction.createURI("https://mdp.utn.edu.ar/"));
-            // Crear el ícono de Instagram
 
 
-            // Crear el párrafo del pie de página con el enlace y el ícono de Instagram
+
+            //  párrafo del pie de página con el enlace y el ícono de Instagram
             Paragraph footer2 = null; // Agregar ícono de Instagram
             footer2 = new Paragraph()
                     .setFontSize(10)
@@ -160,7 +154,7 @@ public class PDFGenerator{
                     .setFontSize(10)
                     .setTextAlignment(TextAlignment.CENTER);
 
-            // Agregar el pie de página al canvas
+            //   pie de página al canvas
             new Canvas(canvas, pdfDoc, rect).showTextAligned(footer, x + rect.getWidth() / 2, y + 40, TextAlignment.CENTER);
             new Canvas(canvas, pdfDoc, rect).showTextAligned(footer2, x + rect.getWidth() / 2, y + 15, TextAlignment.CENTER);
             new Canvas(canvas, pdfDoc, rect).showTextAligned(pageNumber, x + rect.getWidth() / 2, y, TextAlignment.CENTER);
